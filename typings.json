@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "vs": "github:agileek/typings-vis#cc86880fa6434c5f0b8b95ab2141de1b42425e82"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "noImplicitAny": true,
+    "declaration": false,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "lib": ["dom", "es6"],
+    "types": [
+      "vis",
+      "jasmine",
+      "webpack"
+    ]
+  },
+  "exclude": [
+    "node_modules", "bundles", "dist"
+  ],
+  "files": [
+    "./demo/custom-typings.d.ts",
+    "./ng2-vis.ts"
+  ],
+  "atom": { "rewriteTsconfig": false }
+}
