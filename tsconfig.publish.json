@@ -16,6 +16,9 @@
       "vis",
       "jasmine",
       "webpack"
+    ],
+    "typeRoots": [
+      "./typings"
     ]
   },
   "exclude": [
