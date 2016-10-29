@@ -5,6 +5,8 @@
     "component-selector-name": [false],
     "only-arrow-functions": false,
     "no-string-literal": false,
-    "no-input-rename": false
+    "no-input-rename": false,
+    "linebreak-style": false,
+    "interface-name": false
   }
 }

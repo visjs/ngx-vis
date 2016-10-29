@@ -17,10 +17,17 @@ import { VisNetworkService } from './vis-network.service';
 })
 export class VisNetworkDirective implements OnDestroy, OnChanges {
 
-  @Input('visNetwork') visNetwork: string;
-  @Input() visNetworkData: Vis.IData;
-  @Input() visNetworkOptions: Vis.IOptions;
-  @Output() initialized: EventEmitter<any> = new EventEmitter<any>();
+  @Input('visNetwork')
+  public visNetwork: string;
+
+  @Input()
+  public visNetworkData: Vis.IData;
+
+  @Input()
+  public visNetworkOptions: Vis.IOptions;
+
+  @Output()
+  public initialized: EventEmitter<any> = new EventEmitter<any>();
 
   private _visNetworkContainer: any;
 
@@ -29,6 +36,8 @@ export class VisNetworkDirective implements OnDestroy, OnChanges {
   }
 
   public ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
+    // TODO: update network on changes
+    console.log(changes);
     if (this.visNetwork && this.visNetworkData) {
       this.createNetwork();
     }
@@ -38,7 +47,7 @@ export class VisNetworkDirective implements OnDestroy, OnChanges {
     this.visNetworkService.destroy(this.visNetwork);
   }
 
-  private createNetwork() {
+  private createNetwork(): void {
     this.visNetworkService.create(
       this.visNetwork,
       this._visNetworkContainer,

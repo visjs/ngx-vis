@@ -7,5 +7,4 @@ import { VisNetworkDirective, VisNetworkService } from './components/network';
   declarations: [VisNetworkDirective],
   providers: [VisNetworkService]
 })
-export class VisModule {
-}
+export class VisModule { }

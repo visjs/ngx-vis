@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const tslint = require('gulp-tslint');
 const gitignore = require('gitignore-to-glob')();
 
-gitignore.push('**/*.ts');
+gitignore.push('components/**/*.ts');
+gitignore.push('ng2-vis.ts');
 
 gulp.task('tslint', () =>
   gulp

@@ -13,9 +13,6 @@ export interface IFitOptions {
 
 @Injectable()
 export class VisNetworkService {
-
-  private _networks: {[id: string]: any} = [];
-
   public click: EventEmitter<any> = new EventEmitter<any>();
   public doubleClick: EventEmitter<any> = new EventEmitter<any>();
   public oncontext: EventEmitter<any> = new EventEmitter<any>();
@@ -46,6 +43,8 @@ export class VisNetworkService {
   public afterDrawing: EventEmitter<any> = new EventEmitter<any>();
   public animationFinished: EventEmitter<any> = new EventEmitter<any>();
   public configChange: EventEmitter<any> = new EventEmitter<any>();
+
+  private _networks: {[id: string]: any} = [];
 
   public create(
     visNetwork: string,
