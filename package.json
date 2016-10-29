@@ -23,7 +23,7 @@
   "homepage": "https://github.com/seveves/ng2-vis#readme",
   "scripts": {
     "flow.compile": "npm run flow.compile:common && npm run flow.compile:system && npm run flow.extract-metadata",
-    "flow.compile:common": "./node_modules/.bin/tsc -p tsconfig.publish.json",
+    "flow.compile:common": "./node_modules/.bin/typings install && ./node_modules/.bin/tsc -p tsconfig.publish.json",
     "flow.compile:system": "./.config/bundle-system.js",
     "flow.copy:src": "./node_modules/.bin/cpy ng2-vis.ts \"components/*.ts\" ts --parents",
     "flow.clean": "./node_modules/.bin/del bundles coverage demo-build typings \"components/**/*.+(js|d.ts|js.map)\" dist \"ng2-vis.+(js|d.ts|js.map)\"",

@@ -13,7 +13,6 @@
     "stripInternal": true,
     "lib": ["dom", "es6"],
     "types": [
-      "vis",
       "jasmine",
       "webpack"
     ],
@@ -25,6 +24,7 @@
     "node_modules"
   ],
   "files": [
+    "./typings/globals/vs/index.d.ts",
     "./demo/custom-typings.d.ts",
     "./ng2-vis.ts"
   ],
