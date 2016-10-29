@@ -1,6 +1,8 @@
 # ng2-vis
 An angular 2 vis.js project (in a very early development stage)
 
+[![Build Status](https://travis-ci.org/seveves/ng2-vis.svg?branch=develop)](https://travis-ci.org/seveves/ng2-vis)
+
 ## Demo
 Currently I've added only the basic example for a vis.js network:
 * [Demo Page](https://seveves.github.io/ng2-vis)
@@ -20,7 +22,7 @@ Contributions of any kind are very welcome!
 * writing unit tests for the network component
 
 ### Misc
-* getting travis to work
+* ~~getting travis to work~~
 * publish to npm
 * adding some cool badges to this README
 
