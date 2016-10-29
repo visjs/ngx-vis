@@ -25,5 +25,6 @@ Contributions of any kind are very welcome!
 * adding some cool badges to this README
 
 ## Credits
+* thanks to [almende](https://github.com/almende) for [vis.js](http://visjs.org/)
 * thanks to [MichaelBitard](https://github.com/agileek/typings-vis) for initiating the vis.js type definitions.
 * thanks to [valor-software](https://github.com/valor-software) for their nice examples on how to setup, build and publish a angular2 module.
