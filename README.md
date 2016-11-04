@@ -2,6 +2,7 @@
 An angular 2 vis.js project (in a very early development stage)
 
 [![Build Status](https://travis-ci.org/seveves/ng2-vis.svg?branch=develop)](https://travis-ci.org/seveves/ng2-vis)
+[![npm version](https://badge.fury.io/js/ng2-vis.svg)](https://badge.fury.io/js/ng2-vis)
 
 ## Demo
 Currently I've added only the basic example for a vis.js network:
@@ -23,7 +24,7 @@ Contributions of any kind are very welcome!
 
 ### Misc
 * ~~getting travis to work~~
-* publish to npm
+* ~~publish to npm~~
 * adding some cool badges to this README
 
 ## Credits
