@@ -1,12 +1,12 @@
 # ng2-vis
-An angular 2 vis.js project (in a very early development stage)
-
 [![Build Status](https://travis-ci.org/seveves/ng2-vis.svg?branch=develop)](https://travis-ci.org/seveves/ng2-vis)
 [![npm version](https://badge.fury.io/js/ng2-vis.svg)](https://badge.fury.io/js/ng2-vis)
 [![codecov.io](https://codecov.io/github/seveves/ng2-vis/coverage.svg?branch=master)](https://codecov.io/gh/seveves/ng2-vis?branch=master)
 [![David](https://img.shields.io/david/seveves/ng2-vis.svg)]()
 [![David](https://img.shields.io/david/dev/seveves/ng2-vis.svg)]()
 [![David](https://img.shields.io/david/peer/seveves/ng2-vis.svg)]()
+
+An angular 2 vis.js project (in a very early development stage)
 
 ## Demo
 Currently I've added only the basic example for a vis.js network:
