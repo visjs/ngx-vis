@@ -15,7 +15,6 @@ describe('VisNetworkService Tests', () => {
     expect(selectedNodes).toBeUndefined();
     let selectedEdges = visNetworkService.getSelectedEdges('unknown');
     expect(selectedEdges).toBeUndefined();
-    
   });
 
   it('throws no error when the network does not exist', () => {
