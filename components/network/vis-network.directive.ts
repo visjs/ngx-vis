@@ -94,8 +94,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * @memberOf VisNetworkDirective
    */
   public ngOnInit(): void {
-    // at least the network name and data must be defined
-    if (this.visNetwork && this.visNetworkData) {
+    if (!this._isInitialized && this.visNetwork && this.visNetworkData) {
       this.createNetwork();
     }
   }

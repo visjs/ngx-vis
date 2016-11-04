@@ -14,6 +14,7 @@ import '@angular/platform-browser-dynamic';
 
 import 'vis';
 
+/*
 if ('production' === ENV) {
   // Production
 
@@ -21,3 +22,4 @@ if ('production' === ENV) {
   // Development
 
 }
+*/
