@@ -19,6 +19,18 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
 
     public constructor(private visNetworkService: VisNetworkService) { }
 
+    public addNode(): void {
+        let length = this.visNetworkData.nodes.length + 1;
+
+        this.visNetworkData.nodes.push({ id: length.toString(), label: 'Node ' + length});
+
+        let newNetworkData: Vis.IData = {
+            nodes: this.visNetworkData.nodes,
+            edges: this.visNetworkData.edges
+        }
+        this.visNetworkData = newNetworkData;
+    }
+
     public networkInitialized(): void {
         // now we can use the service to register on events
         this.visNetworkService.on(this.visNetwork, 'click');

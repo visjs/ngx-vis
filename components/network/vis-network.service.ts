@@ -1,16 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import * as Vis from 'vis';
 
-export interface IFitOptionsAnimation {
-  duration: number;
-  easingFunction?: string;
-}
-
-export interface IFitOptions {
-  nodes?: string[];
-  animation?: IFitOptionsAnimation | boolean;
-}
-
 @Injectable()
 export class VisNetworkService {
   public click: EventEmitter<any> = new EventEmitter<any>();
@@ -137,7 +127,7 @@ export class VisNetworkService {
     }
   }
 
-  public fit(visNetwork: string, options?: IFitOptions): void {
+  public fit(visNetwork: string, options?: Vis.IFitOptions): void {
     if (this._networks[visNetwork]) {
       this._networks[visNetwork].fit(options);
     }
