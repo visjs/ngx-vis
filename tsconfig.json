@@ -13,9 +13,8 @@
     "stripInternal": true,
     "lib": ["dom", "es6"],
     "typeRoots": [
-            // add path to @types
-            "../node_modules/@types",
-            "../typings"
+            "./node_modules/@types",
+            "./typings"
          ],
     "types": [
       "node",
@@ -27,6 +26,7 @@
     "node_modules", "bundles", "dist"
   ],
   "files": [
+    "./typings/globals/vs/index.d.ts",
     "./demo/custom-typings.d.ts",
     "./ng2-vis.ts"
   ],

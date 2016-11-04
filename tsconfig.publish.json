@@ -12,12 +12,14 @@
     "skipLibCheck": true,
     "stripInternal": true,
     "lib": ["dom", "es6"],
+    "typeRoots": [
+            "./node_modules/@types",
+            "./typings"
+         ],
     "types": [
+      "node",
       "jasmine",
       "webpack"
-    ],
-    "typeRoots": [
-      "./typings"
     ]
   },
   "exclude": [
