@@ -1,0 +1,1 @@
+/// <reference path="lib/vs/index.d.ts" />
