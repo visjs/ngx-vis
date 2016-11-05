@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { VisNetworkDirective, VisNetworkService } from './components/network';
+import { VisTimelineDirective, VisTimelineService } from './components/timeline';
 
-export * from './components/network';
+export * from './components';
 
 @NgModule({
-  exports: [VisNetworkDirective],
-  declarations: [VisNetworkDirective],
-  providers: [VisNetworkService]
+  exports: [VisNetworkDirective, VisTimelineDirective],
+  declarations: [VisNetworkDirective, VisTimelineDirective],
+  providers: [VisNetworkService, VisTimelineService]
 })
 export class VisModule { }
