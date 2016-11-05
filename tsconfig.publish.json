@@ -26,7 +26,7 @@
     "node_modules"
   ],
   "files": [
-    "./typings/globals/vs/index.d.ts",
+    "./lib/vs/index.d.ts",
     "./demo/custom-typings.d.ts",
     "./ng2-vis.ts"
   ],
