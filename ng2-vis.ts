@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { VisNetworkDirective, VisNetworkService } from './components/network';
 
+export * from './components/network';
+
 @NgModule({
   exports: [VisNetworkDirective],
   declarations: [VisNetworkDirective],
