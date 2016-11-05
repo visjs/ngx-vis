@@ -22,7 +22,7 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
     public addNode(): void {
         let length = this.visNetworkData.nodes.length + 1;
 
-        this.visNetworkData.nodes.push({ id: length.toString(), label: 'Node ' + length});
+        (this.visNetworkData.nodes as Vis.INode[]).push({ id: length.toString(), label: 'Node ' + length});
 
         let newNetworkData: Vis.IData = {
             nodes: this.visNetworkData.nodes,
