@@ -9,9 +9,11 @@ import {
   ElementRef,
   SimpleChange } from '@angular/core';
 
-import * as Vis from 'vis';
-
 import { VisTimelineService } from './vis-timeline.service';
+import {
+    VisTimelineItems,
+    VisTimelineGroups,
+    VisTimelineOptions, } from './index';
 
 @Directive({
   selector: '[visTimeline]'
@@ -22,13 +24,13 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
     public visTimeline: string;
 
     @Input()
-    public visTimelineItems: Vis.DataSet<Vis.DataItem>;
+    public visTimelineItems: VisTimelineItems;
 
     @Input()
-    public visTimelineGroups: Vis.DataSet<Vis.DataGroup>;
+    public visTimelineGroups: VisTimelineGroups;
 
     @Input()
-    public visTimelineOptions: Vis.TimelineOptions;
+    public visTimelineOptions: VisTimelineOptions;
 
     @Output()
     public initialized: EventEmitter<any> = new EventEmitter<any>();
