@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'example-app',
-  template: `
-      <network-example></network-example>
-  `
+  template: require('./demo.component.html'),
 })
 export class DemoComponent {
 }
