@@ -1,120 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import * as Vis from 'vis';
 
-export interface HumanInteractionEventData {
-
-  /**
-   * Array of selected nodeIds
-   * 
-   * @type {string[]}
-   * @memberOf HumanInteractionEventData
-   */
-  nodes: string[];
-
-  /**
-   * Array of selected edgeIds
-   * 
-   * @type {string[]}
-   * @memberOf HumanInteractionEventData
-   */
-  edges: string[];
-
-  /**
-   * original click event
-   * 
-   * @type {*}
-   * @memberOf HumanInteractionEventData
-   */
-  event: any;
-
-  /**
-   * The current pointer position (DOM and Canvas).
-   * 
-   * @type {{
-   *     DOM: Vis.IPosition,
-   *     canvas: Vis.IPosition
-   *   }}
-   * @memberOf HumanInteractionEventData
-   */
-  pointer: {
-    DOM: Vis.IPosition,
-    canvas: Vis.IPosition
-  };
-}
-
-export interface DeselectInteractionEventData extends HumanInteractionEventData {
-  previousSelection: {
-
-    /**
-     * Array of previously selected nodeIds
-     * 
-     * @type {string[]}
-     * @memberOf HumanInteractionEventData
-     */
-    nodes: string[],
-
-    /**
-     * Array of previously selected edgeIds
-     * 
-     * @type {string[]}
-     */
-    edges: string[]
-  };
-}
-
-export interface ResizeEventData {
-  /**
-   * the new width  of the canvas
-   * 
-   * @type {number}
-   * @memberOf ResizeEventData
-   */
-  width: number;
-
-  /**
-   * the new height of the canvas
-   * 
-   * @type {number}
-   * @memberOf ResizeEventData
-   */
-  height: number;
-
-  /**
-   * the old width  of the canvas
-   * 
-   * @type {number}
-   * @memberOf ResizeEventData
-   */
-  oldWidth: number;
-
-  /**
-   * the old height of the canvas
-   * 
-   * @type {number}
-   * @memberOf ResizeEventData
-   */
-  oldHeight: number;
-}
-
-export interface ZoomEvent {
-  /**
-   * '+' or '-'
-   * 
-   * @type {string}
-   * @memberOf ZoomEvent
-   */
-  direction: string;
-
-  /**
-   * The scale is a number greater than 0,
-   * which is the same that you get with network.getScale().
-   * 
-   * @type {number}
-   * @memberOf ZoomEvent
-   */
-  scale: number;
-}
-
 /**
  * A service to create, manage and control VisNetwork instances.
  * 
@@ -127,10 +13,10 @@ export class VisNetworkService {
   /**
    * Fired when the user clicks the mouse or taps on a touchscreen device.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public click: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public click: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the user double clicks the mouse or double taps on a touchscreen device.
@@ -138,123 +24,123 @@ export class VisNetworkService {
    * If you do not want to use the click events if a double click event is fired,
    * just check the time between click events before processing them.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public doubleClick: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public doubleClick: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the user click on the canvas with the right mouse button.
    * The right mouse button does not select by default.
    * You can use the method getNodeAt to select the node if you want.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public oncontext: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public oncontext: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the user clicks and holds the mouse or taps and holds on a touchscreen device.
    * A click event is also fired in this case.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public hold: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public hold: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired after drawing on the canvas has been completed.
    * Can be used to draw on top of the network.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public release: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public release: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the selection has changed by user action.
    * This means a node or edge has been selected, added to the selection or deselected.
    * All select events are only triggered on click and hold.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public select: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public select: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when a node has been selected by the user.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public selectNode: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public selectNode: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when a edge has been selected by the user.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public selectEdge: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public selectEdge: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when a node (or nodes) has (or have) been deselected by the user.
    * The previous selection is the list of nodes and edges that were selected before the last user event.
    * 
-   * @type {EventEmitter<DeselectInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public deselectNode: EventEmitter<DeselectInteractionEventData> = new EventEmitter<DeselectInteractionEventData>();
+  public deselectNode: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when a edge (or edges) has (or have) been deselected by the user.
    * The previous selection is the list of nodes and edges that were selected before the last user event.
    * 
-   * @type {EventEmitter<DeselectInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public deselectEdge: EventEmitter<DeselectInteractionEventData> = new EventEmitter<DeselectInteractionEventData>();
+  public deselectEdge: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when starting a drag.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public dragStart: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public dragStart: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when dragging node(s) or the view.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public dragging: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public dragging: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the drag has finished.
    * 
-   * @type {EventEmitter<HumanInteractionEvent>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public dragEnd: EventEmitter<HumanInteractionEventData> = new EventEmitter<HumanInteractionEventData>();
+  public dragEnd: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired if the option interaction:{hover:true} is enabled and the mouse hovers over a node.
    * 
-   * @type {EventEmitter<{node: string}>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public hoverNode: EventEmitter<{node: string}> = new EventEmitter<{node: string}>();
+  public hoverNode: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired if the option interaction:{hover:true} is enabled and
    * the mouse moved away from a node it was hovering over before.
    * 
-   * @type {EventEmitter<{node: string}>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public blurNode: EventEmitter<{node: string}> = new EventEmitter<{node: string}>();
+  public blurNode: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired if the option interaction:{hover:true} is enabled and the mouse hovers over an edge.
@@ -262,16 +148,16 @@ export class VisNetworkService {
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public hoverEdge: EventEmitter<{edge: string}> = new EventEmitter<{edge: string}>();
+  public hoverEdge: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired if the option interaction:{hover:true} is enabled and
    * the mouse moved away from an edge it was hovering over before.
    * 
-   * @type {EventEmitter<{edge: string}>}
+   * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public blurEdge: EventEmitter<{edge: string}> = new EventEmitter<{edge: string}>();
+  public blurEdge: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the user zooms in or out.
@@ -279,7 +165,7 @@ export class VisNetworkService {
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public zoom: EventEmitter<ZoomEvent> = new EventEmitter<ZoomEvent>();
+  public zoom: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the popup (tooltip) is shown.
@@ -315,7 +201,7 @@ export class VisNetworkService {
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public stabilizationProgress: EventEmitter<{iterations: number, total: number}> = new EventEmitter<{iterations: number, total: number}>();
+  public stabilizationProgress: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the 'hidden' stabilization finishes.
@@ -335,7 +221,7 @@ export class VisNetworkService {
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public stabilized: EventEmitter<{iterations: number}> = new EventEmitter<{iterations: number}>();
+  public stabilized: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired when the size of the canvas has been resized,
@@ -345,7 +231,7 @@ export class VisNetworkService {
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkService
    */
-  public resize: EventEmitter<ResizeEventData> = new EventEmitter<ResizeEventData>();
+  public resize: EventEmitter<any> = new EventEmitter<any>();
 
   /**
    * Fired before the redrawing begins.
