@@ -10,7 +10,6 @@ import {
     VisTimelineEventPropertiesResult,
     VisTimeline } from './index';
 
-
 @Injectable()
 export class VisTimelineService {
     public click: EventEmitter<any> = new EventEmitter<any>();
