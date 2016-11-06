@@ -13,7 +13,7 @@ import { VisTimelineService } from './vis-timeline.service';
 import {
     VisTimelineItems,
     VisTimelineGroups,
-    VisTimelineOptions, } from './index';
+    VisTimelineOptions } from './index';
 
 @Directive({
   selector: '[visTimeline]'
