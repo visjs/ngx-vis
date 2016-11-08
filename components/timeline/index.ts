@@ -1,8 +1,5 @@
 import * as Vis from 'vis';
 
-export * from './vis-timeline.service';
-export * from './vis-timeline.directive';
-
 export interface VisTimelineItem extends Vis.DataItem {}
 export interface VisTimelineGroup extends Vis.DataGroup {}
 export interface VisDataSetOptions extends Vis.DataSetOptions {}
@@ -180,3 +177,6 @@ export interface VisTimelineFitOptions extends Vis.TimelineFitOptions {}
 export interface VisTimelineEventPropertiesResult extends  Vis.TimelineEventPropertiesResult {}
 
 export class VisTimeline extends Vis.Timeline {}
+
+export * from './vis-timeline.service';
+export * from './vis-timeline.directive';

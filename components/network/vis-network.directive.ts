@@ -9,10 +9,11 @@ import {
   ElementRef,
   SimpleChange } from '@angular/core';
 
+import { VisNetworkService } from './vis-network.service';
+
 import {
   VisNetworkData,
-  VisNetworkOptions,
-  VisNetworkService
+  VisNetworkOptions
 } from './index';
 
 /**
