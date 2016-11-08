@@ -1,6 +1,7 @@
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/seveves/ng2-vis/compare/v0.0.1-6...v0.0.2) (2016-11-08)
-
+* added timeline directive and service
+* added basic timeline example to demo site
 
 
 <a name="0.0.1-6"></a>
