@@ -18,7 +18,21 @@ import {
  */
 @Injectable()
 export class VisTimelineService {
+    /**
+     * Fired when the current time bar redraws.
+     * The rate depends on the zoom level.
+     * 
+     * @type {EventEmitter<any>}
+     * @memberOf VisTimelineService
+     */
     public currentTimeTick: EventEmitter<any> = new EventEmitter<any>();
+
+    /**
+     * Fired when clicked inside the Timeline.
+     * 
+     * @type {EventEmitter<any>}
+     * @memberOf VisTimelineService
+     */
     public click: EventEmitter<any> = new EventEmitter<any>();
 
     /**
