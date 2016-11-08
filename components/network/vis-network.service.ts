@@ -1,5 +1,10 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import * as Vis from 'vis';
+
+import {
+  VisNetwork,
+  VisFitOptions,
+  VisNetworkData,
+  VisNetworkOptions } from './index';
 
 /**
  * A service to create, manage and control VisNetwork instances.
@@ -281,15 +286,15 @@ export class VisNetworkService {
    */
   public configChange: EventEmitter<any> = new EventEmitter<any>();
 
-  private _networks: {[id: string]: any} = [];
+  private _networks: {[id: string]: VisNetwork} = {};
 
   /**
    * Creates a new network instance.
    * 
    * @param {string} visNetwork The network name/identifier.
    * @param {HTMLElement} container The HTML element that contains the network view.
-   * @param {Vis.IData} data The initial network nodes and edges.
-   * @param {Vis.IOptions} [options] The network options.
+   * @param {VisNetworkData} data The initial network nodes and edges.
+   * @param {VisNetworkOptions} [options] The network options.
    * 
    * @throws {Error} Thrown when a network with the same name already exists.
    * 
@@ -298,13 +303,13 @@ export class VisNetworkService {
   public create(
     visNetwork: string,
     container: HTMLElement,
-    data: Vis.IData,
-    options?: Vis.IOptions): void {
+    data: VisNetworkData,
+    options?: VisNetworkOptions): void {
     if (this._networks[visNetwork]) {
       throw new Error(`Network with id ${visNetwork} already exists.`);
     }
 
-    this._networks[visNetwork] = new Vis.Network(container, data, options);
+    this._networks[visNetwork] = new VisNetwork(container, data, options);
   }
 
   /**
@@ -326,17 +331,21 @@ export class VisNetworkService {
    * 
    * @param {string} visNetwork The network name/identifier.
    * @param {string} eventName The event name.
+   * @param {boolean} preventDefault Stops the default behavior of the event.
    * @returns {boolean} Returns true when the event was activated.
    * 
    * @memberOf VisNetworkService
    */
-  public on(visNetwork: string, eventName: string): boolean {
+  public on(visNetwork: string, eventName: string, preventDefault?: boolean): boolean {
     if (this._networks[visNetwork]) {
       let that: {[index: string]: any} = this;
       this._networks[visNetwork].on(eventName, (params: any) => {
         let emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
           emitter.emit(params ? [visNetwork].concat(params) : visNetwork);
+        }
+        if (preventDefault && params.event) {
+          params.event.preventDefault();
         }
       });
 
@@ -394,13 +403,13 @@ export class VisNetworkService {
    * This method is also performed when first initializing the network.
    * 
    * @param {string} visNetwork The network name/identifier.
-   * @param {Vis.IData} data The network data.
+   * @param {VisNetworkData} data The network data.
    * 
    * @throws {Error} Thrown when the network does not exist.
    * 
    * @memberOf VisNetworkService
    */
-  public setData(visNetwork: string, data: Vis.IData): void {
+  public setData(visNetwork: string, data: VisNetworkData): void {
     if (this._networks[visNetwork]) {
       this._networks[visNetwork].setData(data);
     } else {
@@ -412,13 +421,13 @@ export class VisNetworkService {
    * Set the options.
    * 
    * @param {string} visNetwork The network name/identifier.
-   * @param {Vis.IOptions} options The network options.
+   * @param {VisNetworkOptions} options The network options.
    * 
    * @throws {Error} Thrown when the network does not exist.
    * 
    * @memberOf VisNetworkService
    */
-  public setOptions(visNetwork: string, options: Vis.IOptions): void {
+  public setOptions(visNetwork: string, options: VisNetworkOptions): void {
     if (this._networks[visNetwork]) {
       this._networks[visNetwork].setOptions(options);
     } else {
@@ -516,13 +525,13 @@ export class VisNetworkService {
    * Zooms out so all nodes fit on the canvas.
    * 
    * @param {string} visNetwork The network name/identifier.
-   * @param {Vis.IFitOptions} [options] Options to customize.
+   * @param {VisFitOptions} [options] Options to customize.
    * 
    * @throws {Error} Thrown when the network does not exist.
    * 
    * @memberOf VisNetworkService
    */
-  public fit(visNetwork: string, options?: Vis.IFitOptions): void {
+  public fit(visNetwork: string, options?: VisFitOptions): void {
     if (this._networks[visNetwork]) {
       this._networks[visNetwork].fit(options);
     } else {

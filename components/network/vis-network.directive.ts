@@ -9,9 +9,11 @@ import {
   ElementRef,
   SimpleChange } from '@angular/core';
 
-import * as Vis from 'vis';
-
-import { VisNetworkService } from './vis-network.service';
+import {
+  VisNetworkData,
+  VisNetworkOptions,
+  VisNetworkService
+} from './index';
 
 /**
  * Use this directive with a div container to show network data.
@@ -29,6 +31,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
 
   /**
    * The name or identifier of the network (must be unique in your application).
+   * This property is used once on init and must not be changed.
    * 
    * @type {string}
    * @memberOf VisNetworkDirective
@@ -40,13 +43,13 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * The data that will be used to create the network.
    * Changes to the nodes or edges property won't be detected but
    * changes to the reference of this object.
-   * Changes leade to a call to setData of this network instance.
+   * Changes lead to a call to setData of this network instance.
    * 
-   * @type {Vis.IData}
+   * @type {VisNetworkData}
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visNetworkData: Vis.IData;
+  public visNetworkData: VisNetworkData;
 
   /**
    * The options that will be used with this network instance.
@@ -54,11 +57,11 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * but not changes to properties.
    * Changes lead to a call to setOptions of the network instance.
    * 
-   * @type {Vis.IOptions}
+   * @type {VisNetworkOptions}
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visNetworkOptions: Vis.IOptions;
+  public visNetworkOptions: VisNetworkOptions;
 
   /**
    * This event will be raised when the network is initialized.
