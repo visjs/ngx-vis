@@ -1,8 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import * as Vis from 'vis';
+import {
+    VisNode,
+    VisNodes,
+    VisEdges,
+    VisNetworkService,
+    VisNetworkData,
+    VisNetworkOptions } from '../../components/network';
 
-import { VisNetworkService } from '../../components/network';
+class ExampleNetworkData implements VisNetworkData {
+    public nodes: VisNodes;
+    public edges: VisEdges;
+}
 
 @Component({
     selector: 'network-example',
@@ -14,21 +23,15 @@ import { VisNetworkService } from '../../components/network';
 export class VisNetworkExampleComponent implements OnInit, OnDestroy {
 
     public visNetwork: string = 'networkId1';
-    public visNetworkData: Vis.IData;
-    public visNetworkOptions: Vis.IOptions;
+    public visNetworkData: ExampleNetworkData;
+    public visNetworkOptions: VisNetworkOptions;
 
     public constructor(private visNetworkService: VisNetworkService) { }
 
     public addNode(): void {
-        let length = this.visNetworkData.nodes.length + 1;
-
-        (this.visNetworkData.nodes as Vis.INode[]).push({ id: length.toString(), label: 'Node ' + length});
-
-        let newNetworkData: Vis.IData = {
-            nodes: this.visNetworkData.nodes,
-            edges: this.visNetworkData.edges
-        }
-        this.visNetworkData = newNetworkData;
+        let newId = this.visNetworkData.nodes.getLength() + 1;
+        this.visNetworkData.nodes.add({ id: newId.toString(), label: 'Node ' + newId });
+        this.visNetworkService.fit(this.visNetwork);
     }
 
     public networkInitialized(): void {
@@ -38,27 +41,29 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
         // open your console/dev tools to see the click params
         this.visNetworkService.click
             .subscribe((eventData: any[]) => {
-            if (eventData[0] === this.visNetwork) {
-                console.log(eventData[1]);
-            }
+                if (eventData[0] === this.visNetwork) {
+                    console.log(eventData[1]);
+                }
             });
     }
 
     public ngOnInit(): void {
+        let nodes = new VisNodes([
+            { id: '1', label: 'Node 1' },
+            { id: '2', label: 'Node 2' },
+            { id: '3', label: 'Node 3' },
+            { id: '4', label: 'Node 4' },
+            { id: '5', label: 'Node 5' }]);
+
+        let edges = new VisEdges([
+            { from: '1', to: '3' },
+            { from: '1', to: '2' },
+            { from: '2', to: '4' },
+            { from: '2', to: '5' }]);
+
         this.visNetworkData = {
-            nodes: [
-                { id: '1', label: 'Node 1' },
-                { id: '2', label: 'Node 2' },
-                { id: '3', label: 'Node 3' },
-                { id: '4', label: 'Node 4' },
-                { id: '5', label: 'Node 5' }
-            ],
-            edges: [
-                { from: '1', to: '3' },
-                { from: '1', to: '2' },
-                { from: '2', to: '4' },
-                { from: '2', to: '5' }
-            ]
+            nodes: nodes,
+            edges: edges
         };
 
         this.visNetworkOptions = {};
