@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { VisNetworkDirective, VisNetworkService } from './components/network';
-import { VisTimelineDirective, VisTimelineService } from './components/timeline';
+import { VisNetworkDirective, VisNetworkService } from './components/network/index';
+import { VisTimelineDirective, VisTimelineService } from './components/timeline/index';
 
-export * from './components';
+export * from './components/index';
 
 @NgModule({
   exports: [VisNetworkDirective, VisTimelineDirective],
