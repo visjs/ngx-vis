@@ -53,7 +53,7 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
             { id: '2', label: 'Node 2' },
             { id: '3', label: 'Node 3' },
             { id: '4', label: 'Node 4' },
-            { id: '5', label: 'Node 5' }]);
+            { id: '5', label: 'Node 5', title: 'Title of Node 5' }]);
 
         let edges = new VisEdges([
             { from: '1', to: '3' },
