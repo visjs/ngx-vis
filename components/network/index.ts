@@ -2,6 +2,10 @@ import * as Vis from 'vis';
 
 import { VisDataSetOptions, VisDataSetQueueOptions, VisId } from '../timeline/index';
 
+export { VisId } from '../timeline/index';
+export type VisNetworkEvents = Vis.NetworkEvents;
+export interface VisClusterOptions extends Vis.IClusterOptions {}
+export interface VisOpenClusterOptions extends Vis.IOpenClusterOptions {}
 export interface VisNetworkData extends Vis.IData {}
 export interface VisNode extends Vis.INode {}
 export interface VisEdge extends Vis.IEdge {}
@@ -9,7 +13,9 @@ export interface VisNodeSelectionOptions extends Vis.DataSelectionOptions<VisNod
 export interface VisEdgeSelectionOptions extends Vis.DataSelectionOptions<VisEdge> {}
 export interface VisFitOptions extends Vis.IFitOptions {}
 export interface VisNetworkOptions extends Vis.IOptions {}
+export interface VisEdgeOptions extends Vis.IEdgeOptions {}
 export class VisNetwork extends Vis.Network {}
+export interface VisNodeOptions extends Vis.INodeOptions {}
 
 export class VisNodes extends Vis.DataSet<VisNode> {
     public constructor(data?: Array<VisNode>, options?: VisDataSetOptions) {

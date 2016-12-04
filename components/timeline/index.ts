@@ -1,5 +1,6 @@
 import * as Vis from 'vis';
 
+export type VisId = Vis.IdType;
 export interface VisTimelineItem extends Vis.DataItem {}
 export interface VisTimelineGroup extends Vis.DataGroup {}
 export interface VisDataSetOptions extends Vis.DataSetOptions {}
@@ -170,7 +171,6 @@ export class VisTimelineGroups extends Vis.DataSet<VisTimelineGroup> {
 export interface VisDataSetQueueOptions extends Vis.DataSetQueueOptions {}
 export interface VisItemSelectionOptions extends Vis.DataSelectionOptions<VisTimelineItem> {}
 export interface VisGroupSelectionOptions extends Vis.DataSelectionOptions<VisTimelineGroup> {}
-export type VisId = Vis.IdType;
 export type VisDate = Vis.DateType;
 export type VisTimelineEvents = Vis.TimelineEvents;
 export interface VisTimelineFitOptions extends Vis.TimelineFitOptions {}
