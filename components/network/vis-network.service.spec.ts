@@ -63,7 +63,7 @@ describe('VisNetworkService Tests', () => {
     expect(() => visNetworkService.updateClusteredNode('unknown', 42)).toThrowError();
     expect(() => visNetworkService.updateClusteredNode('unknown', 42, {})).toThrowError();
     expect(() => visNetworkService.getNodesInCluster('unknown', 42)).toThrowError();
-    expect(() => visNetworkService.openCluster('unknown', 'nodeId', {})).toThrowError();
+    expect(() => visNetworkService.openCluster('unknown', 'nodeId', { releaseFunction: null })).toThrowError();
     expect(() => visNetworkService.openCluster('unknown', 'nodeId')).toThrowError();
   });
 

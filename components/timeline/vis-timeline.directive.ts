@@ -1,18 +1,19 @@
 import {
   Directive,
-  Input,
-  Output,
+  ElementRef,
   EventEmitter,
+  Input,
+  OnChanges,
   OnDestroy,
   OnInit,
-  OnChanges,
-  ElementRef,
+  Output,
   SimpleChange } from '@angular/core';
 
 import { VisTimelineService } from './vis-timeline.service';
+
 import {
-    VisTimelineItems,
     VisTimelineGroups,
+    VisTimelineItems,
     VisTimelineOptions } from './index';
 
 /**
@@ -25,7 +26,7 @@ import {
  * @implements {OnChanges}
  */
 @Directive({
-  selector: '[visTimeline]'
+  selector: '[visTimeline]',
 })
 export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
 
@@ -84,8 +85,8 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
     @Output()
     public initialized: EventEmitter<any> = new EventEmitter<any>();
 
-    private _visTimelineContainer: any;
-    private _isInitialized: boolean = false;
+    private visTimelineContainer: any;
+    private isInitialized: boolean = false;
 
     /**
      * Creates an instance of VisTimelineDirective.
@@ -96,7 +97,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * @memberOf VisTimelineDirective
      */
     public constructor(private elementRef: ElementRef, private visTimelineService: VisTimelineService) {
-        this._visTimelineContainer = elementRef.nativeElement;
+        this.visTimelineContainer = elementRef.nativeElement;
     }
 
     /**
@@ -106,7 +107,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * @memberOf VisTimelineDirective
      */
     public ngOnInit(): void {
-        if (!this._isInitialized && this.visTimeline && this.visTimelineItems) {
+        if (!this.isInitialized && this.visTimeline && this.visTimelineItems) {
             this.createTimeline();
         }
     }
@@ -120,7 +121,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * @memberOf VisTimelineDirective
      */
     public ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
-        if (!this._isInitialized && this.visTimeline && this.visTimelineItems) {
+        if (!this.isInitialized && this.visTimeline && this.visTimelineItems) {
             this.createTimeline();
         }
 
@@ -149,7 +150,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * @memberOf VisTimelineDirective
      */
     public ngOnDestroy(): void {
-        this._isInitialized = false;
+        this.isInitialized = false;
         this.visTimelineService.destroy(this.visTimeline);
     }
 
@@ -157,18 +158,18 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
         if (this.visTimelineGroups) {
             this.visTimelineService.createWithItemsAndGroups(
                 this.visTimeline,
-                this._visTimelineContainer,
+                this.visTimelineContainer,
                 this.visTimelineItems,
                 this.visTimelineGroups,
                 this.visTimelineOptions);
         } else {
             this.visTimelineService.createWithItems(
                 this.visTimeline,
-                this._visTimelineContainer,
+                this.visTimelineContainer,
                 this.visTimelineItems,
                 this.visTimelineOptions);
         }
-        this._isInitialized = true;
+        this.isInitialized = true;
         this.initialized.emit(this.visTimeline);
     }
 }

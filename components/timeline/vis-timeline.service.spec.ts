@@ -1,7 +1,7 @@
 import {
-  VisTimelineService,
+  VisTimelineGroups,
   VisTimelineItems,
-  VisTimelineGroups } from './index';
+  VisTimelineService } from './index';
 
 describe('VisTimelineService Tests', () => {
 
@@ -24,12 +24,13 @@ describe('VisTimelineService Tests', () => {
             {id: 3, content: 'item 3', start: '2016-04-18'},
             {id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19'},
             {id: 5, content: 'item 5', start: '2016-04-25'},
-            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'}
+            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'},
         ]);
     let groups = new VisTimelineGroups();
     visTimelineService.createWithItems('knownNetwork', dummyElement, items);
     expect(() => visTimelineService.createWithItems('knownNetwork', dummyElement, items)).toThrowError();
-    expect(() => visTimelineService.createWithItemsAndGroups('knownNetwork', dummyElement, items, groups)).toThrowError();
+    expect(() => visTimelineService.createWithItemsAndGroups(
+      'knownNetwork', dummyElement, items, groups)).toThrowError();
   });
 
   it('returns false when network does not exist', () => {
@@ -43,11 +44,11 @@ describe('VisTimelineService Tests', () => {
             {id: 3, content: 'item 3', start: '2016-04-18'},
             {id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19'},
             {id: 5, content: 'item 5', start: '2016-04-25'},
-            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'}
+            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'},
         ]);
     let groups = new VisTimelineGroups();
 
-    expect(() => visTimelineService.setData('unknown', { items: items, groups: groups })).toThrowError();
+    expect(() => visTimelineService.setData('unknown', { items, groups })).toThrowError();
     expect(() => visTimelineService.setItems('unknown', items)).toThrowError();
     expect(() => visTimelineService.setGroups('unknown', groups)).toThrowError();
     expect(() => visTimelineService.setOptions('unknown', {})).toThrowError();
@@ -56,8 +57,8 @@ describe('VisTimelineService Tests', () => {
     expect(() => visTimelineService.fit('unknown')).toThrowError();
     expect(() => visTimelineService.focusOnId('unknown', 12, {})).toThrowError();
     expect(() => visTimelineService.focusOnId('unknown', 12)).toThrowError();
-    expect(() => visTimelineService.focusOnIds('unknown', [12,11], {})).toThrowError();
-    expect(() => visTimelineService.focusOnIds('unknown', [12,11])).toThrowError();
+    expect(() => visTimelineService.focusOnIds('unknown', [12, 11], {})).toThrowError();
+    expect(() => visTimelineService.focusOnIds('unknown', [12, 11])).toThrowError();
     expect(() => visTimelineService.getCurrentTime('unknown')).toThrowError();
     expect(() => visTimelineService.getCustomTime('unknown')).toThrowError();
     expect(() => visTimelineService.getCustomTime('unknown', 12)).toThrowError();
@@ -74,7 +75,7 @@ describe('VisTimelineService Tests', () => {
     expect(() => visTimelineService.setCustomTime('unknown', Date.now(), 12)).toThrowError();
     expect(() => visTimelineService.setCustomTimeTitle('unknown', 'title')).toThrowError();
     expect(() => visTimelineService.setSelectionToId('unknown', 12)).toThrowError();
-    expect(() => visTimelineService.setSelectionToIds('unknown', [12,11])).toThrowError();
+    expect(() => visTimelineService.setSelectionToIds('unknown', [12, 11])).toThrowError();
     expect(() => visTimelineService.setWindow('unknown', Date.now(), Date.now())).toThrowError();
     expect(() => visTimelineService.setWindow('unknown', Date.now(), Date.now(), {})).toThrowError();
   });
