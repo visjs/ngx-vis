@@ -1,3 +1,8 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/seveves/ng2-vis/compare/v0.0.3...v0.0.4) (2016-12-04)
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/seveves/ng2-vis/compare/v0.0.3-develop...v0.0.3) (2016-11-29)
 
