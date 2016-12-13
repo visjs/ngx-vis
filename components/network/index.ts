@@ -16,6 +16,7 @@ export interface VisNetworkOptions extends Vis.IOptions {}
 export interface VisEdgeOptions extends Vis.IEdgeOptions {}
 export class VisNetwork extends Vis.Network {}
 export interface VisNodeOptions extends Vis.INodeOptions {}
+export interface VisPosition extends Vis.IPosition {}
 
 export class VisNodes extends Vis.DataSet<VisNode> {
     public constructor(data?: VisNode[], options?: VisDataSetOptions) {

@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "https://raw.githubusercontent.com/seveves/typings-vis/888fadfb65fc984aee479cb2c09a4e5da4d48901/typings.json",
-    "raw": "github:seveves/typings-vis#888fadfb65fc984aee479cb2c09a4e5da4d48901",
+    "src": "https://raw.githubusercontent.com/seveves/typings-vis/6696261117e363878b0b3a0472dadae93f43fe27/typings.json",
+    "raw": "github:seveves/typings-vis#6696261117e363878b0b3a0472dadae93f43fe27",
     "main": "vs.d.ts",
     "name": "vs"
   }

@@ -10,7 +10,8 @@ import {
   VisNetworkEvents,
   VisNetworkOptions,
   VisNodeOptions,
-  VisOpenClusterOptions } from './index';
+  VisOpenClusterOptions,
+  VisPosition } from './index';
 
 /**
  * A service to create, manage and control VisNetwork instances.
@@ -522,6 +523,41 @@ export class VisNetworkService {
   public unselectAll(visNetwork: string): void {
     if (this.networks[visNetwork]) {
       this.networks[visNetwork].unselectAll();
+    } else {
+      throw new Error(`Network with id ${visNetwork} not found.`);
+    }
+  }
+
+  /**
+   * Returns the current scale of the network.
+   * 1.0 is comparible to 100%, 0 is zoomed out infinitely.
+   * 
+   * @param {string} visNetwork The network name/identifier.
+   * 
+   * @returns {number} the current scale of the network
+   * 
+   * @memberOf VisNetworkService
+   */
+  public getScale(visNetwork: string): number {
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getScale();
+    } else {
+      throw new Error(`Network with id ${visNetwork} not found.`);
+    }
+  }
+
+  /**
+   * Returns the current central focus point of the view in the form: { x: {Number}, y: {Number} }
+   * 
+   * @param {string} visNetwork The network name/identifier.
+   * 
+   * @returns {IPosition} the view position;
+   * 
+   * @memberOf VisNetworkService
+   */
+  public getViewPosition(visNetwork: string): VisPosition {
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getViewPosition();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
