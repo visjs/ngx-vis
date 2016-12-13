@@ -8,4 +8,4 @@ const config = require('./.ng2-config');
 
 config.src = '/';
 
-module.exports = require('ng2-webpack-config').karma(config);
+module.exports = require('./.config/karma.conf')(config);

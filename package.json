@@ -84,6 +84,7 @@
     "gitignore-to-glob": "^0.3.0",
     "gulp": "3.9.1",
     "gulp-tslint": "^7.0.1",
+    "karma-firefox-launcher": "^1.0.0",
     "ng2-webpack-config": "0.0.5",
     "pre-commit": "^1.2.2",
     "reflect-metadata": "0.1.8",
