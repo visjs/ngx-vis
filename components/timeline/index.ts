@@ -6,7 +6,7 @@ export interface VisTimelineGroup extends Vis.DataGroup {}
 export interface VisDataSetOptions extends Vis.DataSetOptions {}
 export interface VisTimelineOptions extends Vis.TimelineOptions {}
 export class VisTimelineItems extends Vis.DataSet<VisTimelineItem> {
-    public constructor(data?: Array<VisTimelineItem>, options?: VisDataSetOptions) {
+    public constructor(data?: VisTimelineItem[], options?: VisDataSetOptions) {
         super(data, options);
     }
 
@@ -87,7 +87,7 @@ export class VisTimelineItems extends Vis.DataSet<VisTimelineItem> {
     }
 }
 export class VisTimelineGroups extends Vis.DataSet<VisTimelineGroup> {
-    public constructor(data?: Array<VisTimelineGroup>, options?: VisDataSetOptions) {
+    public constructor(data?: VisTimelineGroup[], options?: VisDataSetOptions) {
         super(data, options);
     }
 

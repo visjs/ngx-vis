@@ -6,8 +6,8 @@ import { VisTimelineDirective, VisTimelineService } from './components/timeline/
 export * from './components/index';
 
 @NgModule({
-  exports: [VisNetworkDirective, VisTimelineDirective],
   declarations: [VisNetworkDirective, VisTimelineDirective],
-  providers: [VisNetworkService, VisTimelineService]
+  exports: [VisNetworkDirective, VisTimelineDirective],
+  providers: [VisNetworkService, VisTimelineService],
 })
 export class VisModule { }

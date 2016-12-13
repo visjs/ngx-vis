@@ -1,16 +1,16 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import {
-  VisId,
-  VisNetwork,
-  VisFitOptions,
-  VisNetworkData,
   VisClusterOptions,
   VisEdgeOptions,
-  VisNodeOptions,
+  VisFitOptions,
+  VisId,
+  VisNetwork,
+  VisNetworkData,
+  VisNetworkEvents,
   VisNetworkOptions,
-  VisOpenClusterOptions,
-  VisNetworkEvents } from './index';
+  VisNodeOptions,
+  VisOpenClusterOptions } from './index';
 
 /**
  * A service to create, manage and control VisNetwork instances.
@@ -292,7 +292,7 @@ export class VisNetworkService {
    */
   public configChange: EventEmitter<any> = new EventEmitter<any>();
 
-  private _networks: {[id: string]: VisNetwork} = {};
+  private networks: {[id: string]: VisNetwork} = {};
 
   /**
    * Creates a new network instance.
@@ -311,11 +311,11 @@ export class VisNetworkService {
     container: HTMLElement,
     data: VisNetworkData,
     options?: VisNetworkOptions): void {
-    if (this._networks[visNetwork]) {
+    if (this.networks[visNetwork]) {
       throw new Error(`Network with id ${visNetwork} already exists.`);
     }
 
-    this._networks[visNetwork] = new VisNetwork(container, data, options);
+    this.networks[visNetwork] = new VisNetwork(container, data, options);
   }
 
   /**
@@ -326,9 +326,9 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public destroy(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].destroy();
-      delete this._networks[visNetwork];
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].destroy();
+      delete this.networks[visNetwork];
     }
   }
 
@@ -343,9 +343,9 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public on(visNetwork: string, eventName: VisNetworkEvents, preventDefault?: boolean): boolean {
-    if (this._networks[visNetwork]) {
+    if (this.networks[visNetwork]) {
       let that: {[index: string]: any} = this;
-      this._networks[visNetwork].on(eventName, (params: any) => {
+      this.networks[visNetwork].on(eventName, (params: any) => {
         let emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
           emitter.emit(params ? [visNetwork].concat(params) : visNetwork);
@@ -370,8 +370,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public off(visNetwork: string, eventName: VisNetworkEvents): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].off(eventName);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].off(eventName);
     }
   }
 
@@ -386,9 +386,9 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public once(visNetwork: string, eventName: VisNetworkEvents): boolean {
-    if (this._networks[visNetwork]) {
+    if (this.networks[visNetwork]) {
       let that: {[index: string]: any} = this;
-      this._networks[visNetwork].on(eventName, (params: any) => {
+      this.networks[visNetwork].on(eventName, (params: any) => {
         let emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
           emitter.emit(params ? [visNetwork].concat(params) : visNetwork);
@@ -416,8 +416,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public setData(visNetwork: string, data: VisNetworkData): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].setData(data);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].setData(data);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -434,8 +434,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public setOptions(visNetwork: string, options: VisNetworkOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].setOptions(options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].setOptions(options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -456,8 +456,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public selectNodes(visNetwork: string, nodeIds: VisId[], highlightEdges?: boolean): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].selectNodes(nodeIds, highlightEdges);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].selectNodes(nodeIds, highlightEdges);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -473,8 +473,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getSelection(visNetwork: string): { nodes: VisId[], edges: VisId[] } {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getSelection();
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getSelection();
     }
     return undefined;
   }
@@ -488,8 +488,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getSelectedNodes(visNetwork: string): VisId[] {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getSelectedNodes();
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getSelectedNodes();
     }
     return undefined;
   }
@@ -503,8 +503,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getSelectedEdges(visNetwork: string): VisId[] {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getSelectedEdges();
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getSelectedEdges();
     }
     return undefined;
   }
@@ -520,8 +520,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public unselectAll(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].unselectAll();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].unselectAll();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -538,8 +538,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public fit(visNetwork: string, options?: VisFitOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].fit(options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].fit(options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -555,8 +555,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public redraw(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].redraw();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].redraw();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -573,8 +573,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public enableEditMode(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].enableEditMode();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].enableEditMode();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -591,8 +591,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public addEdgeMode(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].addEdgeMode();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].addEdgeMode();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -610,8 +610,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public disableEditMode(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].disableEditMode();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].disableEditMode();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -628,8 +628,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public deleteSelected(visNetwork: string): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].deleteSelected();
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].deleteSelected();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -646,8 +646,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public cluster(visNetwork: string, options?: VisClusterOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].cluster(options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].cluster(options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -666,8 +666,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public clusterByConnection(visNetwork: string, nodeId: VisId, options?: VisClusterOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].clusterByConnection(nodeId, options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].clusterByConnection(nodeId, options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -688,8 +688,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public clusterByHubsize(visNetwork: string, hubsize?: number, options?: VisClusterOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].clusterByHubsize(hubsize, options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].clusterByHubsize(hubsize, options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -704,8 +704,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public clusterOutliers(visNetwork: string, options?: VisClusterOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].clusterOutliers(options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].clusterOutliers(options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -729,8 +729,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public findNode(visNetwork: string, nodeId: VisId): VisId[] {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].findNode(nodeId);
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].findNode(nodeId);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -747,8 +747,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getClusteredEdges(visNetwork: string, baseEdgeId: VisId): VisId[] {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getClusteredEdges(baseEdgeId);
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getClusteredEdges(baseEdgeId);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -768,8 +768,8 @@ export class VisNetworkService {
    * 
    */
   public getBaseEdge(visNetwork: string, clusteredEdgeId: VisId): VisId {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getBaseEdge(clusteredEdgeId);
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getBaseEdge(clusteredEdgeId);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -790,8 +790,8 @@ export class VisNetworkService {
    * 
    */
   public updateEdge(visNetwork: string, startEdgeId: VisId, options?: VisEdgeOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].updateEdge(startEdgeId, options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].updateEdge(startEdgeId, options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -809,8 +809,8 @@ export class VisNetworkService {
    * 
    */
   public updateClusteredNode(visNetwork: string, clusteredNodeId: VisId, options?: VisNodeOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].updateClusteredNode(clusteredNodeId, options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].updateClusteredNode(clusteredNodeId, options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -827,8 +827,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getNodesInCluster(visNetwork: string, clusterNodeId: VisId): VisId[] {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getNodesInCluster(clusterNodeId);
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getNodesInCluster(clusterNodeId);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -847,8 +847,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public openCluster(visNetwork: string, nodeId: VisId, options?: VisOpenClusterOptions): void {
-    if (this._networks[visNetwork]) {
-      this._networks[visNetwork].openCluster(nodeId, options);
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].openCluster(nodeId, options);
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -864,8 +864,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public isCluster(visNetwork: string, nodeId: VisId): boolean {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].isCluster(nodeId);
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].isCluster(nodeId);
     }
 
     return false;
@@ -881,8 +881,8 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public getSeed(visNetwork: string): number {
-    if (this._networks[visNetwork]) {
-      return this._networks[visNetwork].getSeed();
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getSeed();
     }
 
     return -1;

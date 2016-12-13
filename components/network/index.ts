@@ -18,7 +18,7 @@ export class VisNetwork extends Vis.Network {}
 export interface VisNodeOptions extends Vis.INodeOptions {}
 
 export class VisNodes extends Vis.DataSet<VisNode> {
-    public constructor(data?: Array<VisNode>, options?: VisDataSetOptions) {
+    public constructor(data?: VisNode[], options?: VisDataSetOptions) {
         super(data, options);
     }
 
@@ -100,7 +100,7 @@ export class VisNodes extends Vis.DataSet<VisNode> {
 }
 
 export class VisEdges extends Vis.DataSet<VisEdge> {
-    public constructor(data?: Array<VisEdge>, options?: VisDataSetOptions) {
+    public constructor(data?: VisEdge[], options?: VisDataSetOptions) {
         super(data, options);
     }
 

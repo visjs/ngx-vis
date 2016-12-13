@@ -1,13 +1,12 @@
 {
-  "extends": "tslint-config-valorsoft",
-  "rulesDirectory": ["./node_modules/codelyzer"],
+  "extends": "tslint:latest",
   "rules": {
-    "component-selector-name": [false],
+    "quotemark": false,
     "only-arrow-functions": false,
     "no-string-literal": false,
-    "no-input-rename": false,
     "linebreak-style": false,
     "interface-name": [false],
-    "no-reference": false
+    "no-reference": false,
+    "max-classes-per-file": false
   }
 }

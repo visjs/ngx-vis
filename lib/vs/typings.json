@@ -4,7 +4,6 @@
     "src": "https://raw.githubusercontent.com/seveves/typings-vis/888fadfb65fc984aee479cb2c09a4e5da4d48901/typings.json",
     "raw": "github:seveves/typings-vis#888fadfb65fc984aee479cb2c09a4e5da4d48901",
     "main": "vs.d.ts",
-    "name": "vs",
-    "type": "typings"
+    "name": "vs"
   }
 }
