@@ -9,11 +9,11 @@ describe('VisNetworkService Tests', () => {
   });
 
   it('returns undefined when network id is unknown', () => {
-    let selection = visNetworkService.getSelection('unknown');
+    const selection = visNetworkService.getSelection('unknown');
     expect(selection).toBeUndefined();
-    let selectedNodes = visNetworkService.getSelectedNodes('unknown');
+    const selectedNodes = visNetworkService.getSelectedNodes('unknown');
     expect(selectedNodes).toBeUndefined();
-    let selectedEdges = visNetworkService.getSelectedEdges('unknown');
+    const selectedEdges = visNetworkService.getSelectedEdges('unknown');
     expect(selectedEdges).toBeUndefined();
   });
 
@@ -22,7 +22,7 @@ describe('VisNetworkService Tests', () => {
   });
 
   it('throws error when network already exists', () => {
-    let dummyElement = document.createElement('div');
+    const dummyElement = document.createElement('div');
     visNetworkService.create('knownNetwork', dummyElement, { nodes: [], edges: [] });
     expect(() => visNetworkService.create('knownNetwork', dummyElement, { nodes: [], edges: [] })).toThrowError();
   });

@@ -19,14 +19,14 @@
     "types": [
       "node",
       "jasmine",
-      "webpack"
+      "webpack",
+      "vis"
     ]
   },
   "exclude": [
     "node_modules"
   ],
   "files": [
-    "./lib/vs/index.d.ts",
     "./demo/custom-typings.d.ts",
     "./ng2-vis.ts"
   ],

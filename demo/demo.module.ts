@@ -33,5 +33,4 @@ import { HomeComponent } from './home/home.component';
   providers: [],
   bootstrap: [DemoComponent]
 })
-export class VisDemoModule {
-}
+export class VisDemoModule { }

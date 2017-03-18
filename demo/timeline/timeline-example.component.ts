@@ -4,10 +4,15 @@ import { VisTimelineService, VisTimelineItems } from '../../components/timeline'
 
 @Component({
     selector: 'timeline-example',
-    template: require('./timeline-example.component.html'),
-    styles: [
-        require('./timeline-example.component.css')
-    ]
+    template: `
+      <h2>Timeline</h2>
+      <h3>Basic usage</h3>
+      <div [visTimeline]="visTimeline"
+           [visTimelineItems]="visTimelineItems"
+           (initialized)="timelineInitialized()"></div>
+      <button type="button" class="btn btn-default" (click)="addItem()">Add and focus</button>
+      <p><strong>Note:</strong> Open your dev tools to see the console output when the timeline receives click events.</p>
+    `,
 })
 export class VisTimelineExampleComponent implements OnInit, OnDestroy {
 

@@ -1,28 +1,29 @@
-/* eslint no-process-env: 0 */
 /**
  * @author: @AngularClass
  */
-'use strict';
-var helpers = require('./helpers');
+
+const helpers = require('./helpers');
 
 /**
  * Webpack Plugins
  */
-// const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-var DefinePlugin = require('webpack/lib/DefinePlugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
+const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 /**
  * Webpack Constants
  */
-var ENV = process.env.ENV = process.env.NODE_ENV = 'test';
+const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
 
 /**
  * Webpack configuration
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-function makeConfig(conf) {
-  var config = {
+module.exports = function (options) {
+  return {
 
     /**
      * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
@@ -44,12 +45,12 @@ function makeConfig(conf) {
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['', '.ts', '.js'],
+      extensions: ['.ts', '.js'],
 
       /**
        * Make sure root is src
        */
-      root: helpers.root(conf.src)
+      modules: [helpers.root('src'), 'node_modules']
 
     },
 
@@ -57,26 +58,13 @@ function makeConfig(conf) {
      * Options affecting the normal modules.
      *
      * See: http://webpack.github.io/docs/configuration.html#module
+     *
+     * 'use:' revered back to 'loader:' as a temp. workaround for #1188
+     * See: https://github.com/AngularClass/angular2-webpack-starter/issues/1188#issuecomment-262872034
      */
     module: {
 
-      /**
-       * An array of applied pre and post loaders.
-       *
-       * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
-       */
-      preLoaders: [
-
-        /**
-         * Tslint loader support for *.ts files
-         *
-         * See: https://github.com/wbuchwalter/tslint-loader
-         */
-        {
-          test: /\.ts$/,
-          loader: 'tslint-loader',
-          exclude: [helpers.root('node_modules')]
-        },
+      rules: [
 
         /**
          * Source map loader support for *.js files
@@ -85,6 +73,7 @@ function makeConfig(conf) {
          * See: https://github.com/webpack/source-map-loader
          */
         {
+          enforce: 'pre',
           test: /\.js$/,
           loader: 'source-map-loader',
           exclude: [
@@ -92,19 +81,7 @@ function makeConfig(conf) {
             helpers.root('node_modules/rxjs'),
             helpers.root('node_modules/@angular')
           ]
-        }
-
-      ],
-
-      /**
-       * An array of automatically applied loaders.
-       *
-       * IMPORTANT: The loaders here are resolved relative to the resource which they are applied to.
-       * This means they are not resolved relative to the configuration file.
-       *
-       * See: http://webpack.github.io/docs/configuration.html#module-loaders
-       */
-      loaders: [
+        },
 
         /**
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
@@ -113,29 +90,27 @@ function makeConfig(conf) {
          */
         {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
-          query: {
-            compilerOptions: {
+          use: [
+            {
+              loader: 'awesome-typescript-loader',
+              query: {
+                // use inline sourcemaps for "karma-remap-coverage" reporter
+                sourceMap: false,
+                inlineSourceMap: true,
+                compilerOptions: {
 
-              // Remove TypeScript helpers to be injected
-              // below by DefinePlugin
-              removeComments: true
+                  // Remove TypeScript helpers to be injected
+                  // below by DefinePlugin
+                  removeComments: true
 
-            }
-          },
+                }
+              },
+            },
+            'angular2-template-loader'
+          ],
           exclude: [/\.e2e\.ts$/]
         },
 
-        /**
-         * Json loader support for *.json files.
-         *
-         * See: https://github.com/webpack/json-loader
-         */
-        {
-          test: /\.json$/,
-          loader: 'json-loader',
-          exclude: helpers.excludeIndexHtml(conf.src, conf.htmlIndexes)
-        },
 
         /**
          * Raw loader support for *.css files
@@ -145,8 +120,8 @@ function makeConfig(conf) {
          */
         {
           test: /\.css$/,
-          loader: 'raw-loader',
-          exclude: helpers.excludeIndexHtml(conf.src, conf.htmlIndexes)
+          loader: ['to-string-loader', 'css-loader'],
+          exclude: [helpers.root('src/index.html')]
         },
 
         /**
@@ -158,17 +133,8 @@ function makeConfig(conf) {
         {
           test: /\.html$/,
           loader: 'raw-loader',
-          exclude: helpers.excludeIndexHtml(conf.src, conf.htmlIndexes)
-        }
-
-      ],
-
-      /**
-       * An array of applied pre and post loaders.
-       *
-       * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
-       */
-      postLoaders: [
+          exclude: [helpers.root('src/index.html')]
+        },
 
         /**
          * Instruments JS files with Istanbul for subsequent code coverage reporting.
@@ -177,10 +143,10 @@ function makeConfig(conf) {
          * See: https://github.com/deepsweet/istanbul-instrumenter-loader
          */
         {
+          enforce: 'post',
           test: /\.(js|ts)$/,
           loader: 'istanbul-instrumenter-loader',
-          // todo: solve this somehow
-          include: helpers.root(conf.src),
+          include: helpers.root('src'),
           exclude: [
             /\.(e2e|spec)\.ts$/,
             /node_modules/
@@ -208,27 +174,52 @@ function makeConfig(conf) {
        */
       // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
       new DefinePlugin({
-        ENV: JSON.stringify(ENV),
-        HMR: false,
+        'ENV': JSON.stringify(ENV),
+        'HMR': false,
         'process.env': {
-          ENV: JSON.stringify(ENV),
-          NODE_ENV: JSON.stringify(ENV),
-          HMR: false
+          'ENV': JSON.stringify(ENV),
+          'NODE_ENV': JSON.stringify(ENV),
+          'HMR': false,
         }
-      })
+      }),
+
+      /**
+       * Plugin: ContextReplacementPlugin
+       * Description: Provides context to Angular's use of System.import
+       *
+       * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
+       * See: https://github.com/angular/angular/issues/11580
+       */
+      new ContextReplacementPlugin(
+        // The (\\|\/) piece accounts for path separators in *nix and Windows
+        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+        helpers.root('src'), // location of your src
+        {
+          // your Angular Async Route paths relative to this root directory
+        }
+      ),
+
+      /**
+       * Plugin LoaderOptionsPlugin (experimental)
+       *
+       * See: https://gist.github.com/sokra/27b24881210b56bbaff7
+       */
+      new LoaderOptionsPlugin({
+        debug: false,
+        options: {
+          // legacy options go here
+        }
+      }),
 
     ],
 
     /**
-     * Static analysis linter for TypeScript advanced options configuration
-     * Description: An extensible linter for the TypeScript language.
+     * Disable performance hints
      *
-     * See: https://github.com/wbuchwalter/tslint-loader
+     * See: https://github.com/a-tarasyuk/rr-boilerplate/blob/master/webpack/dev.config.babel.js#L41
      */
-    tslint: {
-      emitErrors: false,
-      failOnHint: false,
-      resourcePath: conf.src
+    performance: {
+      hints: false
     },
 
     /**
@@ -238,15 +229,13 @@ function makeConfig(conf) {
      * See: https://webpack.github.io/docs/configuration.html#node
      */
     node: {
-      global: 'window',
+      global: true,
       process: false,
       crypto: 'empty',
       module: false,
       clearImmediate: false,
       setImmediate: false
     }
-  };
-  return config;
-}
 
-module.exports = makeConfig;
+  };
+};

@@ -18,7 +18,7 @@ import {
 
 /**
  * Use this directive with a div container to show timeline data.
- * 
+ *
  * @export
  * @class VisTimelineDirective
  * @implements {OnInit}
@@ -33,7 +33,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
     /**
      * The name or identifier of the timeline (must be unique in your application).
      * This property is used once on init and must not be changed.
-     * 
+     *
      * @type {string}
      * @memberOf VisTimelineDirective
      */
@@ -44,7 +44,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * The data that will be used to create the timeline.
      * Changes will be detected. If the reference changes then
      * setData will be called on this timeline instance.
-     * 
+     *
      * @type {VisTimelineItems}
      * @memberOf VisTimelineDirective
      */
@@ -55,7 +55,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * The groups that will be used to create the timeline.
      * Changes will be detected. If the reference changes then
      * setGroups will be called on this timeline instance.
-     * 
+     *
      * @type {VisTimelineGroups}
      * @memberOf VisTimelineDirective
      */
@@ -66,7 +66,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * The options that will be used with this timeline.
      * Changes will be detected. If the reference changes then
      * setOptions will be called on this timeline instance.
-     * 
+     *
      * @type {VisTimelineOptions}
      * @memberOf VisTimelineDirective
      */
@@ -78,7 +78,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
      * At this point of time the timeline is successfully registered
      * with the VisNetworkService and you can register to events.
      * The event data is the name of the timeline as a string.
-     * 
+     *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineDirective
      */
@@ -90,10 +90,10 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
 
     /**
      * Creates an instance of VisTimelineDirective.
-     * 
+     *
      * @param {ElementRef} elementRef The HTML element reference.
      * @param {VisTimelineService} visTimelineService The VisTimelineService.
-     * 
+     *
      * @memberOf VisTimelineDirective
      */
     public constructor(private elementRef: ElementRef, private visTimelineService: VisTimelineService) {
@@ -103,7 +103,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
     /**
      * Create the timeline when at least visNetwork and visNetworkData
      * are defined.
-     * 
+     *
      * @memberOf VisTimelineDirective
      */
     public ngOnInit(): void {
@@ -115,9 +115,9 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
     /**
      * Update the timeline data, groups or options on reference changes to
      * the visTimelineItems, visTimelineGroups or visTimelineOptions properties.
-     * 
+     *
      * @param {{[propName: string]: SimpleChange}} changes
-     * 
+     *
      * @memberOf VisTimelineDirective
      */
     public ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
@@ -125,9 +125,9 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
             this.createTimeline();
         }
 
-        for (let propertyName in changes) {
+        for (const propertyName in changes) {
           if (changes.hasOwnProperty(propertyName)) {
-            let change = changes[propertyName];
+            const change = changes[propertyName];
             if (!change.isFirstChange()) {
               if (propertyName === 'visTimelineItems') {
                   this.visTimelineService.setItems(this.visTimeline, changes[propertyName].currentValue);
@@ -145,8 +145,8 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
 
     /**
      * Calls the destroy function for this timeline instance.
-     * 
-     * 
+     *
+     *
      * @memberOf VisTimelineDirective
      */
     public ngOnDestroy(): void {

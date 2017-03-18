@@ -15,9 +15,23 @@ class ExampleNetworkData implements VisNetworkData {
 
 @Component({
     selector: 'network-example',
-    template: require('./network-example.component.html'),
+    template: `
+      <h2>Network</h2>
+      <h3>Basic usage</h3>
+      <div class="network-canvas"
+        [visNetwork]="visNetwork"
+        [visNetworkData]="visNetworkData"
+        [visNetworkOptions]="visNetworkOptions"
+        (initialized)="networkInitialized()"></div>
+      <button type="button" class="btn btn-default" (click)="addNode()">Add node</button>
+      <p><strong>Note:</strong> Open your dev tools to see the console output when the network receives click events.</p>
+    `,
     styles: [
-        require('./network-example.component.css')
+      `.network-canvas {
+          width: 100%;
+          height: 400px;
+          border: 1px solid lightgray;
+      }`,
     ]
 })
 export class VisNetworkExampleComponent implements OnInit, OnDestroy {

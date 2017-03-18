@@ -1,5 +1,11 @@
 {
-  "extends": "./node_modules/eslint-config-valorsoft/.eslintrc.json",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": 2
+  },
   "env": {
     "node": true
   }

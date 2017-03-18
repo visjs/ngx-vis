@@ -7,6 +7,7 @@
     "linebreak-style": false,
     "interface-name": [false],
     "no-reference": false,
-    "max-classes-per-file": false
+    "max-classes-per-file": false,
+    "no-empty-interface": false
   }
 }

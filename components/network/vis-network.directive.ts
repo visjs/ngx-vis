@@ -18,7 +18,7 @@ import {
 
 /**
  * Use this directive with a div container to show network data.
- * 
+ *
  * @export
  * @class VisNetworkDirective
  * @implements {OnInit}
@@ -33,7 +33,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * The name or identifier of the network (must be unique in your application).
    * This property is used once on init and must not be changed.
-   * 
+   *
    * @type {string}
    * @memberOf VisNetworkDirective
    */
@@ -45,7 +45,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * Changes to the nodes or edges property won't be detected but
    * changes to the reference of this object.
    * Changes lead to a call to setData of this network instance.
-   * 
+   *
    * @type {VisNetworkData}
    * @memberOf VisNetworkDirective
    */
@@ -57,7 +57,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * Only reference changes to the whole options object will be detected
    * but not changes to properties.
    * Changes lead to a call to setOptions of the network instance.
-   * 
+   *
    * @type {VisNetworkOptions}
    * @memberOf VisNetworkDirective
    */
@@ -69,7 +69,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * At this point of time the network is successfully registered
    * with the VisNetworkService and you can register to events.
    * The event data is the name of the network as a string.
-   * 
+   *
    * @type {EventEmitter<any>}
    * @memberOf VisNetworkDirective
    */
@@ -81,10 +81,10 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Creates an instance of VisNetworkDirective.
-   * 
+   *
    * @param {ElementRef} elementRef The HTML element reference.
    * @param {VisNetworkService} visNetworkService The VisNetworkService.
-   * 
+   *
    * @memberOf VisNetworkDirective
    */
   public constructor(private elementRef: ElementRef, private visNetworkService: VisNetworkService) {
@@ -93,8 +93,8 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Create the network when at least visNetwork and visNetworkData
-   * are defined. 
-   * 
+   * are defined.
+   *
    * @memberOf VisNetworkDirective
    */
   public ngOnInit(): void {
@@ -106,9 +106,9 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * Update the network data or options on reference changes to
    * the visNetworkData or visNetworkOptions properties.
-   * 
+   *
    * @param {{[propName: string]: SimpleChange}} changes
-   * 
+   *
    * @memberOf VisNetworkDirective
    */
   public ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
@@ -117,9 +117,9 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
       this.createNetwork();
     }
 
-    for (let propertyName in changes) {
+    for (const propertyName in changes) {
       if (changes.hasOwnProperty(propertyName)) {
-        let change = changes[propertyName];
+        const change = changes[propertyName];
         if (!change.isFirstChange()) {
           if (propertyName === 'visNetworkData') {
             this.visNetworkService.setData(this.visNetwork, changes[propertyName].currentValue);
@@ -134,8 +134,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Calls the destroy function for this network instance.
-   * 
-   * 
+   *
    * @memberOf VisNetworkDirective
    */
   public ngOnDestroy(): void {
