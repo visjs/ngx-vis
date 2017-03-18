@@ -14,8 +14,6 @@ after_success:
   - ./node_modules/.bin/codecov  -f coverage/coverage-final.json
 
 addons:
-  # sauce labs tunel connector (read more https://docs.travis-ci.com/user/sauce-connect/ )
-  sauce_connect: true
   firefox: "42.0"
   apt:
     sources:
