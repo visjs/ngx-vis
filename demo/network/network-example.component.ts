@@ -15,6 +15,13 @@ class ExampleNetworkData implements VisNetworkData {
 
 @Component({
     selector: 'network-example',
+    styles: [
+      `.network-canvas {
+          width: 100%;
+          height: 400px;
+          border: 1px solid lightgray;
+      }`,
+    ],
     template: `
       <h2>Network</h2>
       <h3>Basic usage</h3>
@@ -24,15 +31,10 @@ class ExampleNetworkData implements VisNetworkData {
         [visNetworkOptions]="visNetworkOptions"
         (initialized)="networkInitialized()"></div>
       <button type="button" class="btn btn-default" (click)="addNode()">Add node</button>
-      <p><strong>Note:</strong> Open your dev tools to see the console output when the network receives click events.</p>
+      <p>
+        <strong>Note:</strong> Open your dev tools to see the console output when the network receives click events.
+      </p>
     `,
-    styles: [
-      `.network-canvas {
-          width: 100%;
-          height: 400px;
-          border: 1px solid lightgray;
-      }`,
-    ]
 })
 export class VisNetworkExampleComponent implements OnInit, OnDestroy {
 
@@ -43,7 +45,7 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
     public constructor(private visNetworkService: VisNetworkService) { }
 
     public addNode(): void {
-        let newId = this.visNetworkData.nodes.getLength() + 1;
+        const newId = this.visNetworkData.nodes.getLength() + 1;
         this.visNetworkData.nodes.add({ id: newId.toString(), label: 'Node ' + newId });
         this.visNetworkService.fit(this.visNetwork);
     }
@@ -56,28 +58,28 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
         this.visNetworkService.click
             .subscribe((eventData: any[]) => {
                 if (eventData[0] === this.visNetwork) {
-                    console.log(eventData[1]);
+                  console.log(eventData[1]);
                 }
             });
     }
 
     public ngOnInit(): void {
-        let nodes = new VisNodes([
+        const nodes = new VisNodes([
             { id: '1', label: 'Node 1' },
             { id: '2', label: 'Node 2' },
             { id: '3', label: 'Node 3' },
             { id: '4', label: 'Node 4' },
             { id: '5', label: 'Node 5', title: 'Title of Node 5' }]);
 
-        let edges = new VisEdges([
+        const edges = new VisEdges([
             { from: '1', to: '3' },
             { from: '1', to: '2' },
             { from: '2', to: '4' },
             { from: '2', to: '5' }]);
 
         this.visNetworkData = {
-            nodes: nodes,
-            edges: edges
+            nodes,
+            edges,
         };
 
         this.visNetworkOptions = {};

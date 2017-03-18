@@ -11,7 +11,9 @@ import { VisTimelineService, VisTimelineItems } from '../../components/timeline'
            [visTimelineItems]="visTimelineItems"
            (initialized)="timelineInitialized()"></div>
       <button type="button" class="btn btn-default" (click)="addItem()">Add and focus</button>
-      <p><strong>Note:</strong> Open your dev tools to see the console output when the timeline receives click events.</p>
+      <p>
+        <strong>Note:</strong> Open your dev tools to see the console output when the timeline receives click events.
+      </p>
     `,
 })
 export class VisTimelineExampleComponent implements OnInit, OnDestroy {
@@ -37,7 +39,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
     }
 
     public addItem(): void {
-        let newLength = this.visTimelineItems.getLength() + 1;
+        const newLength = this.visTimelineItems.getLength() + 1;
         this.visTimelineItems.add(
             {id: newLength, content: 'item ' + newLength, start: Date.now() }
         );
