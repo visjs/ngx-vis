@@ -529,41 +529,6 @@ export class VisNetworkService {
   }
 
   /**
-   * Returns the current scale of the network.
-   * 1.0 is comparible to 100%, 0 is zoomed out infinitely.
-   *
-   * @param {string} visNetwork The network name/identifier.
-   *
-   * @returns {number} the current scale of the network
-   *
-   * @memberOf VisNetworkService
-   */
-  public getScale(visNetwork: string): number {
-    if (this.networks[visNetwork]) {
-      return this.networks[visNetwork].getScale();
-    } else {
-      throw new Error(`Network with id ${visNetwork} not found.`);
-    }
-  }
-
-  /**
-   * Returns the current central focus point of the view in the form: { x: {Number}, y: {Number} }
-   *
-   * @param {string} visNetwork The network name/identifier.
-   *
-   * @returns {IPosition} the view position;
-   *
-   * @memberOf VisNetworkService
-   */
-  public getViewPosition(visNetwork: string): VisPosition {
-    if (this.networks[visNetwork]) {
-      return this.networks[visNetwork].getViewPosition();
-    } else {
-      throw new Error(`Network with id ${visNetwork} not found.`);
-    }
-  }
-
-  /**
    * Zooms out so all nodes fit on the canvas.
    *
    * @param {string} visNetwork The network name/identifier.
@@ -921,5 +886,35 @@ export class VisNetworkService {
     }
 
     return -1;
+  }
+
+  /**
+   * This function converts canvas coordinates to coordinates on the DOM.
+   * Input and output are in the form of {x:Number,y:Number}.
+   * The DOM values are relative to the network container.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {Position} position The canvas position.
+   * @returns {Position} The DOM position.
+   *
+   * @memberOf VisNetworkService
+   */
+  public canvasToDOM(visNetwork: string, position: vis.Position) {
+    return this.networks[visNetwork].canvasToDOM(position);
+  }
+
+  /**
+   * This function converts DOM coordinates to coordinates on the canvas.
+   * Input and output are in the form of {x:Number,y:Number}.
+   * The DOM values are relative to the network container.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {Position} position The DOM position.
+   * @returns {Position} The canvas position.
+   *
+   * @memberOf VisNetworkService
+   */
+  public DOMtoCanvas(visNetwork: string, position: vis.Position) {
+    return this.networks[visNetwork].DOMtoCanvas(position);
   }
 }

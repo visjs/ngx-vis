@@ -40,8 +40,6 @@ describe('VisNetworkService Tests', () => {
     expect(() => visNetworkService.selectNodes('unknown', [])).toThrowError();
     expect(() => visNetworkService.selectNodes('unknown', [], false)).toThrowError();
     expect(() => visNetworkService.unselectAll('unknown')).toThrowError();
-    expect(() => visNetworkService.getViewPosition('unknown')).toThrowError();
-    expect(() => visNetworkService.getScale('unknown')).toThrowError();
     expect(() => visNetworkService.fit('unknown')).toThrowError();
     expect(() => visNetworkService.fit('unknown', { animation: true })).toThrowError();
     expect(() => visNetworkService.redraw('unknown')).toThrowError();
@@ -67,6 +65,8 @@ describe('VisNetworkService Tests', () => {
     expect(() => visNetworkService.getNodesInCluster('unknown', 42)).toThrowError();
     expect(() => visNetworkService.openCluster('unknown', 'nodeId', { releaseFunction: null })).toThrowError();
     expect(() => visNetworkService.openCluster('unknown', 'nodeId')).toThrowError();
+    expect(() => visNetworkService.canvasToDOM('unknown', { x: 1, y: 1 })).toThrowError();
+    expect(() => visNetworkService.DOMtoCanvas('unknown', { x: 1, y: 1 })).toThrowError();
   });
 
   it('returns -1 when network does not exist', () => {

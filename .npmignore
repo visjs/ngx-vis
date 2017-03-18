@@ -63,3 +63,5 @@ webpack.config.js
 *.yml
 .jshintrc
 .editorconfig
+
+/factories
