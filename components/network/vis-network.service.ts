@@ -346,7 +346,9 @@ export class VisNetworkService {
    */
   public on(visNetwork: string, eventName: VisNetworkEvents, preventDefault?: boolean): boolean {
     if (this.networks[visNetwork]) {
+      /* tslint:disable */
       const that: { [index: string]: any } = this;
+      /* tslint:enable */
       this.networks[visNetwork].on(eventName, (params: any) => {
         const emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
@@ -389,7 +391,9 @@ export class VisNetworkService {
    */
   public once(visNetwork: string, eventName: VisNetworkEvents): boolean {
     if (this.networks[visNetwork]) {
+      /* tslint:disable */
       const that: { [index: string]: any } = this;
+      /* tslint:disable */
       this.networks[visNetwork].on(eventName, (params: any) => {
         const emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {

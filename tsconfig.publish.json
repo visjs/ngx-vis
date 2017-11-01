@@ -1,34 +1,34 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": false,
-    "noEmitHelpers": false,
-    "noImplicitAny": true,
-    "declaration": true,
-    "skipLibCheck": true,
-    "stripInternal": true,
-    "lib": ["dom", "es6"],
-    "typeRoots": [
-      "./node_modules/@types"
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": false,
+        "noEmitHelpers": false,
+        "noImplicitAny": true,
+        "declaration": true,
+        "skipLibCheck": true,
+        "stripInternal": true,
+        "lib": ["dom", "es6"],
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "jasmine",
+            "webpack",
+            "vis"
+        ]
+    },
+    "exclude": [
+        "node_modules"
     ],
-    "types": [
-      "node",
-      "jasmine",
-      "webpack",
-      "vis"
-    ]
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "./ng2-vis.ts"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "factories"
-  }
+    "files": [
+        "./ngx-vis.ts"
+    ],
+    "angularCompilerOptions": {
+        "genDir": "factories"
+    }
 }
