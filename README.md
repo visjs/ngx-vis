@@ -1,15 +1,12 @@
 # ng2-vis
-[![Build Status](https://travis-ci.org/seveves/ng2-vis.svg?branch=develop)](https://travis-ci.org/seveves/ng2-vis)
+[![Build Status](https://travis-ci.org/hypery2k/ngx-vis.svg?branch=develop)](https://travis-ci.org/hypery2k/ngx-vis)
 [![npm version](https://badge.fury.io/js/ng2-vis.svg)](https://badge.fury.io/js/ng2-vis)
-[![codecov.io](https://codecov.io/github/seveves/ng2-vis/coverage.svg?branch=master)](https://codecov.io/gh/seveves/ng2-vis?branch=master)
-[![David](https://img.shields.io/david/seveves/ng2-vis.svg)]()
-[![David](https://img.shields.io/david/dev/seveves/ng2-vis.svg)]()
-[![David](https://img.shields.io/david/peer/seveves/ng2-vis.svg)]()
+[![codecov.io](https://codecov.io/github/hypery2k/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/hypery2k/ngx-vis?branch=master)
+[![David](https://img.shields.io/david/hypery2k/ngx-vis.svg)]()
+[![David](https://img.shields.io/david/dev/hypery2k/ngx-vis.svg)]()
+[![David](https://img.shields.io/david/peer/hypery2k/ngx-vis.svg)]()
 
 An angular 2 vis.js project (in a very early development stage)
-
-## Demo
-* [Demo Page](https://seveves.github.io/ng2-vis)
 
 ## Work in progress:
 Timeline and Network components are implemented and using DataSets for two-way binding.
