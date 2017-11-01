@@ -1,5 +1,5 @@
 {
-    "name": "ng2-vis",
+    "name": "ngx-vis",
     "version": "0.0.6",
     "main": "ng2-vis.js",
     "types": "ng2-vis.d.ts",
@@ -30,24 +30,25 @@
         "postversion": "git push origin master && git push --tags"
     },
     "dependencies": {
-        "vis": "4.17.0",
-        "@types/vis": "4.17.4"
+        "vis": "4.21.0",
+        "@types/vis": "4.18.9"
     },
     "peerDependencies": {
-        "@angular/common": "^2.4.10 || >=4.0.0",
-        "@angular/core": "^2.4.10 || >=4.0.0",
-        "@angular/compiler": "^2.4.10 || >=4.0.0"
+        "@angular/common": "^2.4.0 || >=4.0.0",
+        "@angular/core": "^2.4.0 || >=4.0.0",
+        "@angular/compiler": "^2.4.0 || >=4.0.0"
     },
     "devDependencies": {
-        "@angular/common": "^2.4.10",
-        "@angular/compiler": "^2.4.10",
-        "@angular/compiler-cli": "^2.4.10",
-        "@angular/core": "^2.4.10",
-        "@angular/forms": "^2.4.10",
-        "@angular/platform-browser": "^2.4.10",
-        "@angular/platform-browser-dynamic": "^2.4.10",
-        "@angular/platform-server": "^2.4.10",
-        "@angular/router": "^3.4.10",
+        "@angular/animations": "4.4.6",
+        "@angular/common": "4.4.6",
+        "@angular/compiler": "4.4.6",
+        "@angular/compiler-cli": "4.4.6",
+        "@angular/core": "4.4.6",
+        "@angular/forms": "4.4.6",
+        "@angular/platform-browser": "4.4.6",
+        "@angular/platform-browser-dynamic": "4.4.6",
+        "@angular/platform-server": "4.4.6",
+        "@angular/router": "4.4.6",
         "@types/jasmine": "^2.5.46",
         "@types/node": "^7.0.8",
         "@types/webpack": "^2.2.11",
@@ -96,7 +97,7 @@
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.4.2",
         "webpack-merge": "^4.1.0",
-        "zone.js": "^0.8.4"
+        "zone.js": "^0.8.18"
     },
     "repository": {
         "type": "git",
