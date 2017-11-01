@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-
+import * as vis from "vis";
 import {
   VisClusterOptions,
   VisEdgeOptions,
@@ -11,7 +11,8 @@ import {
   VisNetworkOptions,
   VisNodeOptions,
   VisOpenClusterOptions,
-  VisPosition } from './index';
+  VisPosition,
+} from './index';
 
 /**
  * A service to create, manage and control VisNetwork instances.
@@ -293,7 +294,7 @@ export class VisNetworkService {
    */
   public configChange: EventEmitter<any> = new EventEmitter<any>();
 
-  private networks: {[id: string]: VisNetwork} = {};
+  private networks: { [id: string]: VisNetwork } = {};
 
   /**
    * Creates a new network instance.
@@ -345,7 +346,7 @@ export class VisNetworkService {
    */
   public on(visNetwork: string, eventName: VisNetworkEvents, preventDefault?: boolean): boolean {
     if (this.networks[visNetwork]) {
-      const that: {[index: string]: any} = this;
+      const that: { [index: string]: any } = this;
       this.networks[visNetwork].on(eventName, (params: any) => {
         const emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
@@ -388,7 +389,7 @@ export class VisNetworkService {
    */
   public once(visNetwork: string, eventName: VisNetworkEvents): boolean {
     if (this.networks[visNetwork]) {
-      const that: {[index: string]: any} = this;
+      const that: { [index: string]: any } = this;
       this.networks[visNetwork].on(eventName, (params: any) => {
         const emitter = that[eventName] as EventEmitter<any>;
         if (emitter) {
