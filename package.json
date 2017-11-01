@@ -46,7 +46,7 @@
     "@angular/compiler": "^2.4.0 || >=4.0.0"
   },
   "devDependencies": {
-    "@angular/animations": "4.4.6",
+    "@angular/animations": "5.0.0",
     "@angular/common": "4.4.6",
     "@angular/compiler": "4.4.6",
     "@angular/compiler-cli": "4.4.6",
