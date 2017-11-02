@@ -55,7 +55,7 @@
     "@angular/platform-browser": "4.4.6",
     "@angular/platform-browser-dynamic": "4.4.6",
     "@angular/platform-server": "4.4.6",
-    "@angular/router": "4.4.6",
+    "@angular/router": "5.0.0",
     "@types/jasmine": "^2.5.46",
     "@types/node": "^8.0.47",
     "@types/webpack": "^3.0.14",
