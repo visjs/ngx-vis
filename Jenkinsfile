@@ -1,6 +1,5 @@
 properties properties: [
   [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: '10']],
-  [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/hypery2k/ngx-vis'],
 ]
 
 @Library('mare-build-library')
@@ -41,7 +40,7 @@ node {
     }
 
   } catch (e) {
-    mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}): Error on build", to: 'github@martinreinhardt-online.de', body: "Please go to ${env.BUILD_URL}."
-    throw e
+      mail subject: "${env.JOB_NAME} (${buildNumber}): Error on build", to: 'github@martinreinhardt-online.de', body: "Please go to ${buildUrl}."
+      throw e
   }
 }
