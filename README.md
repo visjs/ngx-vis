@@ -1,4 +1,4 @@
-# ng2-vis
+# ngx-vis
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/ngx-vis.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/hypery2k/ngx-vis.svg?branch=develop)](https://travis-ci.org/hypery2k/ngx-vis)
@@ -8,7 +8,35 @@
 [![David](https://img.shields.io/david/dev/hypery2k/ngx-vis.svg)]()
 [![David](https://img.shields.io/david/peer/hypery2k/ngx-vis.svg)]()
 
-An angular 2 vis.js project (in a very early development stage)
+An angular 2/4 vis.js project (in a very early development stage)
+
+Plugin is still **WIP**
+
+[![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
+<a name="donation"></a>
+> Feel free to **donate**
+>
+> <a href='http://www.pledgie.com/campaigns/33053'><img alt='Click here to lend your support and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/33053.png?skin_name=chrome' border='0' /></a>
+> <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AGPGLZYNV6Y5S">
+> <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif"/>
+> </img></a>
+> Or donate [Bitcoins](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D).
+>
+> Also via [greenaddress](https://greenaddress.it/pay/GA3ZPfh7As3Gc2oP6pQ1njxMij88u/)
+
+
+# Usage
+
+
+
+
+## Installation
+
+```
+$ npm i ngx-vs
+```
+
+# About
 
 ## Work in progress:
 Timeline and Network components are implemented and using DataSets for two-way binding.
