@@ -33,7 +33,7 @@ Plugin is still **WIP**
 ## Installation
 
 ```
-$ npm i ngx-vs
+$ npm i ngx-vis
 ```
 
 # About
