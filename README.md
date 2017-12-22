@@ -13,6 +13,7 @@ An angular 2/4 vis.js project (in a very early development stage)
 Plugin is still **WIP**
 
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
+
 <a name="donation"></a>
 > Feel free to **donate**
 >
@@ -20,7 +21,9 @@ Plugin is still **WIP**
 > <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AGPGLZYNV6Y5S">
 > <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif"/>
 > </img></a>
-> Or donate [Bitcoins](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D).
+> Or donate Bitcoins: bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D
+>
+> [![Bitcoin](https://martinreinhardt-online.de/bitcoin.png)](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D)
 >
 > Also via [greenaddress](https://greenaddress.it/pay/GA3ZPfh7As3Gc2oP6pQ1njxMij88u/)
 
