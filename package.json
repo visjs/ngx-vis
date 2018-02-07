@@ -90,7 +90,7 @@
     "pre-commit": "^1.2.2",
     "raw-loader": "^0.5.1",
     "reflect-metadata": "^0.1.10",
-    "require-dir": "^0.3.1",
+    "require-dir": "^1.0.0",
     "rimraf": "^2.6.1",
     "rxjs": "^5.0.1",
     "source-map-loader": "^0.2.0",
