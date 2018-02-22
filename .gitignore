@@ -10,7 +10,7 @@ npm-debug.log
 .idea
 
 # ignore build and dist for now
-/bundles
+#for the time of not being merged into the npm package #/bundles
 /demo-build
 /dist
 /coverage
@@ -27,7 +27,7 @@ npm-debug.log
 /components/**/*.d.ts
 ng2-vis.js
 ng2-vis.d.ts
-ng2-vis.metadata.json
+#ng2-vis.metadata.json
 ng2-vis.ngfactory.ts
 ng2-vis.js.map
 /logs
