@@ -27,14 +27,14 @@ npm-debug.log
 /components/**/*.d.ts
 ng2-vis.js
 ng2-vis.d.ts
-#ng2-vis.metadata.json
+# ngx-vis.metadata.json
 ng2-vis.ngfactory.ts
 ng2-vis.js.map
 /logs
 
 # AoT generated files
 factories
-/**/*.metadata.json
+#/**/*.metadata.json
 /**/*.ngfactory.ts
 
 *.ngfactory.*
