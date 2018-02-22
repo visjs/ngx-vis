@@ -922,4 +922,50 @@ export class VisNetworkService {
   public DOMtoCanvas(visNetwork: string, position: vis.Position) {
     return this.networks[visNetwork].DOMtoCanvas(position);
   }
+
+  /**
+   * This function looks up the node at the given DOM coordinates on the canvas.
+   * Input and output are in the form of {x:Number,y:Number}.
+   * The DOM values are relative to the network container -> DOM not Canvas coords.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {Position} position The DOM position.
+   * @returns {VisId} nodeId The associated node id.
+   *
+   * @memberOf VisNetworkService
+   */
+  public getNodeAt(visNetwork: string, position: vis.Position) {
+    return this.networks[visNetwork].getNodeAt(position);
+  }
+
+  /**
+ * This function looks up the edge at the given DOM coordinates on the canvas.
+ * Input and output are in the form of {x:Number,y:Number}.
+ * The DOM values are relative to the network container -> DOM not Canvas coords.
+ *
+ * @param {string} visNetwork The network name/identifier.
+ * @param {Position} position The DOM position.
+ * @returns {VisId} edgeId The associated edge id.
+ *
+ * @memberOf VisNetworkService
+ */
+  public getEdgeAt(visNetwork: string, position: vis.Position) {
+    return this.networks[visNetwork].getEdgeAt(position);
+  }
+
+
+
+  /**
+* This function looks up the edges for a given nodeId.
+* The DOM values are relative to the network container -> DOM not Canvas coords.
+*
+* @param {string} visNetwork The network name/identifier.
+* @param {VisId} nodeId The associated node id.
+* @returns {VisId[]} Return array of edge ids
+*
+* @memberOf VisNetworkService
+*/
+  public getConnectedEdges(visNetwork: string, nodeId: vis.IdType) {
+    return this.networks[visNetwork].getConnectedEdges(nodeId);
+  }
 }
