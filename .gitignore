@@ -36,3 +36,7 @@ ng2-vis.js.map
 factories
 /**/*.metadata.json
 /**/*.ngfactory.ts
+
+*.ngfactory.*
+*.ngsummary.json
+yarn.lock
