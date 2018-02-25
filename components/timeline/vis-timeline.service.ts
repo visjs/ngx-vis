@@ -3,9 +3,9 @@ import {
   VisDate,
   VisId,
   VisTimeline,
+  VisTimelineAnimationOptions,
   VisTimelineEventPropertiesResult,
   VisTimelineEvents,
-  VisTimelineFitOptions,
   VisTimelineGroups,
   VisTimelineItems,
   VisTimelineOptions,
@@ -209,13 +209,13 @@ export class VisTimelineService {
    * See also function focus(id).
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisTimelineFitOptions} [options] Optional options.
+   * @param {VisTimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public fit(visTimeline: string, options?: VisTimelineFitOptions): void {
+  public fit(visTimeline: string, options?: VisTimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].fit(options);
     } else {
@@ -228,13 +228,13 @@ export class VisTimelineService {
    *
    * @param {string} visTimeline The timeline name/identifier.
    * @param {VisId} id The id of the item.
-   * @param {VisTimelineFitOptions} [options] Options options.
+   * @param {VisTimelineAnimationOptions} [options] Options options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public focusOnId(visTimeline: string, id: VisId, options?: VisTimelineFitOptions): void {
+  public focusOnId(visTimeline: string, id: VisId, options?: VisTimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].focus(id, options);
     } else {
@@ -247,13 +247,13 @@ export class VisTimelineService {
    *
    * @param {string} visTimeline The timeline name/identifier.
    * @param {VisId[]} ids The item ids.
-   * @param {VisTimelineFitOptions} [options] Optional options.
+   * @param {VisTimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public focusOnIds(visTimeline: string, ids: VisId[], options?: VisTimelineFitOptions): void {
+  public focusOnIds(visTimeline: string, ids: VisId[], options?: VisTimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].focus(ids, options);
     } else {
@@ -396,13 +396,13 @@ export class VisTimelineService {
    *
    * @param {string} visTimeline The timeline name/identifier.
    * @param {VisDate} time Parameter time can be a Date, Number, or String.
-   * @param {VisTimelineFitOptions} [options] Optional options.
+   * @param {VisTimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public moveTo(visTimeline: string, time: VisDate, options?: VisTimelineFitOptions): void {
+  public moveTo(visTimeline: string, time: VisDate, options?: VisTimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].moveTo(time, options);
     } else {
@@ -637,13 +637,13 @@ export class VisTimelineService {
    * @param {string} visTimeline The timeline name/identifier.
    * @param {VisDate} start The parameters start can be a Date, Number, or String.
    * @param {VisDate} end The parameters end can be a Date, Number, or String.
-   * @param {VisTimelineFitOptions} [options] Optional options.
+   * @param {VisTimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setWindow(visTimeline: string, start: VisDate, end: VisDate, options?: VisTimelineFitOptions): void {
+  public setWindow(visTimeline: string, start: VisDate, end: VisDate, options?: VisTimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setWindow(start, end, options);
     } else {

@@ -36,7 +36,7 @@ describe('VisNetworkService Tests', () => {
 
   it('throws error when network does not exist', () => {
     expect(() => visNetworkService.setData('unknown', { nodes: [], edges: [] })).toThrowError();
-    expect(() => visNetworkService.setOptions('unknown', { nodes: [], edges: [] })).toThrowError();
+    expect(() => visNetworkService.setOptions('unknown', {})).toThrowError();
     expect(() => visNetworkService.selectNodes('unknown', [])).toThrowError();
     expect(() => visNetworkService.selectNodes('unknown', [], false)).toThrowError();
     expect(() => visNetworkService.unselectAll('unknown')).toThrowError();

@@ -1,9 +1,9 @@
 {
   "name": "ngx-vis",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "ngx-vis",
   "types": "ngx-vis.d.ts",
-  "description": "Angular 2 components for using vis.js",
+  "description": "Angular x components for using vis.js",
   "scripts": {
     "flow.compile": "npm run flow.compile:common && npm run flow.compile:system && npm run flow.extract-metadata",
     "flow.compile:tsc": "./node_modules/.bin/tsc -p tsconfig.publish.json",
@@ -109,7 +109,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hypery2k/ngx-vis.git"
+    "url": "git+https://github.com/paulhindenberg/ngx-vis.git"
+  },
+  "publishConfig": {
+    "registry": "https://api.bintray.com/npm/awesome-inc/npm"
   },
   "keywords": [
     "angular2",
@@ -119,13 +122,14 @@
     "ngx-vis",
     "ng2-vis"
   ],
-  "author": "Martin Reinhardt <contact@martinreinhardt-online.de> (https://github.com/hypery2k)",
+  "author": "Paul Hindenberg <contact.hindenberg@gmail.com> (https://github.com/paulhindenberg)",
   "license": "MIT",
   "contributors": [
-    "Severin Friede <seveves>"
+    "Severin Friede <seveves>",
+    "Martin Reinhardt <hypery2k>"
   ],
   "bugs": {
-    "url": "https://github.com/hypery2k/ngx-vis/issues"
+    "url": "https://github.com/paulhindenberg/ngx-vis/issues"
   },
-  "homepage": "https://github.com/hypery2k/ngx-vis#readme"
+  "homepage": "https://github.com/paulhindenberg/ngx-vis#readme"
 }

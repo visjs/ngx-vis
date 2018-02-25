@@ -45,6 +45,7 @@ Thumbs.db
 
 src/app/example*
 src/public
+demo
 typings
 *_spec.*
 CONTRIBUTING.md
