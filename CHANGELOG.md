@@ -1,9 +1,12 @@
+### Forked from:
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/hypery2k/ngx-vis/compare/v0.0.6...v0.1.0) (2017-11-01)
 
 
 ### Bug Fixes
 
+* **tsc-error:** Resolve type error ([ee481bd](https://github.com/paulhindenberg/ngx-vis/commit/ee481bd))
 * **tsc-error:** Resolve type error ([f9bdb79](https://github.com/hypery2k/ngx-vis/commit/f9bdb79))
 * **tslint:** Corrected linting errors ([dbbd13f](https://github.com/hypery2k/ngx-vis/commit/dbbd13f))
 

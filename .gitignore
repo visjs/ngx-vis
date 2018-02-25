@@ -11,7 +11,7 @@ npm-debug.log
 .idea
 
 # ignore build and dist for now
-#for the time of not being merged into the npm package #/bundles
+/bundles
 /demo-build
 /dist
 /coverage
