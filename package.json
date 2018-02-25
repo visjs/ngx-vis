@@ -103,7 +103,7 @@
     "typescript": "^2.2.1",
     "typings": "^2.1.0",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.4.2",
+    "webpack-dev-server": "^3.0.0",
     "webpack-merge": "^4.1.0",
     "zone.js": "^0.8.18"
   },
