@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var vis = require("vis");
 var index_1 = require("./index");
 /**
  * A service to create, manage and control VisNetwork instances.

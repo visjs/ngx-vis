@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var vis_network_service_1 = require("./vis-network.service");
-var index_1 = require("./index");
 /**
  * Use this directive with a div container to show network data.
  *

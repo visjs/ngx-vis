@@ -14,9 +14,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 var Vis = require("vis");
-var index_1 = require("../timeline/index");
-var index_2 = require("../timeline/index");
-exports.VisId = index_2.VisId;
 var VisNetwork = /** @class */ (function (_super) {
     __extends(VisNetwork, _super);
     function VisNetwork() {

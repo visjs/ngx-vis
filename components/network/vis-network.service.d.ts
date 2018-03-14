@@ -14,7 +14,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public click: EventEmitter<any>;
+    click: EventEmitter<any>;
     /**
      * Fired when the user double clicks the mouse or double taps on a touchscreen device.
      * Since a double click is in fact 2 clicks, 2 click events are fired, followed by a double click event.
@@ -24,7 +24,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public doubleClick: EventEmitter<any>;
+    doubleClick: EventEmitter<any>;
     /**
      * Fired when the user click on the canvas with the right mouse button.
      * The right mouse button does not select by default.
@@ -33,7 +33,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public oncontext: EventEmitter<any>;
+    oncontext: EventEmitter<any>;
     /**
      * Fired when the user clicks and holds the mouse or taps and holds on a touchscreen device.
      * A click event is also fired in this case.
@@ -41,7 +41,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public hold: EventEmitter<any>;
+    hold: EventEmitter<any>;
     /**
      * Fired after drawing on the canvas has been completed.
      * Can be used to draw on top of the network.
@@ -49,7 +49,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public release: EventEmitter<any>;
+    release: EventEmitter<any>;
     /**
      * Fired when the selection has changed by user action.
      * This means a node or edge has been selected, added to the selection or deselected.
@@ -58,21 +58,21 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public select: EventEmitter<any>;
+    select: EventEmitter<any>;
     /**
      * Fired when a node has been selected by the user.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public selectNode: EventEmitter<any>;
+    selectNode: EventEmitter<any>;
     /**
      * Fired when a edge has been selected by the user.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public selectEdge: EventEmitter<any>;
+    selectEdge: EventEmitter<any>;
     /**
      * Fired when a node (or nodes) has (or have) been deselected by the user.
      * The previous selection is the list of nodes and edges that were selected before the last user event.
@@ -80,7 +80,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public deselectNode: EventEmitter<any>;
+    deselectNode: EventEmitter<any>;
     /**
      * Fired when a edge (or edges) has (or have) been deselected by the user.
      * The previous selection is the list of nodes and edges that were selected before the last user event.
@@ -88,35 +88,35 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public deselectEdge: EventEmitter<any>;
+    deselectEdge: EventEmitter<any>;
     /**
      * Fired when starting a drag.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public dragStart: EventEmitter<any>;
+    dragStart: EventEmitter<any>;
     /**
      * Fired when dragging node(s) or the view.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public dragging: EventEmitter<any>;
+    dragging: EventEmitter<any>;
     /**
      * Fired when the drag has finished.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public dragEnd: EventEmitter<any>;
+    dragEnd: EventEmitter<any>;
     /**
      * Fired if the option interaction:{hover:true} is enabled and the mouse hovers over a node.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public hoverNode: EventEmitter<any>;
+    hoverNode: EventEmitter<any>;
     /**
      * Fired if the option interaction:{hover:true} is enabled and
      * the mouse moved away from a node it was hovering over before.
@@ -124,14 +124,14 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public blurNode: EventEmitter<any>;
+    blurNode: EventEmitter<any>;
     /**
      * Fired if the option interaction:{hover:true} is enabled and the mouse hovers over an edge.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public hoverEdge: EventEmitter<any>;
+    hoverEdge: EventEmitter<any>;
     /**
      * Fired if the option interaction:{hover:true} is enabled and
      * the mouse moved away from an edge it was hovering over before.
@@ -139,28 +139,28 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public blurEdge: EventEmitter<any>;
+    blurEdge: EventEmitter<any>;
     /**
      * Fired when the user zooms in or out.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public zoom: EventEmitter<any>;
+    zoom: EventEmitter<any>;
     /**
      * Fired when the popup (tooltip) is shown.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public showPopup: EventEmitter<any>;
+    showPopup: EventEmitter<any>;
     /**
      * Fired when the popup (tooltip) is hidden.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public hidePopup: EventEmitter<any>;
+    hidePopup: EventEmitter<any>;
     /**
      * Fired when stabilization starts.
      * This is also the case when you drag a node and the physics
@@ -170,7 +170,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public startStabilizing: EventEmitter<any>;
+    startStabilizing: EventEmitter<any>;
     /**
      * Fired when a multiple of the updateInterval number of iterations is reached.
      * This only occurs in the 'hidden' stabilization.
@@ -178,7 +178,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public stabilizationProgress: EventEmitter<any>;
+    stabilizationProgress: EventEmitter<any>;
     /**
      * Fired when the 'hidden' stabilization finishes.
      * This does not necessarily mean the network is stabilized;
@@ -187,7 +187,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public stabilizationIterationsDone: EventEmitter<any>;
+    stabilizationIterationsDone: EventEmitter<any>;
     /**
      * Fired when the 'hidden' stabilization finishes.
      * This does not necessarily mean the network is stabilized;
@@ -196,7 +196,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public stabilized: EventEmitter<any>;
+    stabilized: EventEmitter<any>;
     /**
      * Fired when the size of the canvas has been resized,
      * either by a redraw call when the container div has changed in size,
@@ -205,7 +205,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public resize: EventEmitter<any>;
+    resize: EventEmitter<any>;
     /**
      * Fired before the redrawing begins.
      * The simulation step has completed at this point.
@@ -214,7 +214,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public initRedraw: EventEmitter<any>;
+    initRedraw: EventEmitter<any>;
     /**
      * Fired after the canvas has been cleared, scaled and translated to
      * the viewing position but before all edges and nodes are drawn.
@@ -223,7 +223,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public beforeDrawing: EventEmitter<any>;
+    beforeDrawing: EventEmitter<any>;
     /**
      * Fired after drawing on the canvas has been completed.
      * Can be used to draw on top of the network.
@@ -231,14 +231,14 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public afterDrawing: EventEmitter<any>;
+    afterDrawing: EventEmitter<any>;
     /**
      * Fired when an animation is finished.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public animationFinished: EventEmitter<any>;
+    animationFinished: EventEmitter<any>;
     /**
      * Fired when a user changes any option in the configurator.
      * The options object can be used with the setOptions method or stringified using JSON.stringify().
@@ -248,7 +248,7 @@ export declare class VisNetworkService {
      * @type {EventEmitter<any>}
      * @memberOf VisNetworkService
      */
-    public configChange: EventEmitter<any>;
+    configChange: EventEmitter<any>;
     private networks;
     /**
      * Creates a new network instance.
@@ -262,7 +262,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public create(visNetwork: string, container: HTMLElement, data: VisNetworkData, options?: VisNetworkOptions): void;
+    create(visNetwork: string, container: HTMLElement, data: VisNetworkData, options?: VisNetworkOptions): void;
     /**
      * Remove the network from the DOM and remove all Hammer bindings and references.
      *
@@ -270,7 +270,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public destroy(visNetwork: string): void;
+    destroy(visNetwork: string): void;
     /**
      * Activates an event.
      *
@@ -281,7 +281,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public on(visNetwork: string, eventName: VisNetworkEvents, preventDefault?: boolean): boolean;
+    on(visNetwork: string, eventName: VisNetworkEvents, preventDefault?: boolean): boolean;
     /**
      * Deactivates an event.
      *
@@ -290,7 +290,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public off(visNetwork: string, eventName: VisNetworkEvents): void;
+    off(visNetwork: string, eventName: VisNetworkEvents): void;
     /**
      * Activates an event listener only once.
      * After it has taken place, the event listener will be removed.
@@ -301,7 +301,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public once(visNetwork: string, eventName: VisNetworkEvents): boolean;
+    once(visNetwork: string, eventName: VisNetworkEvents): boolean;
     /**
      * Override all the data in the network.
      * If stabilization is enabled in the physics module,
@@ -315,7 +315,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public setData(visNetwork: string, data: VisNetworkData): void;
+    setData(visNetwork: string, data: VisNetworkData): void;
     /**
      * Set the options.
      *
@@ -326,7 +326,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public setOptions(visNetwork: string, options: VisNetworkOptions): void;
+    setOptions(visNetwork: string, options: VisNetworkOptions): void;
     /**
      * Selects the nodes corresponding to the id's in the input array.
      * This method unselects all other objects before selecting its own objects.
@@ -341,7 +341,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public selectNodes(visNetwork: string, nodeIds: VisId[], highlightEdges?: boolean): void;
+    selectNodes(visNetwork: string, nodeIds: VisId[], highlightEdges?: boolean): void;
     /**
      * Returns an object with selected nodes and edges ids.
      *
@@ -351,7 +351,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getSelection(visNetwork: string): {
+    getSelection(visNetwork: string): {
         nodes: VisId[];
         edges: VisId[];
     };
@@ -363,7 +363,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getSelectedNodes(visNetwork: string): VisId[];
+    getSelectedNodes(visNetwork: string): VisId[];
     /**
      * Returns an array of selected edge ids.
      *
@@ -372,7 +372,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getSelectedEdges(visNetwork: string): VisId[];
+    getSelectedEdges(visNetwork: string): VisId[];
     /**
      * Unselect all objects.
      * Does not fire events.
@@ -383,7 +383,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public unselectAll(visNetwork: string): void;
+    unselectAll(visNetwork: string): void;
     /**
      * Zooms out so all nodes fit on the canvas.
      *
@@ -394,7 +394,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public fit(visNetwork: string, options?: VisFitOptions): void;
+    fit(visNetwork: string, options?: VisFitOptions): void;
     /**
      * Redraw the network.
      *
@@ -404,7 +404,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public redraw(visNetwork: string): void;
+    redraw(visNetwork: string): void;
     /**
      * Programatically enable the edit mode.
      * Similar effect to pressing the edit button.
@@ -415,7 +415,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public enableEditMode(visNetwork: string): void;
+    enableEditMode(visNetwork: string): void;
     /**
      * Go into addEdge mode.
      * The explaination from addNodeMode applies here as well.
@@ -426,7 +426,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public addEdgeMode(visNetwork: string): void;
+    addEdgeMode(visNetwork: string): void;
     /**
      * Programatically disable the edit mode.
      * Similar effect to pressing the close icon
@@ -438,7 +438,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public disableEditMode(visNetwork: string): void;
+    disableEditMode(visNetwork: string): void;
     /**
      * Delete selected.
      * Having edit mode or manipulation enabled is not required.
@@ -449,7 +449,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public deleteSelected(visNetwork: string): void;
+    deleteSelected(visNetwork: string): void;
     /**
      * Makes a cluster.
      *
@@ -460,7 +460,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public cluster(visNetwork: string, options?: VisClusterOptions): void;
+    cluster(visNetwork: string, options?: VisClusterOptions): void;
     /**
      * This method looks at the provided node and makes a cluster of it and all it's connected nodes.
      * The behaviour can be customized by proving the options object.
@@ -473,7 +473,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public clusterByConnection(visNetwork: string, nodeId: VisId, options?: VisClusterOptions): void;
+    clusterByConnection(visNetwork: string, nodeId: VisId, options?: VisClusterOptions): void;
     /**
      * This method checks all nodes in the network and those with a equal or higher
      * amount of edges than specified with the hubsize qualify.
@@ -488,7 +488,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public clusterByHubsize(visNetwork: string, hubsize?: number, options?: VisClusterOptions): void;
+    clusterByHubsize(visNetwork: string, hubsize?: number, options?: VisClusterOptions): void;
     /**
      * This method will cluster all nodes with 1 edge with their respective connected node.
      *
@@ -497,7 +497,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public clusterOutliers(visNetwork: string, options?: VisClusterOptions): void;
+    clusterOutliers(visNetwork: string, options?: VisClusterOptions): void;
     /**
      * Nodes can be in clusters.
      * Clusters can also be in clusters.
@@ -515,7 +515,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public findNode(visNetwork: string, nodeId: VisId): VisId[];
+    findNode(visNetwork: string, nodeId: VisId): VisId[];
     /**
      * Similar to findNode in that it returns all the edge ids that were
      * created from the provided edge during clustering.
@@ -526,7 +526,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getClusteredEdges(visNetwork: string, baseEdgeId: VisId): VisId[];
+    getClusteredEdges(visNetwork: string, baseEdgeId: VisId): VisId[];
     /**
      * When a clusteredEdgeId is available, this method will return the original
      * baseEdgeId provided in data.edges ie.
@@ -540,7 +540,7 @@ export declare class VisNetworkService {
      * @memberOf VisNetworkService
      *
      */
-    public getBaseEdge(visNetwork: string, clusteredEdgeId: VisId): VisId;
+    getBaseEdge(visNetwork: string, clusteredEdgeId: VisId): VisId;
     /**
      * Visible edges between clustered nodes are not the same edge as the ones provided
      * in data.edges passed on network creation. With each layer of clustering, copies of
@@ -555,7 +555,7 @@ export declare class VisNetworkService {
      * @memberOf VisNetworkService
      *
      */
-    public updateEdge(visNetwork: string, startEdgeId: VisId, options?: VisEdgeOptions): void;
+    updateEdge(visNetwork: string, startEdgeId: VisId, options?: VisEdgeOptions): void;
     /**
      * Clustered Nodes when created are not contained in the original data.nodes
      * passed on network creation. This method updates the cluster node.
@@ -566,7 +566,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public updateClusteredNode(visNetwork: string, clusteredNodeId: VisId, options?: VisNodeOptions): void;
+    updateClusteredNode(visNetwork: string, clusteredNodeId: VisId, options?: VisNodeOptions): void;
     /**
      * Returns an array of all nodeIds of the nodes that
      * would be released if you open the cluster.
@@ -577,7 +577,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getNodesInCluster(visNetwork: string, clusterNodeId: VisId): VisId[];
+    getNodesInCluster(visNetwork: string, clusterNodeId: VisId): VisId[];
     /**
      * Opens the cluster, releases the contained nodes and edges,
      * removing the cluster node and cluster edges.
@@ -590,7 +590,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public openCluster(visNetwork: string, nodeId: VisId, options?: VisOpenClusterOptions): void;
+    openCluster(visNetwork: string, nodeId: VisId, options?: VisOpenClusterOptions): void;
     /**
      * Returns true if the node whose ID has been supplied is a cluster.
      *
@@ -600,7 +600,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public isCluster(visNetwork: string, nodeId: VisId): boolean;
+    isCluster(visNetwork: string, nodeId: VisId): boolean;
     /**
      * If you like the layout of your network and would like it to start in the same way next time,
      * ask for the seed using this method and put it in the layout.randomSeed option.
@@ -610,7 +610,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getSeed(visNetwork: string): number;
+    getSeed(visNetwork: string): number;
     /**
      * This function converts canvas coordinates to coordinates on the DOM.
      * Input and output are in the form of {x:Number,y:Number}.
@@ -622,7 +622,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public canvasToDOM(visNetwork: string, position: vis.Position): vis.Position;
+    canvasToDOM(visNetwork: string, position: vis.Position): vis.Position;
     /**
      * This function converts DOM coordinates to coordinates on the canvas.
      * Input and output are in the form of {x:Number,y:Number}.
@@ -634,7 +634,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public DOMtoCanvas(visNetwork: string, position: vis.Position): vis.Position;
+    DOMtoCanvas(visNetwork: string, position: vis.Position): vis.Position;
     /**
      * This function looks up the node at the given DOM coordinates on the canvas.
      * Input and output are in the form of {x:Number,y:Number}.
@@ -646,7 +646,7 @@ export declare class VisNetworkService {
      *
      * @memberOf VisNetworkService
      */
-    public getNodeAt(visNetwork: string, position: vis.Position): vis.IdType;
+    getNodeAt(visNetwork: string, position: vis.Position): vis.IdType;
     /**
    * This function looks up the edge at the given DOM coordinates on the canvas.
    * Input and output are in the form of {x:Number,y:Number}.
@@ -658,7 +658,7 @@ export declare class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-    public getEdgeAt(visNetwork: string, position: vis.Position): vis.IdType;
+    getEdgeAt(visNetwork: string, position: vis.Position): vis.IdType;
     /**
   * This function looks up the edges for a given nodeId.
   * The DOM values are relative to the network container -> DOM not Canvas coords.
@@ -669,5 +669,5 @@ export declare class VisNetworkService {
   *
   * @memberOf VisNetworkService
   */
-    public getConnectedEdges(visNetwork: string, nodeId: vis.IdType): vis.IdType[];
+    getConnectedEdges(visNetwork: string, nodeId: vis.IdType): vis.IdType[];
 }

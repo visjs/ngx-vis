@@ -14,14 +14,14 @@ export declare class VisTimelineService {
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public currentTimeTick: EventEmitter<any>;
+    currentTimeTick: EventEmitter<any>;
     /**
      * Fired when clicked inside the Timeline.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public click: EventEmitter<any>;
+    click: EventEmitter<any>;
     /**
      * Fired when right-clicked inside the Timeline.
      * Note that in order to prevent the context menu from showing up,
@@ -30,42 +30,42 @@ export declare class VisTimelineService {
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public contextmenu: EventEmitter<any>;
+    contextmenu: EventEmitter<any>;
     /**
      * Fired when double clicked inside the Timeline.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public doubleClick: EventEmitter<any>;
+    doubleClick: EventEmitter<any>;
     /**
      * 	Fired after the dragging of a group is finished.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public groupDragged: EventEmitter<any>;
+    groupDragged: EventEmitter<any>;
     /**
      * Fired once after each graph redraw.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public changed: EventEmitter<any>;
+    changed: EventEmitter<any>;
     /**
      * Fired repeatedly when the timeline window is being changed.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public rangechange: EventEmitter<any>;
+    rangechange: EventEmitter<any>;
     /**
      * Fired once after the timeline window has been changed.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public rangechanged: EventEmitter<any>;
+    rangechanged: EventEmitter<any>;
     /**
      * Fired after the user selects or deselects items by tapping or holding them.
      * When a use taps an already selected item, the select event is fired again.
@@ -74,21 +74,21 @@ export declare class VisTimelineService {
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public select: EventEmitter<any>;
+    select: EventEmitter<any>;
     /**
      * Fired when the user moves the mouse over an item.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public itemover: EventEmitter<any>;
+    itemover: EventEmitter<any>;
     /**
      * Fired when the user moves the mouse out of an item.
      *
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public itemout: EventEmitter<any>;
+    itemout: EventEmitter<any>;
     /**
      * Fired repeatedly when the user is dragging the custom time bar.
      * Only available when the custom time bar is enabled.
@@ -96,7 +96,7 @@ export declare class VisTimelineService {
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public timechange: EventEmitter<any>;
+    timechange: EventEmitter<any>;
     /**
      * Fired once after the user has dragged the custom time bar.
      * Only available when the custom time bar is enabled.
@@ -104,7 +104,7 @@ export declare class VisTimelineService {
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineService
      */
-    public timechanged: EventEmitter<any>;
+    timechanged: EventEmitter<any>;
     private timelines;
     /**
      * Creates a new timeline instance.
@@ -118,7 +118,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public createWithItems(visTimeline: string, container: HTMLElement, items: VisTimelineItems, options?: VisTimelineOptions): void;
+    createWithItems(visTimeline: string, container: HTMLElement, items: VisTimelineItems, options?: VisTimelineOptions): void;
     /**
      * Creates a new timeline instance.
      *
@@ -132,7 +132,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public createWithItemsAndGroups(visTimeline: string, container: HTMLElement, items: VisTimelineItems, groups: VisTimelineGroups, options?: VisTimelineOptions): void;
+    createWithItemsAndGroups(visTimeline: string, container: HTMLElement, items: VisTimelineItems, groups: VisTimelineGroups, options?: VisTimelineOptions): void;
     /**
      * Add new vertical bar representing a custom time that can be dragged by the user.
      * The id is added as CSS class name of the custom time bar,
@@ -147,7 +147,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public addCustomTime(visTimeline: string, time: VisDate, id?: VisId): VisId;
+    addCustomTime(visTimeline: string, time: VisDate, id?: VisId): VisId;
     /**
      * Adjust the visible window such that it fits all items.
      * See also function focus(id).
@@ -159,7 +159,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public fit(visTimeline: string, options?: VisTimelineAnimationOptions): void;
+    fit(visTimeline: string, options?: VisTimelineAnimationOptions): void;
     /**
      * Adjust the visible window such that the selected item is centered on screen.
      *
@@ -171,7 +171,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public focusOnId(visTimeline: string, id: VisId, options?: VisTimelineAnimationOptions): void;
+    focusOnId(visTimeline: string, id: VisId, options?: VisTimelineAnimationOptions): void;
     /**
      * Adjust the visible window such that the selected items are centered on screen.
      *
@@ -183,7 +183,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public focusOnIds(visTimeline: string, ids: VisId[], options?: VisTimelineAnimationOptions): void;
+    focusOnIds(visTimeline: string, ids: VisId[], options?: VisTimelineAnimationOptions): void;
     /**
      * Get the current time.
      * Only applicable when option showCurrentTime is true.
@@ -195,7 +195,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getCurrentTime(visTimeline: string): Date;
+    getCurrentTime(visTimeline: string): Date;
     /**
      * Retrieve the custom time from the custom time bar with given id.
      * Id is undefined by default.
@@ -208,7 +208,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getCustomTime(visTimeline: string, id?: VisId): Date;
+    getCustomTime(visTimeline: string, id?: VisId): Date;
     /**
      * Returns an Object with relevant properties from an event.
      *
@@ -220,7 +220,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getEventProperties(visTimeline: string, event: Event): VisTimelineEventPropertiesResult;
+    getEventProperties(visTimeline: string, event: Event): VisTimelineEventPropertiesResult;
     /**
      * Get the range of all the items as an object containing min: Date and max: Date.
      *
@@ -231,7 +231,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getItemRange(visTimeline: string): {
+    getItemRange(visTimeline: string): {
         min: Date;
         max: Date;
     };
@@ -245,7 +245,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getSelection(visTimeline: string): VisId[];
+    getSelection(visTimeline: string): VisId[];
     /**
      * Get an array with the ids of the currently visible items.
      *
@@ -256,7 +256,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getVisibleItems(visTimeline: string): VisId[];
+    getVisibleItems(visTimeline: string): VisId[];
     /**
      * Get the current visible window.
      *
@@ -267,7 +267,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public getWindow(visTimeline: string): {
+    getWindow(visTimeline: string): {
         start: Date;
         end: Date;
     };
@@ -282,7 +282,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public moveTo(visTimeline: string, time: VisDate, options?: VisTimelineAnimationOptions): void;
+    moveTo(visTimeline: string, time: VisDate, options?: VisTimelineAnimationOptions): void;
     /**
      * Force a redraw of the Timeline.
      * The size of all items will be recalculated.
@@ -295,7 +295,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public redraw(visTimeline: string): void;
+    redraw(visTimeline: string): void;
     /**
      * Remove vertical bars previously added to the timeline via addCustomTime method.
      *
@@ -306,7 +306,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public removeCustomTime(visTimeline: string, id: VisId): void;
+    removeCustomTime(visTimeline: string, id: VisId): void;
     /**
      * Set a current time.
      * This can be used for example to ensure that a client's time is synchronized
@@ -320,7 +320,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setCurrentTime(visTimeline: string, time: VisDate): void;
+    setCurrentTime(visTimeline: string, time: VisDate): void;
     /**
      * 	Adjust the time of a custom time bar.
      *
@@ -332,7 +332,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setCustomTime(visTimeline: string, time: VisDate, id?: VisId): void;
+    setCustomTime(visTimeline: string, time: VisDate, id?: VisId): void;
     /**
      * Adjust the title attribute of a custom time bar.
      *
@@ -345,7 +345,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setCustomTimeTitle(visTimeline: string, title: string, id?: VisId): void;
+    setCustomTimeTitle(visTimeline: string, title: string, id?: VisId): void;
     /**
      * Set both groups and items at once.
      * Both properties are optional.
@@ -362,7 +362,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setData(visTimeline: string, data: {
+    setData(visTimeline: string, data: {
         groups?: VisTimelineGroups;
         items?: VisTimelineItems;
     }): void;
@@ -378,7 +378,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setGroups(visTimeline: string, groups: VisTimelineGroups): void;
+    setGroups(visTimeline: string, groups: VisTimelineGroups): void;
     /**
      * Set a data set with items for the Timeline.
      *
@@ -389,7 +389,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setItems(visTimeline: string, items: VisTimelineItems): void;
+    setItems(visTimeline: string, items: VisTimelineItems): void;
     /**
      * Set or update options.
      * It is possible to change any option of the timeline at any time.
@@ -402,7 +402,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setOptions(visTimeline: string, options: VisTimelineOptions): void;
+    setOptions(visTimeline: string, options: VisTimelineOptions): void;
     /**
      * Select one item by its id.#
      * The currently selected items will be unselected.
@@ -414,7 +414,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setSelectionToId(visTimeline: string, id: VisId): void;
+    setSelectionToId(visTimeline: string, id: VisId): void;
     /**
      * Select multiple items by their id.
      * The currently selected items will be unselected.
@@ -427,7 +427,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setSelectionToIds(visTimeline: string, ids: VisId[]): void;
+    setSelectionToIds(visTimeline: string, ids: VisId[]): void;
     /**
      * Set the current visible window.
      *
@@ -442,7 +442,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public setWindow(visTimeline: string, start: VisDate, end: VisDate, options?: VisTimelineAnimationOptions): void;
+    setWindow(visTimeline: string, start: VisDate, end: VisDate, options?: VisTimelineAnimationOptions): void;
     /**
      * Destroy the Timeline.
      * The timeline is removed from memory.
@@ -452,7 +452,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public destroy(visTimeline: string): void;
+    destroy(visTimeline: string): void;
     /**
      * Activates an event.
      *
@@ -463,7 +463,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public on(visTimeline: string, eventName: VisTimelineEvents, preventDefault?: boolean): boolean;
+    on(visTimeline: string, eventName: VisTimelineEvents, preventDefault?: boolean): boolean;
     /**
      * Deactivates an event.
      *
@@ -472,7 +472,7 @@ export declare class VisTimelineService {
      *
      * @memberOf VisTimelineService
      */
-    public off(visTimeline: string, eventName: VisTimelineEvents): void;
+    off(visTimeline: string, eventName: VisTimelineEvents): void;
     private doesNotExistError(visTimeline);
     private alreadyExistsError(visTimeline);
 }
