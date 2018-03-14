@@ -6,7 +6,7 @@
 
 ### Bug Fixes
 
-* **tsc-error:** Resolve type error ([ee481bd](https://github.com/paulhindenberg/ngx-vis/commit/ee481bd))
+* **tsc-error:** Resolve type error ([ee481bd](https://github.com/hypery2k/ngx-vis/commit/ee481bd))
 * **tsc-error:** Resolve type error ([f9bdb79](https://github.com/hypery2k/ngx-vis/commit/f9bdb79))
 * **tslint:** Corrected linting errors ([dbbd13f](https://github.com/hypery2k/ngx-vis/commit/dbbd13f))
 

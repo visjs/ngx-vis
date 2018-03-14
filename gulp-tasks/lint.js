@@ -12,6 +12,8 @@ gulp.task('tslint', () =>
     .src(gitignore)
     .pipe(tslint({
         formatter: 'verbose',
+        fix: true,
+        exclude: 'components/*/*.d.ts',
         emitError: true,
         summarizeFailureOutput: true,
         reportLimit: 50

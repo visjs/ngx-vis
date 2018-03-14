@@ -11,6 +11,8 @@ import { VisTimelineService } from './vis-timeline.service';
  * @implements {OnChanges}
  */
 export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
+    private elementRef;
+    private visTimelineService;
     /**
      * The name or identifier of the timeline (must be unique in your application).
      * This property is used once on init and must not be changed.
@@ -58,8 +60,6 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
     public initialized: EventEmitter<any>;
     private visTimelineContainer;
     private isInitialized;
-    private elementRef;
-    private visTimelineService;
     /**
      * Creates an instance of VisTimelineDirective.
      *

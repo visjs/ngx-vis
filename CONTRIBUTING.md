@@ -35,7 +35,7 @@ Please follow these basic steps to simplify pull request reviews - if you don't 
 * Please ensure that the test suite passes **and** that code is lint free before submitting a PR by running:
  * ```npm test```
 * If you've added new functionality, **please** include tests which validate its behaviour
-* Make reference to possible [issues](https://github.com/paulhindenberg/ngx-vis/issues) on PR comment
+* Make reference to possible [issues](https://github.com/hypery2k/ngx-vis/issues) on PR comment
 
 ## <a name="rules"></a> Coding Rules
 
