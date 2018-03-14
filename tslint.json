@@ -1,6 +1,10 @@
 {
   "extends": "tslint:latest",
   "rules": {
+    "max-line-length": [
+      true,
+      180
+    ],
     "quotemark": false,
     "only-arrow-functions": false,
     "no-string-literal": false,

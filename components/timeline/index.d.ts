@@ -10,47 +10,47 @@ export interface VisTimelineOptions extends Vis.TimelineOptions {
 }
 export declare class VisTimelineItems extends Vis.DataSet<VisTimelineItem> {
     constructor(data?: VisTimelineItem[], options?: VisDataSetOptions);
-    getLength(): number;
-    add(data: VisTimelineItem | VisTimelineItem[], senderId?: VisId): VisId[];
-    clear(senderId?: VisId): VisId[];
-    distinct(field: string): any[];
-    flush(): void;
-    forEach(callback: (item: VisTimelineItem, id: VisId) => void, options?: VisItemSelectionOptions): void;
-    getAll(options?: VisItemSelectionOptions): VisTimelineItem[];
-    getById(id: VisId, options?: VisItemSelectionOptions): VisTimelineItem;
-    getByIds(ids: VisId[], options?: VisItemSelectionOptions): VisTimelineItem[];
-    getDataSet(): VisTimelineItems;
-    getIds(options?: VisItemSelectionOptions): VisId[];
-    map(callback: (item: VisTimelineItem, id: VisId) => any, options?: VisItemSelectionOptions): any[];
-    max(field: string): VisTimelineItem;
-    min(field: string): VisTimelineItem;
-    on(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
-    off(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
-    removeItems(ids: VisId[], senderId?: VisId): VisId[];
-    setOptions(options?: VisDataSetQueueOptions): void;
-    update(data: VisTimelineItem[], senderId?: VisId): VisId[];
+    public getLength(): number;
+    public add(data: VisTimelineItem | VisTimelineItem[], senderId?: VisId): VisId[];
+    public clear(senderId?: VisId): VisId[];
+    public distinct(field: string): any[];
+    public flush(): void;
+    public forEach(callback: (item: VisTimelineItem, id: VisId) => void, options?: VisItemSelectionOptions): void;
+    public getAll(options?: VisItemSelectionOptions): VisTimelineItem[];
+    public getById(id: VisId, options?: VisItemSelectionOptions): VisTimelineItem;
+    public getByIds(ids: VisId[], options?: VisItemSelectionOptions): VisTimelineItem[];
+    public getDataSet(): VisTimelineItems;
+    public getIds(options?: VisItemSelectionOptions): VisId[];
+    public map(callback: (item: VisTimelineItem, id: VisId) => any, options?: VisItemSelectionOptions): any[];
+    public max(field: string): VisTimelineItem;
+    public min(field: string): VisTimelineItem;
+    public on(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
+    public off(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
+    public removeItems(ids: VisId[], senderId?: VisId): VisId[];
+    public setOptions(options?: VisDataSetQueueOptions): void;
+    public update(data: VisTimelineItem[], senderId?: VisId): VisId[];
 }
 export declare class VisTimelineGroups extends Vis.DataSet<VisTimelineGroup> {
     constructor(data?: VisTimelineGroup[], options?: VisDataSetOptions);
-    getLength(): number;
-    add(data: VisTimelineGroup | VisTimelineGroup[], senderId?: VisId): VisId[];
-    clear(senderId?: VisId): VisId[];
-    distinct(field: string): any[];
-    flush(): void;
-    forEach(callback: (item: VisTimelineGroup, id: VisId) => void, options?: VisGroupSelectionOptions): void;
-    getAll(options?: VisGroupSelectionOptions): VisTimelineGroup[];
-    getById(id: VisId, options?: VisGroupSelectionOptions): VisTimelineGroup;
-    getByIds(ids: VisId[], options?: VisGroupSelectionOptions): VisTimelineGroup[];
-    getDataSet(): VisTimelineGroups;
-    getIds(options?: VisGroupSelectionOptions): VisId[];
-    map(callback: (item: VisTimelineGroup, id: VisId) => any, options?: VisGroupSelectionOptions): any[];
-    max(field: string): VisTimelineGroup;
-    min(field: string): VisTimelineGroup;
-    on(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
-    off(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
-    removeItems(ids: VisId[], senderId?: VisId): VisId[];
-    setOptions(options?: VisDataSetQueueOptions): void;
-    update(data: VisTimelineGroup[], senderId?: VisId): VisId[];
+    public getLength(): number;
+    public add(data: VisTimelineGroup | VisTimelineGroup[], senderId?: VisId): VisId[];
+    public clear(senderId?: VisId): VisId[];
+    public distinct(field: string): any[];
+    public flush(): void;
+    public forEach(callback: (item: VisTimelineGroup, id: VisId) => void, options?: VisGroupSelectionOptions): void;
+    public getAll(options?: VisGroupSelectionOptions): VisTimelineGroup[];
+    public getById(id: VisId, options?: VisGroupSelectionOptions): VisTimelineGroup;
+    public getByIds(ids: VisId[], options?: VisGroupSelectionOptions): VisTimelineGroup[];
+    public getDataSet(): VisTimelineGroups;
+    public getIds(options?: VisGroupSelectionOptions): VisId[];
+    public map(callback: (item: VisTimelineGroup, id: VisId) => any, options?: VisGroupSelectionOptions): any[];
+    public max(field: string): VisTimelineGroup;
+    public min(field: string): VisTimelineGroup;
+    public on(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
+    public off(event: string, callback: (event: string, properties: any, senderId: VisId) => void): void;
+    public removeItems(ids: VisId[], senderId?: VisId): VisId[];
+    public setOptions(options?: VisDataSetQueueOptions): void;
+    public update(data: VisTimelineGroup[], senderId?: VisId): VisId[];
 }
 export interface VisDataSetQueueOptions extends Vis.DataSetQueueOptions {
 }

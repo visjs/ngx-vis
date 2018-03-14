@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { VisTimelineService, VisTimelineItems } from '../../components/timeline';
+import { VisTimelineItems, VisTimelineService } from '../../components/timeline';
 
 @Component({
     selector: 'timeline-example',
@@ -41,7 +41,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
     public addItem(): void {
         const newLength = this.visTimelineItems.getLength() + 1;
         this.visTimelineItems.add(
-            {id: newLength, content: 'item ' + newLength, start: Date.now() }
+            {id: newLength, content: 'item ' + newLength, start: Date.now() },
         );
         this.visTimelineService.focusOnIds(this.visTimeline, [1, newLength]);
     }
@@ -53,7 +53,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
             {id: 3, content: 'item 3', start: '2016-04-18'},
             {id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19'},
             {id: 5, content: 'item 5', start: '2016-04-25'},
-            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'}
+            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'},
         ]);
     }
 

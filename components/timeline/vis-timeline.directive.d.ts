@@ -1,6 +1,6 @@
 import { ElementRef, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChange } from '@angular/core';
-import { VisTimelineService } from './vis-timeline.service';
 import { VisTimelineGroups, VisTimelineItems, VisTimelineOptions } from './index';
+import { VisTimelineService } from './vis-timeline.service';
 /**
  * Use this directive with a div container to show timeline data.
  *
@@ -11,8 +11,6 @@ import { VisTimelineGroups, VisTimelineItems, VisTimelineOptions } from './index
  * @implements {OnChanges}
  */
 export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
-    private elementRef;
-    private visTimelineService;
     /**
      * The name or identifier of the timeline (must be unique in your application).
      * This property is used once on init and must not be changed.
@@ -20,7 +18,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      * @type {string}
      * @memberOf VisTimelineDirective
      */
-    visTimeline: string;
+    public visTimeline: string;
     /**
      * The data that will be used to create the timeline.
      * Changes will be detected. If the reference changes then
@@ -29,7 +27,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      * @type {VisTimelineItems}
      * @memberOf VisTimelineDirective
      */
-    visTimelineItems: VisTimelineItems;
+    public visTimelineItems: VisTimelineItems;
     /**
      * The groups that will be used to create the timeline.
      * Changes will be detected. If the reference changes then
@@ -38,7 +36,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      * @type {VisTimelineGroups}
      * @memberOf VisTimelineDirective
      */
-    visTimelineGroups: VisTimelineGroups;
+    public visTimelineGroups: VisTimelineGroups;
     /**
      * The options that will be used with this timeline.
      * Changes will be detected. If the reference changes then
@@ -47,7 +45,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      * @type {VisTimelineOptions}
      * @memberOf VisTimelineDirective
      */
-    visTimelineOptions: VisTimelineOptions;
+    public visTimelineOptions: VisTimelineOptions;
     /**
      * This event will be raised when the timline is initialized.
      * At this point of time the timeline is successfully registered
@@ -57,9 +55,11 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      * @type {EventEmitter<any>}
      * @memberOf VisTimelineDirective
      */
-    initialized: EventEmitter<any>;
+    public initialized: EventEmitter<any>;
     private visTimelineContainer;
     private isInitialized;
+    private elementRef;
+    private visTimelineService;
     /**
      * Creates an instance of VisTimelineDirective.
      *
@@ -75,7 +75,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      *
      * @memberOf VisTimelineDirective
      */
-    ngOnInit(): void;
+    public ngOnInit(): void;
     /**
      * Update the timeline data, groups or options on reference changes to
      * the visTimelineItems, visTimelineGroups or visTimelineOptions properties.
@@ -84,7 +84,7 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      *
      * @memberOf VisTimelineDirective
      */
-    ngOnChanges(changes: {
+    public ngOnChanges(changes: {
         [propName: string]: SimpleChange;
     }): void;
     /**
@@ -93,6 +93,6 @@ export declare class VisTimelineDirective implements OnInit, OnDestroy, OnChange
      *
      * @memberOf VisTimelineDirective
      */
-    ngOnDestroy(): void;
+    public ngOnDestroy(): void;
     private createTimeline();
 }
