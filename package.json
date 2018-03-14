@@ -109,9 +109,6 @@
         "type": "git",
         "url": "git+https://github.com/hypery2k/ngx-vis.git"
     },
-    "publishConfig": {
-        "registry": "https://api.bintray.com/npm/awesome-inc/npm"
-    },
     "keywords": [
         "angular2",
         "ng2",
