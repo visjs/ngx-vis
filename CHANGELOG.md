@@ -1,4 +1,13 @@
-### Forked from:
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/hypery2k/ngx-vis/compare/v0.1.0...v0.2.0) (2018-03-14)
+
+
+### Bug Fixes
+
+* **tslint:** Fix tslint errors ([1943ff4](https://github.com/hypery2k/ngx-vis/commit/1943ff4))
+* **tslint:** Resolve tslint errors ([5b60716](https://github.com/hypery2k/ngx-vis/commit/5b60716))
+
+
 
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/hypery2k/ngx-vis/compare/v0.0.6...v0.1.0) (2017-11-01)
@@ -6,7 +15,6 @@
 
 ### Bug Fixes
 
-* **tsc-error:** Resolve type error ([ee481bd](https://github.com/hypery2k/ngx-vis/commit/ee481bd))
 * **tsc-error:** Resolve type error ([f9bdb79](https://github.com/hypery2k/ngx-vis/commit/f9bdb79))
 * **tslint:** Corrected linting errors ([dbbd13f](https://github.com/hypery2k/ngx-vis/commit/dbbd13f))
 
