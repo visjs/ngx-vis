@@ -2,6 +2,7 @@
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 /node_modules
 npm-debug.log
+.npmrc
 
 # type script artifacts
 /typings
@@ -22,17 +23,21 @@ npm-debug.log
 /demo/**/*.js.map
 /demo/**/*.d.ts
 !/demo/custom-typings.d.ts
-/components/**/*.js
-/components/**/*.js.map
-/components/**/*.d.ts
+#/components/**/*.js
+#/components/**/*.js.map
+#/components/**/*.d.ts
 ng2-vis.js
 ng2-vis.d.ts
-ng2-vis.metadata.json
+# ngx-vis.metadata.json
 ng2-vis.ngfactory.ts
 ng2-vis.js.map
 /logs
 
 # AoT generated files
 factories
-/**/*.metadata.json
+#/**/*.metadata.json
 /**/*.ngfactory.ts
+
+*.ngfactory.*
+*.ngsummary.json
+yarn.lock
