@@ -954,8 +954,6 @@ export class VisNetworkService {
     return this.networks[visNetwork].getEdgeAt(position);
   }
 
-
-
   /**
 * This function looks up the edges for a given nodeId.
 * The DOM values are relative to the network container -> DOM not Canvas coords.
