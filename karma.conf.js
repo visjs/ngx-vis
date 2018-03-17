@@ -3,9 +3,35 @@
  */
 'use strict';
 
-// Look in ./config for karma.conf.js
-const config = require('./.ng2-config');
+var pkg = require('./package.json');
 
-config.src = '/';
+// Look in ./config for karma.conf.js
+const config = {
+    src: '/',
+    // metadata
+    title: pkg.description,
+    baseUrl: '/',
+    // root folder name
+    src: 'demo',
+    dist: 'demo-build',
+    htmlIndexes: ['index.html'],
+    // karma bundle src
+    spec: './spec-bundle.js',
+    // webpack entry
+    entry: {
+        polyfills: './demo/polyfills.ts',
+        vendor: './demo/vendor.ts',
+        main: './demo/index.ts'
+    },
+    commonChunks: {
+        name: ['polyfills', 'vendor'].reverse()
+    },
+    // webpack alias
+    alias: {},
+    copy: [
+        { from: 'demo/favicon.ico', to: 'favicon.ico' },
+        { from: 'demo/assets', to: 'assets' }
+    ]
+};
 
 module.exports = require('./.config/karma.conf')(config);
