@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/hypery2k/ngx-vis/compare/v0.2.0...v0.3.0) (2018-03-17)
+
+
+### Features
+
+* **networkservice:** Adding networkservice methods ([81990b7](https://github.com/hypery2k/ngx-vis/commit/81990b7)), closes [#69](https://github.com/hypery2k/ngx-vis/issues/69)
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/hypery2k/ngx-vis/compare/v0.1.0...v0.2.0) (2018-03-14)
 
