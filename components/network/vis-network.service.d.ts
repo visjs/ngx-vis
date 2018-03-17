@@ -1,5 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import * as vis from "vis";
+import { VisMoveToOptions } from '..';
 import { VisClusterOptions, VisEdgeOptions, VisFitOptions, VisId, VisNetworkData, VisNetworkEvents, VisNetworkOptions, VisNodeOptions, VisOpenClusterOptions } from './index';
 /**
  * A service to create, manage and control VisNetwork instances.
@@ -670,4 +671,47 @@ export declare class VisNetworkService {
   * @memberOf VisNetworkService
   */
     getConnectedEdges(visNetwork: string, nodeId: vis.IdType): vis.IdType[];
+    /**
+   * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
+   * If you supply an edgeId, vis will first match the id to nodes.
+   * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param nodeOrEdgeId a node or edge id
+   * @returns {VisId[]} Return array of node ids
+   */
+    getConnectedNodes(visNetwork: string, nodeOrEdgeId: vis.IdType): vis.IdType[] | {
+        fromId: vis.IdType;
+        toId: vis.IdType;
+    }[];
+    /**
+     * Returns the positions of the nodes.
+     * @param {string} visNetwork The network name/identifier.
+     * @param {Array.<Node.id>|String} [ids]  --> optional, can be array of nodeIds, can be string
+     * @returns {{}}
+     */
+    getPositions(visNetwork: string, nodeIds: VisId[]): {
+        [nodeId: string]: vis.Position;
+    };
+    /**
+     * You can animate or move the camera using the moveTo method.
+     *
+     * @param {string} visNetwork The network name/identifier.
+     * @param {VisFocusOptions} options Options for moveTo function.
+     */
+    moveTo(visNetwork: string, moveToOptions: VisMoveToOptions): void;
+    /**
+     * Start the physics simulation.
+     * This is normally done whenever needed and is only really useful
+     * if you stop the simulation yourself and wish to continue it afterwards.
+     * @param {string} visNetwork The network name/identifier.
+     */
+    startSimulation(visNetwork: string): void;
+    /**
+     * This stops the physics simulation and triggers a stabilized event.
+     * Tt can be restarted by dragging a node,
+     * altering the dataset or calling startSimulation().
+     * @param {string} visNetwork The network name/identifier.
+     */
+    stopSimulation(visNetwork: string): void;
 }

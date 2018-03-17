@@ -1661,6 +1661,120 @@ var VisNetworkService = /** @class */ (function () {
     function (visNetwork, nodeId) {
         return this.networks[visNetwork].getConnectedEdges(nodeId);
     };
+    /**
+   * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
+   * If you supply an edgeId, vis will first match the id to nodes.
+   * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param nodeOrEdgeId a node or edge id
+   * @returns {VisId[]} Return array of node ids
+   */
+    /**
+     * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
+     * If you supply an edgeId, vis will first match the id to nodes.
+     * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
+     *
+     * @param {string} visNetwork The network name/identifier.
+     * @param nodeOrEdgeId a node or edge id
+     * @returns {VisId[]} Return array of node ids
+     */
+    VisNetworkService.prototype.getConnectedNodes = /**
+     * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
+     * If you supply an edgeId, vis will first match the id to nodes.
+     * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
+     *
+     * @param {string} visNetwork The network name/identifier.
+     * @param nodeOrEdgeId a node or edge id
+     * @returns {VisId[]} Return array of node ids
+     */
+    function (visNetwork, nodeOrEdgeId) {
+        return this.networks[visNetwork].getConnectedNodes(nodeOrEdgeId);
+    };
+    /**
+     * Returns the positions of the nodes.
+     * @param {string} visNetwork The network name/identifier.
+     * @param {Array.<Node.id>|String} [ids]  --> optional, can be array of nodeIds, can be string
+     * @returns {{}}
+     */
+    /**
+       * Returns the positions of the nodes.
+       * @param {string} visNetwork The network name/identifier.
+       * @param {Array.<Node.id>|String} [ids]  --> optional, can be array of nodeIds, can be string
+       * @returns {{}}
+       */
+    VisNetworkService.prototype.getPositions = /**
+       * Returns the positions of the nodes.
+       * @param {string} visNetwork The network name/identifier.
+       * @param {Array.<Node.id>|String} [ids]  --> optional, can be array of nodeIds, can be string
+       * @returns {{}}
+       */
+    function (visNetwork, nodeIds) {
+        return this.networks[visNetwork].getPositions(nodeIds);
+    };
+    /**
+     * You can animate or move the camera using the moveTo method.
+     *
+     * @param {string} visNetwork The network name/identifier.
+     * @param {VisFocusOptions} options Options for moveTo function.
+     */
+    /**
+       * You can animate or move the camera using the moveTo method.
+       *
+       * @param {string} visNetwork The network name/identifier.
+       * @param {VisFocusOptions} options Options for moveTo function.
+       */
+    VisNetworkService.prototype.moveTo = /**
+       * You can animate or move the camera using the moveTo method.
+       *
+       * @param {string} visNetwork The network name/identifier.
+       * @param {VisFocusOptions} options Options for moveTo function.
+       */
+    function (visNetwork, moveToOptions) {
+        return this.networks[visNetwork].moveTo(moveToOptions);
+    };
+    /**
+     * Start the physics simulation.
+     * This is normally done whenever needed and is only really useful
+     * if you stop the simulation yourself and wish to continue it afterwards.
+     * @param {string} visNetwork The network name/identifier.
+     */
+    /**
+       * Start the physics simulation.
+       * This is normally done whenever needed and is only really useful
+       * if you stop the simulation yourself and wish to continue it afterwards.
+       * @param {string} visNetwork The network name/identifier.
+       */
+    VisNetworkService.prototype.startSimulation = /**
+       * Start the physics simulation.
+       * This is normally done whenever needed and is only really useful
+       * if you stop the simulation yourself and wish to continue it afterwards.
+       * @param {string} visNetwork The network name/identifier.
+       */
+    function (visNetwork) {
+        return this.networks[visNetwork].startSimulation();
+    };
+    /**
+     * This stops the physics simulation and triggers a stabilized event.
+     * Tt can be restarted by dragging a node,
+     * altering the dataset or calling startSimulation().
+     * @param {string} visNetwork The network name/identifier.
+     */
+    /**
+       * This stops the physics simulation and triggers a stabilized event.
+       * Tt can be restarted by dragging a node,
+       * altering the dataset or calling startSimulation().
+       * @param {string} visNetwork The network name/identifier.
+       */
+    VisNetworkService.prototype.stopSimulation = /**
+       * This stops the physics simulation and triggers a stabilized event.
+       * Tt can be restarted by dragging a node,
+       * altering the dataset or calling startSimulation().
+       * @param {string} visNetwork The network name/identifier.
+       */
+    function (visNetwork) {
+        return this.networks[visNetwork].stopSimulation();
+    };
     VisNetworkService.decorators = [
         { type: core_1.Injectable },
     ];

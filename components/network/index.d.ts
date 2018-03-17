@@ -2,6 +2,7 @@ import * as Vis from 'vis';
 import { VisDataSetOptions, VisDataSetQueueOptions, VisId } from '../timeline/index';
 export { VisId } from '../timeline/index';
 export declare type VisNetworkEvents = Vis.NetworkEvents;
+export declare type VisMoveToOptions = Vis.MoveToOptions;
 export interface VisClusterOptions extends Vis.ClusterOptions {
 }
 export interface VisOpenClusterOptions extends Vis.OpenClusterOptions {
