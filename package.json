@@ -57,7 +57,7 @@
         "@angular/platform-server": "5.2.9",
         "@angular/router": "5.2.9",
         "@types/jasmine": "^2.5.46",
-        "@types/node": "9.6.1",
+        "@types/node": "9.6.2",
         "@types/webpack": "^4.1.1",
         "angular2-template-loader": "^0.6.2",
         "awesome-typescript-loader": "^3.1.2",
