@@ -8,7 +8,7 @@
 [![David](https://img.shields.io/david/dev/hypery2k/ngx-vis.svg)]()
 [![David](https://img.shields.io/david/peer/hypery2k/ngx-vis.svg)]()
 
-An angular 2/4 vis.js project (in a very early development stage)
+An angular 2/4/5 vis.js project (in a very early development stage)
 
 Plugin is still **WIP**
 
@@ -16,7 +16,17 @@ Plugin is still **WIP**
 
 # Usage
 
-
+<a name="donation"></a>
+> Feel free to **donate**
+>
+> <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H8TR8246RCDJG">
+> <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/>
+> </img></a>
+> Or donate Bitcoins: bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D
+>
+> [![Bitcoin](https://martinreinhardt-online.de/bitcoin.png)](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D)
+>
+> Also via [greenaddress](https://greenaddress.it/pay/GA3ZPfh7As3Gc2oP6pQ1njxMij88u/)
 
 
 ## Installation

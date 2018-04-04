@@ -4,9 +4,6 @@ language: node_js
 
 env:
   matrix:
-    - NODE_VERSION="4" NPM_VERSION="3"
-    - NODE_VERSION="5" NPM_VERSION="3"
-    - NODE_VERSION="5" NPM_VERSION="3"
     - NODE_VERSION="6" NPM_VERSION="3"
     - NODE_VERSION="6" NPM_VERSION="4"
     - NODE_VERSION="7" NPM_VERSION="3"
@@ -19,6 +16,10 @@ before_install:
   - nvm install $NODE_VERSION && nvm use $NODE_VERSION
   - npm install -g npm@$NPM_VERSION
 
+before_script:
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
 script:
   - npm test
 
@@ -26,6 +27,7 @@ after_success:
   - ./node_modules/.bin/codecov  -f coverage/coverage-final.json
 
 addons:
+  chrome: stable
   firefox: "42.0"
   apt:
     sources:

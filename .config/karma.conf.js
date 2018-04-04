@@ -5,10 +5,11 @@
 
 const testWebpackFn = require('./webpack.test.js');
 
+// karma.conf.js
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = function localConf(conf) {
     const testWebpackConfig = testWebpackFn(conf);
-
-    return karmaConf;
 
     function karmaConf(config) {
         config.set({
@@ -96,7 +97,7 @@ module.exports = function localConf(conf) {
                     ]
                 }
             },
-            browsers: ['Chrome'],
+            browsers: ['Chrome', 'ChromeHeadless'],
 
             /*
              * Continuous Integration mode
@@ -104,5 +105,10 @@ module.exports = function localConf(conf) {
              */
             singleRun: true
         });
+
+        if(process.env.TRAVIS) {
+          config.browsers = ['ChromeHeadless'];
+        }
     }
+    return karmaConf;
 };
