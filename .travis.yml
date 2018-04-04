@@ -1,14 +1,23 @@
+sudo: required
+dist: trusty
 language: node_js
 
 env:
-  - NODE_VERSION=6
-  - NODE_VERSION=8
-  
-before_install: 
-  - nvm install $NODE_VERSION
-  - npm i -g npm@latest
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  matrix:
+    - NODE_VERSION="4" NPM_VERSION="3"
+    - NODE_VERSION="5" NPM_VERSION="3"
+    - NODE_VERSION="5" NPM_VERSION="3"
+    - NODE_VERSION="6" NPM_VERSION="3"
+    - NODE_VERSION="6" NPM_VERSION="4"
+    - NODE_VERSION="7" NPM_VERSION="3"
+    - NODE_VERSION="7" NPM_VERSION="4"
+    - NODE_VERSION="8" NPM_VERSION="5"
+    - NODE_VERSION="9" NPM_VERSION="5"
+
+before_install:
+  # Prepare node and npm
+  - nvm install $NODE_VERSION && nvm use $NODE_VERSION
+  - npm install -g npm@$NPM_VERSION
 
 script:
   - npm test
