@@ -5,7 +5,7 @@ properties properties: [
 @Library('mare-build-library')
 def nodeJS = new de.mare.ci.jenkins.NodeJS()
 
-node {
+node('nodejs') {
   def buildNumber = env.BUILD_NUMBER
   def branchName = env.BRANCH_NAME
   def workspace = env.WORKSPACE
