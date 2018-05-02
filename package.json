@@ -23,7 +23,7 @@
         "clean": "npm run flow.clean",
         "build": "npm run flow.compile",
         "pretest": "npm run flow.lint",
-        "test": "karma start --browser=ChromeHeadless",
+        "test": "karma start --browsers=ChromeHeadless",
         "test:watch": "cross-env NODE_ENV=test karma start --auto-watch --no-single-run",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
         "changelog:add": "git add CHANGELOG.md && git commit -m 'chore(changelog): Updated CHANGELOG.md'",
