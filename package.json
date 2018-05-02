@@ -54,7 +54,7 @@
         "@angular/forms": "5.2.9",
         "@angular/platform-browser": "5.2.9",
         "@angular/platform-browser-dynamic": "5.2.9",
-        "@angular/platform-server": "5.2.9",
+        "@angular/platform-server": "5.2.10",
         "@angular/router": "5.2.9",
         "@types/jasmine": "^2.5.46",
         "@types/node": "9.6.6",
