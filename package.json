@@ -41,21 +41,21 @@
         "@types/vis": "4.21.3"
     },
     "peerDependencies": {
-        "@angular/common": "^2.4.0 || >=4.0.0",
-        "@angular/core": "^2.4.0 || >=4.0.0",
-        "@angular/compiler": "^2.4.0 || >=4.0.0"
+        "@angular/common": "^2.4.0 || >=4.0.0 || >=5.0.0",
+        "@angular/core": "^2.4.0 || >=4.0.0 || >=5.0.0",
+        "@angular/compiler": "^2.4.0 || >=4.0.0 || >=5.0.0"
     },
     "devDependencies": {
-        "@angular/animations": "5.2.9",
-        "@angular/common": "5.2.9",
-        "@angular/compiler": "5.2.9",
-        "@angular/compiler-cli": "5.2.9",
-        "@angular/core": "5.2.9",
-        "@angular/forms": "5.2.9",
-        "@angular/platform-browser": "5.2.9",
-        "@angular/platform-browser-dynamic": "5.2.9",
+        "@angular/animations": "5.2.10",
+        "@angular/common": "5.2.10",
+        "@angular/compiler": "5.2.10",
+        "@angular/compiler-cli": "5.2.10",
+        "@angular/core": "5.2.10",
+        "@angular/forms": "5.2.10",
+        "@angular/platform-browser": "5.2.10",
+        "@angular/platform-browser-dynamic": "5.2.10",
         "@angular/platform-server": "5.2.10",
-        "@angular/router": "5.2.9",
+        "@angular/router": "5.2.10",
         "@types/jasmine": "^2.5.46",
         "@types/node": "9.6.6",
         "@types/webpack": "^4.1.1",
