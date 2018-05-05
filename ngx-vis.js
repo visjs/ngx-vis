@@ -17,8 +17,6 @@ var VisModule = /** @class */ (function () {
                     providers: [index_1.VisNetworkService, index_2.VisTimelineService],
                 },] },
     ];
-    /** @nocollapse */
-    VisModule.ctorParameters = function () { return []; };
     return VisModule;
 }());
 exports.VisModule = VisModule;
