@@ -1,3 +1,14 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/hypery2k/ngx-vis/compare/v0.3.1...v1.0.0) (2018-05-05)
+
+
+### Features
+
+* **Angular 6:** Adding support for Angular 6 ([8b0dea8](https://github.com/hypery2k/ngx-vis/commit/8b0dea8))
+* **Angular 6:** Prepare Support for Angular 6 ([6ba8704](https://github.com/hypery2k/ngx-vis/commit/6ba8704))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/hypery2k/ngx-vis/compare/v0.3.0...v0.3.1) (2018-04-04)
 
