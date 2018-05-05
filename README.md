@@ -14,8 +14,6 @@ Plugin is still **WIP**
 
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
 
-# Usage
-
 <a name="donation"></a>
 > Feel free to **donate**
 >
@@ -28,6 +26,8 @@ Plugin is still **WIP**
 >
 > Also via [greenaddress](https://greenaddress.it/pay/GA3ZPfh7As3Gc2oP6pQ1njxMij88u/)
 
+
+# Usage
 
 ## Installation
 

@@ -12,6 +12,7 @@ env:
     - NODE_VERSION="9" NPM_VERSION="5"
 
 before_install:
+  - pip install --user codecov
   # Prepare node and npm
   - nvm install $NODE_VERSION && nvm use $NODE_VERSION
   - npm install -g npm@$NPM_VERSION
