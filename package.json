@@ -1,6 +1,6 @@
 {
     "name": "ngx-vis",
-    "version": "0.3.1",
+    "version": "1.0.0",
     "main": "ngx-vis",
     "types": "ngx-vis.d.ts",
     "description": "Angular x components for using vis.js",
