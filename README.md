@@ -2,6 +2,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/ngx-vis.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/hypery2k/ngx-vis.svg?branch=develop)](https://travis-ci.org/hypery2k/ngx-vis)
+[![Donate with Bitcoin](https://martinreinhardt-online.de/assets/img/button-badge-bitcoin.svg)](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D)
+
 [![npm version](https://badge.fury.io/js/ngx-vis.svg)](https://badge.fury.io/js/ngx-vis)
 [![codecov.io](https://codecov.io/github/hypery2k/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/hypery2k/ngx-vis?branch=master)
 [![David](https://img.shields.io/david/hypery2k/ngx-vis.svg)]()
