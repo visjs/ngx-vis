@@ -10,9 +10,7 @@
 [![David](https://img.shields.io/david/dev/hypery2k/ngx-vis.svg)]()
 [![David](https://img.shields.io/david/peer/hypery2k/ngx-vis.svg)]()
 
-An angular 2/4/5 vis.js project (in a very early development stage)
-
-Plugin is still **WIP**
+An angular 2+ vis.js project 
 
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
 
