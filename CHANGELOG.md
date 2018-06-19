@@ -1,3 +1,15 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/hypery2k/ngx-vis/compare/v1.0.0...v1.0.1) (2018-06-19)
+
+
+### Bug Fixes
+
+* **build:** Corrected dependencies ([0574f7e](https://github.com/hypery2k/ngx-vis/commit/0574f7e))
+* **package:** update [@types](https://github.com/types)/vis to version 4.21.4 ([d2073b9](https://github.com/hypery2k/ngx-vis/commit/d2073b9))
+* **package:** update [@types](https://github.com/types)/vis to version 4.21.5 ([997cdcb](https://github.com/hypery2k/ngx-vis/commit/997cdcb))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/hypery2k/ngx-vis/compare/v0.3.1...v1.0.0) (2018-05-05)
 
