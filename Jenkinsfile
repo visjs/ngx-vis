@@ -38,8 +38,10 @@ node('nodejs') {
       // junit '*/target/tests.js.xml'
     }
 
-    stage('Publish NPM snapshot') {
-      nodeJS.publishSnapshot('.', buildNumber, branchName)
+    if(git.isDevelopBranch() || git.isFeatureBranch()){
+      stage('Publish NPM snapshot') {
+        nodeJS.publishSnapshot('.', buildNumber, branchName)
+      }
     }
 
   } catch (e) {
