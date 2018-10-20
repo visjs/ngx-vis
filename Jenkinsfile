@@ -28,6 +28,10 @@ node('nodejs') {
       sh "npm install && npm run build"
     }
 
+    stage('Security Checks') {
+      sh "npm run audit"
+    }
+
     stage('Test') {
       sh "npm run test"
       // junit '*/target/tests.js.xml'

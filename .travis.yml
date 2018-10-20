@@ -16,12 +16,15 @@ before_install:
   # Prepare node and npm
   - nvm install $NODE_VERSION && nvm use $NODE_VERSION
   - npm install -g npm@$NPM_VERSION
+  - npm install
 
 before_script:
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
+  - npm run build
+  - npm audit
   - npm test
 
 after_success:
