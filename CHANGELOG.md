@@ -1,3 +1,24 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/hypery2k/ngx-vis/compare/v1.0.1...v2.0.0) (2018-10-20)
+
+
+### Bug Fixes
+
+* **Build:** Corrected Jenkins build ([88ded19](https://github.com/hypery2k/ngx-vis/commit/88ded19))
+
+
+### Features
+
+* **Angular:** Drop support for older version of Angular ([7162bbd](https://github.com/hypery2k/ngx-vis/commit/7162bbd))
+* **Security:** Run `npm audit` in CI ([e383694](https://github.com/hypery2k/ngx-vis/commit/e383694))
+
+
+### BREAKING CHANGES
+
+* **Angular:** The package will only support Angular 5+ because with this version metadata v4 was introduced, see #115
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/hypery2k/ngx-vis/compare/v1.0.0...v1.0.1) (2018-06-19)
 
