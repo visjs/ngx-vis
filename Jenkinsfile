@@ -25,15 +25,16 @@ node('nodejs') {
     }
 
     stage('Build') {
-      sh "npm install && npm run build"
+      nodeJS.nvm('install')
+      nodeJS.nvmRun('build')
     }
 
     stage('Security Checks') {
-      sh "npm audit"
+      nodeJS.nvm('audit')
     }
 
     stage('Test') {
-      sh "npm run test"
+      nodeJS.nvmRun('test')
       // junit '*/target/tests.js.xml'
     }
 
