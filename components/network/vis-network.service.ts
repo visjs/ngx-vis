@@ -485,7 +485,7 @@ export class VisNetworkService {
    * @memberOf VisNetworkService
    */
   public setSelection(visNetwork: string, selection: { nodes: VisId[], edges: VisId[] },
-                      options: { unselectAll?: boolean, highlightEdges?: boolean } = {}): void {
+    options: { unselectAll?: boolean, highlightEdges?: boolean } = {}): void {
     if (this.networks[visNetwork]) {
       this.networks[visNetwork].setSelection(selection, options);
     } else {
@@ -587,6 +587,25 @@ export class VisNetworkService {
   public redraw(visNetwork: string): void {
     if (this.networks[visNetwork]) {
       this.networks[visNetwork].redraw();
+    } else {
+      throw new Error(`Network with id ${visNetwork} not found.`);
+    }
+  }
+
+  /**
+   * Go into addNode mode. Having edit mode or manipulation enabled is not required. 
+   * To get out of this mode, call disableEditMode(). The callback functions defined in handlerFunctions still apply. 
+   * To use these methods without having the manipulation GUI, make sure you set enabled to false.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   *
+   * @throws {Error} Thrown when the network does not exist.
+   *
+   * @memberOf VisNetworkService
+   */
+  public addNodeMode(visNetwork: string): void {
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].addNodeMode();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
@@ -1042,5 +1061,23 @@ export class VisNetworkService {
    */
   public stopSimulation(visNetwork: string) {
     return this.networks[visNetwork].stopSimulation();
+  }
+
+  /**
+   * Returns the current scale of the network. 1.0 is comparible to 100%, 0 is zoomed out infinitely.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {VisFitOptions} [options] Options to customize.
+   *
+   * @throws {Error} Thrown when the network does not exist.
+   *
+   * @memberOf VisNetworkService
+   */
+  public getScale(visNetwork: string): void {
+    if (this.networks[visNetwork]) {
+      this.networks[visNetwork].getScale();
+    } else {
+      throw new Error(`Network with id ${visNetwork} not found.`);
+    }
   }
 }
