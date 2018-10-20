@@ -4,6 +4,7 @@ properties properties: [
 
 @Library('mare-build-library')
 def nodeJS = new de.mare.ci.jenkins.NodeJS()
+def git = new de.mare.ci.jenkins.Git()
 
 node('nodejs') {
   def buildNumber = env.BUILD_NUMBER
