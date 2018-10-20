@@ -29,7 +29,7 @@ node('nodejs') {
     }
 
     stage('Security Checks') {
-      sh "npm run audit"
+      sh "npm audit"
     }
 
     stage('Test') {
