@@ -4,6 +4,7 @@ properties properties: [
 
 @Library('mare-build-library')
 def nodeJS = new de.mare.ci.jenkins.NodeJS()
+def git = new de.mare.ci.jenkins.Git()
 
 node('nodejs') {
   def buildNumber = env.BUILD_NUMBER
@@ -25,16 +26,23 @@ node('nodejs') {
     }
 
     stage('Build') {
-      sh "npm install && npm run build"
+      nodeJS.nvm('install')
+      nodeJS.nvmRun('build')
+    }
+
+    stage('Security Checks') {
+      nodeJS.nvm('audit')
     }
 
     stage('Test') {
-      sh "npm run test"
+      nodeJS.nvmRun('test')
       // junit '*/target/tests.js.xml'
     }
 
-    stage('Publish NPM snapshot') {
-      nodeJS.publishSnapshot('.', buildNumber, branchName)
+    if(git.isDevelopBranch() || git.isFeatureBranch()){
+      stage('Publish NPM snapshot') {
+        nodeJS.publishSnapshot('.', buildNumber, branchName)
+      }
     }
 
   } catch (e) {
