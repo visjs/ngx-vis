@@ -1073,9 +1073,9 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public getScale(visNetwork: string): void {
+  public getScale(visNetwork: string): number {
     if (this.networks[visNetwork]) {
-      this.networks[visNetwork].getScale();
+      return this.networks[visNetwork].getScale();
     } else {
       throw new Error(`Network with id ${visNetwork} not found.`);
     }
