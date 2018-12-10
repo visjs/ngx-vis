@@ -88,7 +88,7 @@
         "null-loader": "^0.1.1",
         "pre-commit": "^1.2.2",
         "puppeteer": "1.11.0",
-        "raw-loader": "^0.5.1",
+        "raw-loader": "^1.0.0",
         "reflect-metadata": "^0.1.10",
         "require-dir": "^1.2.0",
         "rimraf": "^2.6.1",
