@@ -1,4 +1,14 @@
-<a name="2.0.0"></a>
+## [2.0.1](https://github.com/hypery2k/ngx-vis/compare/v2.0.0...v2.0.1) (2018-12-15)
+
+
+### Bug Fixes
+
+* **Build:** Resolve puppeteer issue ([f71e47f](https://github.com/hypery2k/ngx-vis/commit/f71e47f)), closes [#136](https://github.com/hypery2k/ngx-vis/issues/136)
+* **getScale:** Fixed returned output of getScale method ([e74fbcc](https://github.com/hypery2k/ngx-vis/commit/e74fbcc)), closes [#143](https://github.com/hypery2k/ngx-vis/issues/143)
+* **package:** update [@types](https://github.com/types)/vis to version 4.21.9 ([05b45ff](https://github.com/hypery2k/ngx-vis/commit/05b45ff))
+
+
+
 # [2.0.0](https://github.com/hypery2k/ngx-vis/compare/v1.0.1...v2.0.0) (2018-10-20)
 
 
@@ -19,7 +29,6 @@
 
 
 
-<a name="1.0.1"></a>
 ## [1.0.1](https://github.com/hypery2k/ngx-vis/compare/v1.0.0...v1.0.1) (2018-06-19)
 
 
@@ -31,7 +40,6 @@
 
 
 
-<a name="1.0.0"></a>
 # [1.0.0](https://github.com/hypery2k/ngx-vis/compare/v0.3.1...v1.0.0) (2018-05-05)
 
 
@@ -42,7 +50,6 @@
 
 
 
-<a name="0.3.1"></a>
 ## [0.3.1](https://github.com/hypery2k/ngx-vis/compare/v0.3.0...v0.3.1) (2018-04-04)
 
 
@@ -53,7 +60,6 @@
 
 
 
-<a name="0.3.0"></a>
 # [0.3.0](https://github.com/hypery2k/ngx-vis/compare/v0.2.0...v0.3.0) (2018-03-17)
 
 
@@ -63,7 +69,6 @@
 
 
 
-<a name="0.2.0"></a>
 # [0.2.0](https://github.com/hypery2k/ngx-vis/compare/v0.1.0...v0.2.0) (2018-03-14)
 
 
@@ -74,7 +79,6 @@
 
 
 
-<a name="0.1.0"></a>
 # [0.1.0](https://github.com/hypery2k/ngx-vis/compare/v0.0.6...v0.1.0) (2017-11-01)
 
 
@@ -91,67 +95,54 @@
 
 
 
-<a name="0.0.6"></a>
 ## [0.0.6](https://github.com/hypery2k/ngx-vis/compare/v0.0.6-pre...v0.0.6) (2017-03-18)
 
 
 
-<a name="0.0.6-pre"></a>
 ## [0.0.6-pre](https://github.com/hypery2k/ngx-vis/compare/v0.0.5...v0.0.6-pre) (2017-03-18)
 
 
 
-<a name="0.0.5"></a>
 ## [0.0.5](https://github.com/hypery2k/ngx-vis/compare/v0.0.4...v0.0.5) (2016-12-13)
 
 
 
-<a name="0.0.4"></a>
 ## [0.0.4](https://github.com/hypery2k/ngx-vis/compare/v0.0.3...v0.0.4) (2016-12-04)
 
 
 
-<a name="0.0.3"></a>
 ## [0.0.3](https://github.com/hypery2k/ngx-vis/compare/v0.0.3-develop...v0.0.3) (2016-11-29)
 
 
 
-<a name="0.0.3-develop"></a>
 ## [0.0.3-develop](https://github.com/hypery2k/ngx-vis/compare/v0.0.2...v0.0.3-develop) (2016-11-18)
 
 
 
-<a name="0.0.2"></a>
 ## [0.0.2](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-6...v0.0.2) (2016-11-08)
 
 
 
-<a name="0.0.1-6"></a>
 ## [0.0.1-6](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-5...v0.0.1-6) (2016-11-05)
 
 
 
-<a name="0.0.1-5"></a>
 ## [0.0.1-5](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-4...v0.0.1-5) (2016-11-05)
 
 
 
-<a name="0.0.1-4"></a>
 ## [0.0.1-4](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-3...v0.0.1-4) (2016-11-05)
 
 
 
-<a name="0.0.1-3"></a>
 ## [0.0.1-3](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-2...v0.0.1-3) (2016-11-04)
 
 
 
-<a name="0.0.1-2"></a>
 ## [0.0.1-2](https://github.com/hypery2k/ngx-vis/compare/v0.0.1-1...v0.0.1-2) (2016-11-04)
 
 
 
-<a name="0.0.1-1"></a>
 ## 0.0.1-1 (2016-11-04)
 
 
