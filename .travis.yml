@@ -24,7 +24,7 @@ before_script:
 
 script:
   - npm run build
-  - npm audit
+  - npm run check
   - npm test
 
 after_success:

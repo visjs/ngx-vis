@@ -31,7 +31,7 @@ node('nodejs') {
     }
 
     stage('Security Checks') {
-      nodeJS.nvm('audit')
+      nodeJS.nvmRun('check')
     }
 
     stage('Test') {
