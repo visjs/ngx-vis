@@ -1,3 +1,19 @@
+# [2.1.0](https://github.com/hypery2k/ngx-vis/compare/v2.0.1...v2.1.0) (2019-02-26)
+
+
+### Bug Fixes
+
+* **Security:** Resolve security issues ([404d2a7](https://github.com/hypery2k/ngx-vis/commit/404d2a7))
+* **TSLint:** Corrected linting errors ([7637888](https://github.com/hypery2k/ngx-vis/commit/7637888))
+
+
+### Features
+
+* **Events:** Added support for vis events ([#181](https://github.com/hypery2k/ngx-vis/issues/181)) ([2bf0a1b](https://github.com/hypery2k/ngx-vis/commit/2bf0a1b))
+* **Security:** Update dependencies to resolve security issues ([8e66970](https://github.com/hypery2k/ngx-vis/commit/8e66970))
+
+
+
 ## [2.0.1](https://github.com/hypery2k/ngx-vis/compare/v2.0.0...v2.0.1) (2018-12-15)
 
 
@@ -5,7 +21,7 @@
 
 * **Build:** Resolve puppeteer issue ([f71e47f](https://github.com/hypery2k/ngx-vis/commit/f71e47f)), closes [#136](https://github.com/hypery2k/ngx-vis/issues/136)
 * **getScale:** Fixed returned output of getScale method ([e74fbcc](https://github.com/hypery2k/ngx-vis/commit/e74fbcc)), closes [#143](https://github.com/hypery2k/ngx-vis/issues/143)
-* **package:** update [@types](https://github.com/types)/vis to version 4.21.9 ([05b45ff](https://github.com/hypery2k/ngx-vis/commit/05b45ff))
+* **package:** update @types/vis to version 4.21.9 ([05b45ff](https://github.com/hypery2k/ngx-vis/commit/05b45ff))
 
 
 
@@ -35,8 +51,8 @@
 ### Bug Fixes
 
 * **build:** Corrected dependencies ([0574f7e](https://github.com/hypery2k/ngx-vis/commit/0574f7e))
-* **package:** update [@types](https://github.com/types)/vis to version 4.21.4 ([d2073b9](https://github.com/hypery2k/ngx-vis/commit/d2073b9))
-* **package:** update [@types](https://github.com/types)/vis to version 4.21.5 ([997cdcb](https://github.com/hypery2k/ngx-vis/commit/997cdcb))
+* **package:** update @types/vis to version 4.21.4 ([d2073b9](https://github.com/hypery2k/ngx-vis/commit/d2073b9))
+* **package:** update @types/vis to version 4.21.5 ([997cdcb](https://github.com/hypery2k/ngx-vis/commit/997cdcb))
 
 
 
@@ -55,8 +71,8 @@
 
 ### Bug Fixes
 
-* **package:** update [@types](https://github.com/types)/vis to version 4.21.2 ([2173df5](https://github.com/hypery2k/ngx-vis/commit/2173df5))
-* **package:** update [@types](https://github.com/types)/vis to version 4.21.3 ([fc425ce](https://github.com/hypery2k/ngx-vis/commit/fc425ce))
+* **package:** update @types/vis to version 4.21.2 ([2173df5](https://github.com/hypery2k/ngx-vis/commit/2173df5))
+* **package:** update @types/vis to version 4.21.3 ([fc425ce](https://github.com/hypery2k/ngx-vis/commit/fc425ce))
 
 
 
