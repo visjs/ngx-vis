@@ -682,7 +682,7 @@ export class VisTimelineService {
   public on(visTimeline: string, eventName: VisTimelineEvents, preventDefault?: boolean): boolean {
     if (this.timelines[visTimeline]) {
       this.events.set(eventName, new EventEmitter<any>());
-
+      // tslint:disable-next-line
       const that: { [index: string]: any } = this;
       this.timelines[visTimeline].on(eventName, (params: any) => {
         const emitter = (that[eventName] || that.events.get(eventName)) as EventEmitter<any>;
