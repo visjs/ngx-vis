@@ -130,6 +130,8 @@ export class VisTimelineService {
    */
   public timechanged: EventEmitter<any> = new EventEmitter<any>();
 
+  private events: Map<String, EventEmitter<any>> = new Map();
+
   private timelines: { [id: string]: VisTimeline } = {};
 
   /**
@@ -679,11 +681,11 @@ export class VisTimelineService {
    */
   public on(visTimeline: string, eventName: VisTimelineEvents, preventDefault?: boolean): boolean {
     if (this.timelines[visTimeline]) {
-      /* tslint:disable */
+      this.events.set(eventName, new EventEmitter<any>());
+
       const that: { [index: string]: any } = this;
-      /* tslint:enable */
       this.timelines[visTimeline].on(eventName, (params: any) => {
-        const emitter = that[eventName] as EventEmitter<any>;
+        const emitter = (that[eventName] || that.events.get(eventName)) as EventEmitter<any>;
         if (emitter) {
           emitter.emit(params ? [visTimeline].concat(params) : visTimeline);
         }
@@ -708,8 +710,18 @@ export class VisTimelineService {
    */
   public off(visTimeline: string, eventName: VisTimelineEvents): void {
     if (this.timelines[visTimeline]) {
+      this.events.delete(eventName);
       this.timelines[visTimeline].off(eventName, undefined);
     }
+  }
+
+  /**
+   * Get the event emitter associated with the specified event name.
+   * @param {VisTimelineEvents} eventName The event name.
+   * @returns {EventEmitter<any>} The event emitter of the specified event name.
+   */
+  public getEmitter(eventName: VisTimelineEvents): EventEmitter<any> {
+    return this.events.get(eventName);
   }
 
   private doesNotExistError(visTimeline: string): string {
