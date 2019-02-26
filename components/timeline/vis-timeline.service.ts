@@ -130,7 +130,7 @@ export class VisTimelineService {
    */
   public timechanged: EventEmitter<any> = new EventEmitter<any>();
 
-  private events: Map<String, EventEmitter<any>> = new Map();
+  private events: Map<string, EventEmitter<any>> = new Map();
 
   private timelines: { [id: string]: VisTimeline } = {};
 
