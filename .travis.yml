@@ -4,11 +4,8 @@ language: node_js
 
 env:
   matrix:
-    - NODE_VERSION="8" NPM_VERSION="5"
     - NODE_VERSION="8" NPM_VERSION="6"
-    - NODE_VERSION="9" NPM_VERSION="5"
     - NODE_VERSION="9" NPM_VERSION="6"
-    - NODE_VERSION="10" NPM_VERSION="5"
     - NODE_VERSION="10" NPM_VERSION="6"
 
 before_install:
