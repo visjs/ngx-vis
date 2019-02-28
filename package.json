@@ -59,7 +59,7 @@
         "@angular/platform-server": "7.0.0",
         "@angular/router": "7.0.0",
         "@types/jasmine": "^3.3.1",
-        "@types/node": "11.9.4",
+        "@types/node": "11.9.6",
         "@types/webpack": "^4.1.1",
         "ajv": "6.6.2",
         "angular2-template-loader": "^0.6.2",
