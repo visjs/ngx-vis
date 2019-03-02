@@ -24,6 +24,7 @@
         "clean": "npm run flow.clean",
         "check": "check-audit --ignoreLow",
         "build": "npm run flow.compile",
+        "build:demo": "rm -rf docs/* && npm run flow.build:prod",
         "pretest": "npm run flow.lint",
         "test": "karma start --browsers=ChromeHeadless",
         "test:watch": "cross-env NODE_ENV=test karma start --auto-watch --no-single-run",
