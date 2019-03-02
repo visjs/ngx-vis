@@ -1,5 +1,5 @@
 var webpackMerge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
@@ -14,7 +14,12 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ],
 
   devServer: {

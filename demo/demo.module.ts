@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 
-import { VisModule } from '../ng2-vis';
+import { VisModule } from '../ngx-vis';
 import { DemoComponent } from './demo.component';
 import { HomeComponent } from './home/home.component';
 import { VisNetworkExampleComponent } from './network/network-example.component';

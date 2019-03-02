@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
     selector: 'home-example',
     template: `
       <div class="jumbotron">
-        <h1>ng2-vis</h1>
-        <p class="lead"><strong>Note:</strong> these examples mimic the ones for <code>vis</code>, but using <code>ng2-vis</code>.</p>
+        <h1>ngx-vis</h1>
+        <p class="lead"><strong>Note:</strong> these examples mimic the ones for <code>vis</code>, but using <code>ngx-vis</code>.</p>
         <p>
-          <a class="btn btn-lg btn-success" href="https://github.com/seveves/ng2-vis" role="button">Get it on GitHub</a>
+          <a class="btn btn-lg btn-success" href="https://github.com/seveves/ngx-vis" role="button">Get it on GitHub</a>
           <a class="btn btn-lg btn-success" href="http://visjs.org" role="button">Check out visjs.org</a>
         </p>
         </div>

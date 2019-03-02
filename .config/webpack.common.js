@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var helpers = require('./helpers');
 
@@ -36,7 +36,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: '../'
+            }
+          },
+          "css-loader"
+        ]
       }
     ]
   },
@@ -49,10 +59,6 @@ module.exports = {
       helpers.root('./demo'), // location of your src
       {} // a map of your routes
     ),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
 
     new HtmlWebpackPlugin({
       template: helpers.root('demo', 'index.html')
