@@ -1,3 +1,20 @@
+## [2.1.1](https://github.com/hypery2k/ngx-vis/compare/v2.1.0...v2.1.1) (2019-04-23)
+
+
+### Bug Fixes
+
+* **Demo:** Corrected demo setup ([95f786a](https://github.com/hypery2k/ngx-vis/commit/95f786a))
+* **Demo:** Use relative paths ([ee6981b](https://github.com/hypery2k/ngx-vis/commit/ee6981b))
+* **GitHub Page:** Correct url routing ([898cd7b](https://github.com/hypery2k/ngx-vis/commit/898cd7b))
+* **Security:** Resolve dependency security issues ([a6388b9](https://github.com/hypery2k/ngx-vis/commit/a6388b9))
+
+
+### Features
+
+* **Demo:** Adding demo project ([93c32d7](https://github.com/hypery2k/ngx-vis/commit/93c32d7))
+
+
+
 # [2.1.0](https://github.com/hypery2k/ngx-vis/compare/v2.0.1...v2.1.0) (2019-02-26)
 
 
