@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
         <h1>ngx-vis</h1>
         <p class="lead"><strong>Note:</strong> these examples mimic the ones for <code>vis</code>, but using <code>ngx-vis</code>.</p>
         <p>
-          <a class="btn btn-lg btn-success" href="https://github.com/seveves/ngx-vis" role="button">Get it on GitHub</a>
+          <a class="btn btn-lg btn-success" href="https://github.com/hypery2k/ngx-vis" role="button">Get it on GitHub</a>
           <a class="btn btn-lg btn-success" href="http://visjs.org" role="button">Check out visjs.org</a>
         </p>
         </div>
