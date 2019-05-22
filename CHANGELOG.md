@@ -1,3 +1,13 @@
+# [2.2.0](https://github.com/hypery2k/ngx-vis/compare/v2.1.1...v2.2.0) (2019-05-22)
+
+
+### Features
+
+* **Angular 8:** Basic Angular 8 support in peerDependencies ([be21df0](https://github.com/hypery2k/ngx-vis/commit/be21df0))
+* **storePosition:** Inital dummy implementation for store position ([#221](https://github.com/hypery2k/ngx-vis/issues/221)) ([e9c543f](https://github.com/hypery2k/ngx-vis/commit/e9c543f)), closes [#141](https://github.com/hypery2k/ngx-vis/issues/141)
+
+
+
 ## [2.1.1](https://github.com/hypery2k/ngx-vis/compare/v2.1.0...v2.1.1) (2019-04-23)
 
 
