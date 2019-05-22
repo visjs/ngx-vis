@@ -593,8 +593,8 @@ export class VisNetworkService {
   }
 
   /**
-   * Go into addNode mode. Having edit mode or manipulation enabled is not required. 
-   * To get out of this mode, call disableEditMode(). The callback functions defined in handlerFunctions still apply. 
+   * Go into addNode mode. Having edit mode or manipulation enabled is not required.
+   * To get out of this mode, call disableEditMode(). The callback functions defined in handlerFunctions still apply.
    * To use these methods without having the manipulation GUI, make sure you set enabled to false.
    *
    * @param {string} visNetwork The network name/identifier.
@@ -1031,6 +1031,14 @@ export class VisNetworkService {
    */
   public getPositions(visNetwork: string, nodeIds: VisId[]) {
     return this.networks[visNetwork].getPositions(nodeIds);
+  }
+
+  /**
+   * Returns the positions of the nodes.
+   * @param {string} visNetwork The network name/identifier.
+   */
+  public storePositions(visNetwork: string): void {
+    return this.networks[visNetwork].storePositions();
   }
 
   /**
