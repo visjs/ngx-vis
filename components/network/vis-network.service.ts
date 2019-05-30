@@ -12,7 +12,6 @@ import {
   VisNetworkOptions,
   VisNodeOptions,
   VisOpenClusterOptions,
-  VisPosition,
 } from './index';
 
 /**
@@ -1031,6 +1030,14 @@ export class VisNetworkService {
    */
   public getPositions(visNetwork: string, nodeIds: VisId[]) {
     return this.networks[visNetwork].getPositions(nodeIds);
+  }
+
+  /**
+   * Returns the positions of the nodes.
+   * @param {string} visNetwork The network name/identifier.
+   */
+  public getBoundingBox(visNetwork: string,nodeId: vis.IdType): vis.BoundingBox {
+    return this.networks[visNetwork].getBoundingBox(nodeId);
   }
 
   /**
