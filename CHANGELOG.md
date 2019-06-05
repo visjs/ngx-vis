@@ -1,3 +1,7 @@
+## [2.3.1](https://github.com/hypery2k/ngx-vis/compare/v2.3.0...v2.3.1) (2019-06-05)
+
+
+
 # [2.3.0](https://github.com/hypery2k/ngx-vis/compare/v2.2.0...v2.3.0) (2019-05-30)
 
 
