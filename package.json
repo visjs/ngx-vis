@@ -95,7 +95,7 @@
         "null-loader": "^0.1.1",
         "pre-commit": "^1.2.2",
         "puppeteer": "1.17.0",
-        "raw-loader": "^2.0.0",
+        "raw-loader": "^3.0.0",
         "reflect-metadata": "^0.1.10",
         "require-dir": "^1.2.0",
         "rimraf": "^2.6.1",
