@@ -42,7 +42,7 @@
         "prepublish": "npm run build"
     },
     "dependencies": {
-        "vis": "4.21.0",
+        "vis": "5.0.0",
         "@types/vis": "4.21.17"
     },
     "peerDependencies": {
