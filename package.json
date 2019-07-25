@@ -127,9 +127,10 @@
         "ngx-vis",
         "ngx-vis"
     ],
-    "author": "Paul Hindenberg <contact.hindenberg@gmail.com> (https://github.com/hypery2k)",
+    "author": "Martin Reinhardt <hypery2k>",
     "license": "MIT",
     "contributors": [
+        "Paul Hindenberg <contact.hindenberg@gmail.com>",
         "Severin Friede <seveves>",
         "Martin Reinhardt <hypery2k>"
     ],
