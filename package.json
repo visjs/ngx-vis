@@ -98,7 +98,7 @@
         "raw-loader": "^3.0.0",
         "reflect-metadata": "^0.1.10",
         "require-dir": "^1.2.0",
-        "rimraf": "^2.6.1",
+        "rimraf": "^3.0.0",
         "rxjs": "^6.0.0",
         "rxjs-compat": "^6.0.0",
         "source-map-loader": "^0.2.0",
