@@ -2,7 +2,6 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/ngx-vis.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/hypery2k/ngx-vis.svg?branch=develop)](https://travis-ci.org/hypery2k/ngx-vis)
-[![Donate with Bitcoin](https://martinreinhardt-online.de/assets/img/button-badge-bitcoin.svg)](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D)
 
 [![npm version](https://badge.fury.io/js/ngx-vis.svg)](https://badge.fury.io/js/ngx-vis)
 [![codecov.io](https://codecov.io/github/hypery2k/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/hypery2k/ngx-vis?branch=master)
@@ -13,19 +12,6 @@
 An angular 2+ vis.js project 
 
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
-
-<a name="donation"></a>
-> Feel free to **donate**
->
-> <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H8TR8246RCDJG">
-> <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/>
-> </img></a>
-> Or donate Bitcoins: bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D
->
-> [![Bitcoin](https://martinreinhardt-online.de/bitcoin.png)](bitcoin:3NKtxw1SRYgess5ev4Ri54GekoAgkR213D)
->
-> Also via [greenaddress](https://greenaddress.it/pay/GA3ZPfh7As3Gc2oP6pQ1njxMij88u/)
-
 
 # Usage
 
