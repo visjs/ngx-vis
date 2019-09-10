@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import * as vis from "vis";
+import { BoundingBox, IdType, Position } from 'vis-network';
 import { VisMoveToOptions } from '..';
 import {
   VisClusterOptions,
@@ -11,7 +11,7 @@ import {
   VisNetworkEvents,
   VisNetworkOptions,
   VisNodeOptions,
-  VisOpenClusterOptions,
+  VisOpenClusterOptions
 } from './index';
 
 /**
@@ -22,7 +22,6 @@ import {
  */
 @Injectable()
 export class VisNetworkService {
-
   /**
    * Fired when the user clicks the mouse or taps on a touchscreen device.
    *
@@ -308,11 +307,7 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public create(
-    visNetwork: string,
-    container: HTMLElement,
-    data: VisNetworkData,
-    options?: VisNetworkOptions): void {
+  public create(visNetwork: string, container: HTMLElement, data: VisNetworkData, options?: VisNetworkOptions): void {
     if (this.networks[visNetwork]) {
       throw new Error(`Network with id ${visNetwork} already exists.`);
     }
@@ -483,8 +478,11 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public setSelection(visNetwork: string, selection: { nodes: VisId[], edges: VisId[] },
-    options: { unselectAll?: boolean, highlightEdges?: boolean } = {}): void {
+  public setSelection(
+    visNetwork: string,
+    selection: { nodes: VisId[]; edges: VisId[] },
+    options: { unselectAll?: boolean; highlightEdges?: boolean } = {}
+  ): void {
     if (this.networks[visNetwork]) {
       this.networks[visNetwork].setSelection(selection, options);
     } else {
@@ -501,7 +499,7 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public getSelection(visNetwork: string): { nodes: VisId[], edges: VisId[] } {
+  public getSelection(visNetwork: string): { nodes: VisId[]; edges: VisId[] } {
     if (this.networks[visNetwork]) {
       return this.networks[visNetwork].getSelection();
     }
@@ -946,7 +944,7 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public canvasToDOM(visNetwork: string, position: vis.Position) {
+  public canvasToDOM(visNetwork: string, position: Position) {
     return this.networks[visNetwork].canvasToDOM(position);
   }
 
@@ -961,7 +959,7 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public DOMtoCanvas(visNetwork: string, position: vis.Position) {
+  public DOMtoCanvas(visNetwork: string, position: Position) {
     return this.networks[visNetwork].DOMtoCanvas(position);
   }
 
@@ -976,49 +974,49 @@ export class VisNetworkService {
    *
    * @memberOf VisNetworkService
    */
-  public getNodeAt(visNetwork: string, position: vis.Position) {
+  public getNodeAt(visNetwork: string, position: Position) {
     return this.networks[visNetwork].getNodeAt(position);
   }
 
   /**
- * This function looks up the edge at the given DOM coordinates on the canvas.
- * Input and output are in the form of {x:Number,y:Number}.
- * The DOM values are relative to the network container -> DOM not Canvas coords.
- *
- * @param {string} visNetwork The network name/identifier.
- * @param {Position} position The DOM position.
- * @returns {VisId} edgeId The associated edge id.
- *
- * @memberOf VisNetworkService
- */
-  public getEdgeAt(visNetwork: string, position: vis.Position) {
+   * This function looks up the edge at the given DOM coordinates on the canvas.
+   * Input and output are in the form of {x:Number,y:Number}.
+   * The DOM values are relative to the network container -> DOM not Canvas coords.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {Position} position The DOM position.
+   * @returns {VisId} edgeId The associated edge id.
+   *
+   * @memberOf VisNetworkService
+   */
+  public getEdgeAt(visNetwork: string, position: Position) {
     return this.networks[visNetwork].getEdgeAt(position);
   }
 
   /**
-* This function looks up the edges for a given nodeId.
-* The DOM values are relative to the network container -> DOM not Canvas coords.
-*
-* @param {string} visNetwork The network name/identifier.
-* @param {VisId} nodeId The associated node id.
-* @returns {VisId[]} Return array of edge ids
-*
-* @memberOf VisNetworkService
-*/
-  public getConnectedEdges(visNetwork: string, nodeId: vis.IdType) {
+   * This function looks up the edges for a given nodeId.
+   * The DOM values are relative to the network container -> DOM not Canvas coords.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param {VisId} nodeId The associated node id.
+   * @returns {VisId[]} Return array of edge ids
+   *
+   * @memberOf VisNetworkService
+   */
+  public getConnectedEdges(visNetwork: string, nodeId: IdType) {
     return this.networks[visNetwork].getConnectedEdges(nodeId);
   }
 
   /**
- * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
- * If you supply an edgeId, vis will first match the id to nodes.
- * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
- *
- * @param {string} visNetwork The network name/identifier.
- * @param nodeOrEdgeId a node or edge id
- * @returns {VisId[]} Return array of node ids
- */
-  public getConnectedNodes(visNetwork: string, nodeOrEdgeId: vis.IdType) {
+   * Returns an array of nodeIds of the all the nodes that are directly connected to this node.
+   * If you supply an edgeId, vis will first match the id to nodes.
+   * If no match is found, it will search in the edgelist and return an array: [fromId, toId].
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @param nodeOrEdgeId a node or edge id
+   * @returns {VisId[]} Return array of node ids
+   */
+  public getConnectedNodes(visNetwork: string, nodeOrEdgeId: IdType) {
     return this.networks[visNetwork].getConnectedNodes(nodeOrEdgeId);
   }
 
@@ -1036,7 +1034,7 @@ export class VisNetworkService {
    * Returns the positions of the nodes.
    * @param {string} visNetwork The network name/identifier.
    */
-  public getBoundingBox(visNetwork: string,nodeId: vis.IdType): vis.BoundingBox {
+  public getBoundingBox(visNetwork: string, nodeId: IdType): BoundingBox {
     return this.networks[visNetwork].getBoundingBox(nodeId);
   }
 

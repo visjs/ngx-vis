@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Event } from 'vis-timeline';
 import {
   VisDate,
   VisId,
@@ -8,7 +9,7 @@ import {
   VisTimelineEvents,
   VisTimelineGroups,
   VisTimelineItems,
-  VisTimelineOptions,
+  VisTimelineOptions
 } from './index';
 
 /**
@@ -146,11 +147,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public createWithItems(
-    visTimeline: string,
-    container: HTMLElement,
-    items: VisTimelineItems,
-    options?: VisTimelineOptions): void {
+  public createWithItems(visTimeline: string, container: HTMLElement, items: VisTimelineItems, options?: VisTimelineOptions): void {
     if (this.timelines[visTimeline]) {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
@@ -176,7 +173,8 @@ export class VisTimelineService {
     container: HTMLElement,
     items: VisTimelineItems,
     groups: VisTimelineGroups,
-    options?: VisTimelineOptions): void {
+    options?: VisTimelineOptions
+  ): void {
     if (this.timelines[visTimeline]) {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
@@ -331,7 +329,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getItemRange(visTimeline: string): { min: Date, max: Date } {
+  public getItemRange(visTimeline: string): { min: Date; max: Date } {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getItemRange();
     } else {
@@ -385,7 +383,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getWindow(visTimeline: string): { start: Date, end: Date } {
+  public getWindow(visTimeline: string): { start: Date; end: Date } {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getWindow();
     } else {

@@ -1,26 +1,42 @@
-import * as Vis from 'vis';
+import {
+  ClusterOptions,
+  Data,
+  DataSet,
+  Edge,
+  EdgeOptions,
+  FitOptions,
+  MoveToOptions,
+  Network,
+  NetworkEvents,
+  NodeOptions,
+  OpenClusterOptions,
+  Options,
+  SelectionOptions
+} from 'vis-network';
 
 import { VisDataSetOptions, VisDataSetQueueOptions, VisId } from '../timeline/index';
-
 export { VisId } from '../timeline/index';
-export type VisNetworkEvents = Vis.NetworkEvents;
-export type VisMoveToOptions = Vis.MoveToOptions;
 
-export interface VisClusterOptions extends Vis.ClusterOptions { }
-export interface VisOpenClusterOptions extends Vis.OpenClusterOptions { }
-export interface VisNetworkData extends Vis.Data { }
-export interface VisNode extends Vis.Node { title?: string; }
-export interface VisEdge extends Vis.Edge { }
-export interface VisNodeSelectionOptions extends Vis.DataSelectionOptions<VisNode> { }
-export interface VisEdgeSelectionOptions extends Vis.DataSelectionOptions<VisEdge> { }
-export interface VisFitOptions extends Vis.FitOptions { }
-export interface VisNetworkOptions extends Vis.Options { }
-export interface VisEdgeOptions extends Vis.EdgeOptions { }
-export class VisNetwork extends Vis.Network { }
-export interface VisNodeOptions extends Vis.NodeOptions { }
-export interface VisPosition extends Vis.Position { }
+export type VisNetworkEvents = NetworkEvents;
+export type VisMoveToOptions = MoveToOptions;
 
-export class VisNodes extends Vis.DataSet<VisNode> {
+export interface VisClusterOptions extends ClusterOptions {}
+export interface VisOpenClusterOptions extends OpenClusterOptions {}
+export interface VisNetworkData extends Data {}
+export interface VisNode extends Node {
+  title?: string;
+}
+export interface VisEdge extends Edge {}
+export interface VisNodeSelectionOptions extends SelectionOptions<VisNode> {}
+export interface VisEdgeSelectionOptions extends SelectionOptions<VisEdge> {}
+export interface VisFitOptions extends FitOptions {}
+export interface VisNetworkOptions extends Options {}
+export interface VisEdgeOptions extends EdgeOptions {}
+export class VisNetwork extends Network {}
+export interface VisNodeOptions extends NodeOptions {}
+export interface VisPosition extends Position {}
+
+export class VisNodes extends DataSet<VisNode> {
   public constructor(data?: VisNode[], options?: VisDataSetOptions) {
     super(data, options);
   }
@@ -102,7 +118,7 @@ export class VisNodes extends Vis.DataSet<VisNode> {
   }
 }
 
-export class VisEdges extends Vis.DataSet<VisEdge> {
+export class VisEdges extends DataSet<VisEdge> {
   public constructor(data?: VisEdge[], options?: VisDataSetOptions) {
     super(data, options);
   }

@@ -1,11 +1,25 @@
-import * as Vis from 'vis';
+import {
+  DataGroup,
+  DataItem,
+  DataSelectionOptions,
+  DataSet,
+  DataSetOptions,
+  DataSetQueueOptions,
+  DateType,
+  IdType,
+  Timeline,
+  TimelineAnimationOptions,
+  TimelineEventPropertiesResult,
+  TimelineEvents,
+  TimelineOptions
+} from 'vis-timeline';
 
-export type VisId = Vis.IdType;
-export interface VisTimelineItem extends Vis.DataItem { }
-export interface VisTimelineGroup extends Vis.DataGroup { }
-export interface VisDataSetOptions extends Vis.DataSetOptions { }
-export interface VisTimelineOptions extends Vis.TimelineOptions { }
-export class VisTimelineItems extends Vis.DataSet<VisTimelineItem> {
+export type VisId = IdType;
+export interface VisTimelineItem extends DataItem {}
+export interface VisTimelineGroup extends DataGroup {}
+export interface VisDataSetOptions extends DataSetOptions {}
+export interface VisTimelineOptions extends TimelineOptions {}
+export class VisTimelineItems extends DataSet<VisTimelineItem> {
   public constructor(data?: VisTimelineItem[], options?: VisDataSetOptions) {
     super(data, options);
   }
@@ -86,7 +100,7 @@ export class VisTimelineItems extends Vis.DataSet<VisTimelineItem> {
     return super.update(data, senderId);
   }
 }
-export class VisTimelineGroups extends Vis.DataSet<VisTimelineGroup> {
+export class VisTimelineGroups extends DataSet<VisTimelineGroup> {
   public constructor(data?: VisTimelineGroup[], options?: VisDataSetOptions) {
     super(data, options);
   }
@@ -168,15 +182,15 @@ export class VisTimelineGroups extends Vis.DataSet<VisTimelineGroup> {
   }
 }
 
-export interface VisDataSetQueueOptions extends Vis.DataSetQueueOptions { }
-export interface VisItemSelectionOptions extends Vis.DataSelectionOptions<VisTimelineItem> { }
-export interface VisGroupSelectionOptions extends Vis.DataSelectionOptions<VisTimelineGroup> { }
-export type VisDate = Vis.DateType;
-export type VisTimelineEvents = Vis.TimelineEvents;
-export interface VisTimelineAnimationOptions extends Vis.TimelineAnimationOptions { }
-export interface VisTimelineEventPropertiesResult extends Vis.TimelineEventPropertiesResult { }
+export interface VisDataSetQueueOptions extends DataSetQueueOptions {}
+export interface VisItemSelectionOptions extends DataSelectionOptions<VisTimelineItem> {}
+export interface VisGroupSelectionOptions extends DataSelectionOptions<VisTimelineGroup> {}
+export type VisDate = DateType;
+export type VisTimelineEvents = TimelineEvents;
+export interface VisTimelineAnimationOptions extends TimelineAnimationOptions {}
+export interface VisTimelineEventPropertiesResult extends TimelineEventPropertiesResult {}
 
-export class VisTimeline extends Vis.Timeline { }
+export class VisTimeline extends Timeline {}
 
 export * from './vis-timeline.service';
 export * from './vis-timeline.directive';
