@@ -1,19 +1,15 @@
 {
   "extends": "tslint:latest",
   "rules": {
-    "max-line-length": [
-      true,
-      180
-    ],
+    "max-line-length": [true, 180],
     "quotemark": false,
     "only-arrow-functions": false,
     "no-string-literal": false,
     "linebreak-style": false,
-    "interface-name": [
-      false
-    ],
+    "interface-name": [false],
     "no-reference": false,
     "max-classes-per-file": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "trailing-comma": false
   }
 }
