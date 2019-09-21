@@ -42,7 +42,7 @@
   "prepublish": "npm run build"
  },
  "dependencies": {
-  "vis-network": "5.4.1",
+  "vis-network": "6.0.0",
   "vis-timeline": "5.1.0"
  },
  "peerDependencies": {

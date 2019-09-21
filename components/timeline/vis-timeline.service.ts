@@ -383,7 +383,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getWindow(visTimeline: string): { start: Date; end: Date } {
+  public getWindow(visTimeline: string): { start: Date, end: Date } {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getWindow();
     } else {

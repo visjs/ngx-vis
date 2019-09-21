@@ -24,7 +24,6 @@ export interface VisClusterOptions extends ClusterOptions {}
 export interface VisOpenClusterOptions extends OpenClusterOptions {}
 export interface VisNetworkData extends Data {}
 export interface VisNode extends Node {
-  title?: string;
 }
 export interface VisEdge extends Edge {}
 export interface VisNodeSelectionOptions extends SelectionOptions<VisNode> {}
@@ -118,7 +117,7 @@ export class VisNodes extends DataSet<VisNode> {
   }
 }
 
-export class VisEdges extends DataSet<VisEdge> {
+export class VisEdges extends DataSet<VisEdge, 'id'> {
   public constructor(data?: VisEdge[], options?: VisDataSetOptions) {
     super(data, options);
   }
