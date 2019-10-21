@@ -42,8 +42,8 @@
   "prepublish": "npm run build"
  },
  "dependencies": {
-  "vis-network": "6.0.0",
-  "vis-timeline": "5.1.0"
+  "vis-network": "6.1.1",
+  "vis-timeline": "6.0.3"
  },
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0",
