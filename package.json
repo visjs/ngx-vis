@@ -42,13 +42,13 @@
   "prepublish": "npm run build"
  },
  "dependencies": {
-  "vis-network": "6.1.1",
-  "vis-timeline": "6.0.3"
+  "vis-network": "6.3.1",
+  "vis-timeline": "6.1.0"
  },
  "peerDependencies": {
-  "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0",
-  "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0",
-  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0"
+  "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
+  "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
+  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0"
  },
  "devDependencies": {
   "@angular/animations": "8.2.5",

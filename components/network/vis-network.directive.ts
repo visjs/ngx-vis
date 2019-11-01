@@ -1,20 +1,7 @@
-import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChange } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange } from '@angular/core';
 
+import { Data, Options } from '.';
 import { VisNetworkService } from './vis-network.service';
-
-import {
-  VisNetworkData,
-  VisNetworkOptions,
-} from './index';
 
 /**
  * Use this directive with a div container to show network data.
@@ -26,10 +13,9 @@ import {
  * @implements {OnChanges}
  */
 @Directive({
-  selector: '[visNetwork]',
+  selector: '[visNetwork]'
 })
 export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
-
   /**
    * The name or identifier of the network (must be unique in your application).
    * This property is used once on init and must not be changed.
@@ -46,11 +32,11 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * changes to the reference of this object.
    * Changes lead to a call to setData of this network instance.
    *
-   * @type {VisNetworkData}
+   * @type {Data}
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visNetworkData: VisNetworkData;
+  public visData: Data;
 
   /**
    * The options that will be used with this network instance.
@@ -58,11 +44,11 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * but not changes to properties.
    * Changes lead to a call to setOptions of the network instance.
    *
-   * @type {VisNetworkOptions}
+   * @type {VisOptions}
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visNetworkOptions: VisNetworkOptions;
+  public visOptions: Options;
 
   /**
    * This event will be raised when the network is initialized.
@@ -92,28 +78,27 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   /**
-   * Create the network when at least visNetwork and visNetworkData
+   * Create the network when at least visNetwork and visData
    * are defined.
    *
    * @memberOf VisNetworkDirective
    */
   public ngOnInit(): void {
-    if (!this.isInitialized && this.visNetwork && this.visNetworkData) {
+    if (!this.isInitialized && this.visNetwork && this.visData) {
       this.createNetwork();
     }
   }
 
   /**
    * Update the network data or options on reference changes to
-   * the visNetworkData or visNetworkOptions properties.
+   * the visData or visOptions properties.
    *
    * @param {{[propName: string]: SimpleChange}} changes
    *
    * @memberOf VisNetworkDirective
    */
-  public ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
-
-    if (!this.isInitialized && this.visNetwork && this.visNetworkData) {
+  public ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
+    if (!this.isInitialized && this.visNetwork && this.visData) {
       this.createNetwork();
     }
 
@@ -121,10 +106,10 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
       if (changes.hasOwnProperty(propertyName)) {
         const change = changes[propertyName];
         if (!change.isFirstChange()) {
-          if (propertyName === 'visNetworkData') {
+          if (propertyName === 'visData') {
             this.visNetworkService.setData(this.visNetwork, changes[propertyName].currentValue);
           }
-          if (propertyName === 'visNetworkOptions') {
+          if (propertyName === 'visOptions') {
             this.visNetworkService.setOptions(this.visNetwork, changes[propertyName].currentValue);
           }
         }
@@ -143,11 +128,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   private createNetwork(): void {
-    this.visNetworkService.create(
-      this.visNetwork,
-      this.visNetworkContainer,
-      this.visNetworkData,
-      this.visNetworkOptions);
+    this.visNetworkService.create(this.visNetwork, this.visNetworkContainer, this.visData, this.visOptions);
     this.isInitialized = true;
     this.initialized.emit(this.visNetwork);
   }
