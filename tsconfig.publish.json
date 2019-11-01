@@ -11,15 +11,17 @@
         "declaration": true,
         "skipLibCheck": true,
         "stripInternal": true,
-        "lib": ["dom", "es6"],
+        "lib": [
+            "dom",
+            "es6"
+        ],
         "typeRoots": [
             "./node_modules/@types"
         ],
         "types": [
             "node",
             "jasmine",
-            "webpack",
-            "vis"
+            "webpack"
         ]
     },
     "exclude": [

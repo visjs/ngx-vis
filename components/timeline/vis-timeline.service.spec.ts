@@ -1,10 +1,7 @@
-import {
-  VisTimelineGroups,
-  VisTimelineItems,
-  VisTimelineService } from './index';
+import { DataItem, DataInterfaceDataGroup } from 'vis-timeline';
+import { VisTimelineService } from './index';
 
 describe('VisTimelineService Tests', () => {
-
   let visTimelineService: VisTimelineService;
 
   beforeEach(() => {
@@ -18,19 +15,18 @@ describe('VisTimelineService Tests', () => {
 
   it('throws error when network already exists', () => {
     const dummyElement = document.createElement('div');
-    const items = new VisTimelineItems([
-            {id: 1, content: 'item 1', start: '2016-04-20'},
-            {id: 2, content: 'item 2', start: '2016-04-14'},
-            {id: 3, content: 'item 3', start: '2016-04-18'},
-            {id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19'},
-            {id: 5, content: 'item 5', start: '2016-04-25'},
-            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'},
-        ]);
-    const groups = new VisTimelineGroups();
+    const items: DataItem[] = [
+      { id: 1, content: 'item 1', start: '2016-04-20' },
+      { id: 2, content: 'item 2', start: '2016-04-14' },
+      { id: 3, content: 'item 3', start: '2016-04-18' },
+      { id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19' },
+      { id: 5, content: 'item 5', start: '2016-04-25' },
+      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' }
+    ];
+    const groups: DataInterfaceDataGroup = null;
     visTimelineService.createWithItems('knownNetwork', dummyElement, items);
     expect(() => visTimelineService.createWithItems('knownNetwork', dummyElement, items)).toThrowError();
-    expect(() => visTimelineService.createWithItemsAndGroups(
-      'knownNetwork', dummyElement, items, groups)).toThrowError();
+    expect(() => visTimelineService.createWithItemsAndGroups('knownNetwork', dummyElement, items, groups)).toThrowError();
   });
 
   it('returns false when network does not exist', () => {
@@ -38,15 +34,15 @@ describe('VisTimelineService Tests', () => {
   });
 
   it('throws error when network does not exist', () => {
-    const items = new VisTimelineItems([
-            {id: 1, content: 'item 1', start: '2016-04-20'},
-            {id: 2, content: 'item 2', start: '2016-04-14'},
-            {id: 3, content: 'item 3', start: '2016-04-18'},
-            {id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19'},
-            {id: 5, content: 'item 5', start: '2016-04-25'},
-            {id: 6, content: 'item 6', start: '2016-04-27', type: 'point'},
-        ]);
-    const groups = new VisTimelineGroups();
+    const items: DataItem[] = [
+      { id: 1, content: 'item 1', start: '2016-04-20' },
+      { id: 2, content: 'item 2', start: '2016-04-14' },
+      { id: 3, content: 'item 3', start: '2016-04-18' },
+      { id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19' },
+      { id: 5, content: 'item 5', start: '2016-04-25' },
+      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' }
+    ];
+    const groups: DataInterfaceDataGroup = null;
 
     expect(() => visTimelineService.setData('unknown', { items, groups })).toThrowError();
     expect(() => visTimelineService.setItems('unknown', items)).toThrowError();

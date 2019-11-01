@@ -1,6 +1,6 @@
 {
  "name": "ngx-vis",
- "version": "2.3.2",
+ "version": "3.0.0",
  "main": "ngx-vis",
  "types": "ngx-vis.d.ts",
  "description": "Angular x components for using vis.js",
@@ -24,7 +24,9 @@
   "preclean": "npm i",
   "clean": "npm run flow.clean",
   "check": "check-audit --ignoreLow",
-  "build": "npm run flow.compile",
+  "build": "npm run build:lib",
+  "build:all": "npm run build:lib && npm run build:demo && npm run build:docs",
+  "build:lib": "npm run flow.compile",
   "build:demo": "rm -rf docs/* && npm run flow.build:prod",
   "build:docs": "rm -rf docs/* && npm run flow.build:github-pages",
   "pretest": "npm run flow.lint",
@@ -42,13 +44,13 @@
   "prepublish": "npm run build"
  },
  "dependencies": {
-  "vis": "4.21.0",
-  "@types/vis": "4.21.19"
+  "vis-network": "6.3.1",
+  "vis-timeline": "6.1.0"
  },
  "peerDependencies": {
-  "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0",
-  "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0",
-  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0"
+  "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
+  "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
+  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0"
  },
  "devDependencies": {
   "@angular/animations": "8.2.5",

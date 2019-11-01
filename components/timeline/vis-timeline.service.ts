@@ -1,15 +1,14 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import {
-  VisDate,
-  VisId,
-  VisTimeline,
-  VisTimelineAnimationOptions,
-  VisTimelineEventPropertiesResult,
-  VisTimelineEvents,
-  VisTimelineGroups,
-  VisTimelineItems,
-  VisTimelineOptions,
-} from './index';
+  DataGroupCollectionType,
+  DataItemCollectionType,
+  DateType,
+  IdType,
+  Timeline,
+  TimelineAnimationOptions,
+  TimelineEventPropertiesResult,
+  TimelineOptions
+} from 'vis-timeline';
 
 /**
  * A service to create, manage and control VisTimeline instances.
@@ -132,7 +131,7 @@ export class VisTimelineService {
 
   private events: Map<string, EventEmitter<any>> = new Map();
 
-  private timelines: { [id: string]: VisTimeline } = {};
+  private timelines: { [id: string]: Timeline } = {};
 
   /**
    * Creates a new timeline instance.
@@ -146,16 +145,12 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public createWithItems(
-    visTimeline: string,
-    container: HTMLElement,
-    items: VisTimelineItems,
-    options?: VisTimelineOptions): void {
+  public createWithItems(visTimeline: string, container: HTMLElement, items: DataItemCollectionType, options?: TimelineOptions): void {
     if (this.timelines[visTimeline]) {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = new VisTimeline(container, items, options);
+    this.timelines[visTimeline] = new Timeline(container, items, options);
   }
 
   /**
@@ -174,14 +169,15 @@ export class VisTimelineService {
   public createWithItemsAndGroups(
     visTimeline: string,
     container: HTMLElement,
-    items: VisTimelineItems,
-    groups: VisTimelineGroups,
-    options?: VisTimelineOptions): void {
+    items: DataItemCollectionType,
+    groups: DataGroupCollectionType,
+    options?: TimelineOptions
+  ): void {
     if (this.timelines[visTimeline]) {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = new VisTimeline(container, items, groups, options);
+    this.timelines[visTimeline] = new Timeline(container, items, groups, options);
   }
 
   /**
@@ -190,15 +186,15 @@ export class VisTimelineService {
    * allowing to style multiple time bars differently.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisDate} time Parameter time can be a Date, Number, or String, and is new Date() by default.
-   * @param {VisId} [id] Parameter id can be Number or String and is undefined by default.
-   * @returns {VisId} The method returns id of the created bar.
+   * @param {DateType} time Parameter time can be a Date, Number, or String, and is new Date() by default.
+   * @param {IdType} [id] Parameter id can be Number or String and is undefined by default.
+   * @returns {IdType} The method returns id of the created bar.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public addCustomTime(visTimeline: string, time: VisDate, id?: VisId): VisId {
+  public addCustomTime(visTimeline: string, time: DateType, id?: IdType): IdType {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].addCustomTime(time, id);
     } else {
@@ -211,13 +207,13 @@ export class VisTimelineService {
    * See also function focus(id).
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisTimelineAnimationOptions} [options] Optional options.
+   * @param {TimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public fit(visTimeline: string, options?: VisTimelineAnimationOptions): void {
+  public fit(visTimeline: string, options?: TimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].fit(options);
     } else {
@@ -229,14 +225,14 @@ export class VisTimelineService {
    * Adjust the visible window such that the selected item is centered on screen.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId} id The id of the item.
-   * @param {VisTimelineAnimationOptions} [options] Options options.
+   * @param {IdType} id The id of the item.
+   * @param {TimelineAnimationOptions} [options] Options options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public focusOnId(visTimeline: string, id: VisId, options?: VisTimelineAnimationOptions): void {
+  public focusOnId(visTimeline: string, id: IdType, options?: TimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].focus(id, options);
     } else {
@@ -248,14 +244,14 @@ export class VisTimelineService {
    * Adjust the visible window such that the selected items are centered on screen.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId[]} ids The item ids.
-   * @param {VisTimelineAnimationOptions} [options] Optional options.
+   * @param {IdType[]} ids The item ids.
+   * @param {TimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public focusOnIds(visTimeline: string, ids: VisId[], options?: VisTimelineAnimationOptions): void {
+  public focusOnIds(visTimeline: string, ids: IdType[], options?: TimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].focus(ids, options);
     } else {
@@ -287,14 +283,14 @@ export class VisTimelineService {
    * Id is undefined by default.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId} [id] The time bar id.
+   * @param {IdType} [id] The time bar id.
    * @returns {Date} The custom time.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public getCustomTime(visTimeline: string, id?: VisId): Date {
+  public getCustomTime(visTimeline: string, id?: IdType): Date {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getCustomTime(id);
     } else {
@@ -313,7 +309,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getEventProperties(visTimeline: string, event: Event): VisTimelineEventPropertiesResult {
+  public getEventProperties(visTimeline: string, event: Event): TimelineEventPropertiesResult {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getEventProperties(event);
     } else {
@@ -331,7 +327,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getItemRange(visTimeline: string): { min: Date, max: Date } {
+  public getItemRange(visTimeline: string): { min: Date; max: Date } {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getItemRange();
     } else {
@@ -343,13 +339,13 @@ export class VisTimelineService {
    * Get an array with the ids of the currently selected items.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @returns {VisId[]} The currently selected items.
+   * @returns {IdType[]} The currently selected items.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public getSelection(visTimeline: string): VisId[] {
+  public getSelection(visTimeline: string): IdType[] {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getSelection();
     } else {
@@ -361,13 +357,13 @@ export class VisTimelineService {
    * Get an array with the ids of the currently visible items.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @returns {VisId[]} The currently visible items.
+   * @returns {IdType[]} The currently visible items.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public getVisibleItems(visTimeline: string): VisId[] {
+  public getVisibleItems(visTimeline: string): IdType[] {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getVisibleItems();
     } else {
@@ -385,7 +381,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public getWindow(visTimeline: string): { start: Date, end: Date } {
+  public getWindow(visTimeline: string): { start: Date; end: Date } {
     if (this.timelines[visTimeline]) {
       return this.timelines[visTimeline].getWindow();
     } else {
@@ -397,14 +393,14 @@ export class VisTimelineService {
    * 	Move the window such that given time is centered on screen.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisDate} time Parameter time can be a Date, Number, or String.
-   * @param {VisTimelineAnimationOptions} [options] Optional options.
+   * @param {DateType} time Parameter time can be a Date, Number, or String.
+   * @param {TimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public moveTo(visTimeline: string, time: VisDate, options?: VisTimelineAnimationOptions): void {
+  public moveTo(visTimeline: string, time: DateType, options?: TimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].moveTo(time, options);
     } else {
@@ -436,13 +432,13 @@ export class VisTimelineService {
    * Remove vertical bars previously added to the timeline via addCustomTime method.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId} id Parameter id is the ID of the custom vertical bar returned by addCustomTime method.
+   * @param {IdType} id Parameter id is the ID of the custom vertical bar returned by addCustomTime method.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public removeCustomTime(visTimeline: string, id: VisId): void {
+  public removeCustomTime(visTimeline: string, id: IdType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].removeCustomTime(id);
     } else {
@@ -457,13 +453,13 @@ export class VisTimelineService {
    * Only applicable when option showCurrentTime is true.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisDate} time time can be a Date object, numeric timestamp, or ISO date string.
+   * @param {DateType} time time can be a Date object, numeric timestamp, or ISO date string.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setCurrentTime(visTimeline: string, time: VisDate): void {
+  public setCurrentTime(visTimeline: string, time: DateType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setCurrentTime(time);
     } else {
@@ -475,14 +471,14 @@ export class VisTimelineService {
    * 	Adjust the time of a custom time bar.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisDate} time Parameter time can be a Date object, numeric timestamp, or ISO date string.
-   * @param {VisId} [id] Parameter id is the id of the custom time bar, and is undefined by default.
+   * @param {DateType} time Parameter time can be a Date object, numeric timestamp, or ISO date string.
+   * @param {IdType} [id] Parameter id is the id of the custom time bar, and is undefined by default.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setCustomTime(visTimeline: string, time: VisDate, id?: VisId): void {
+  public setCustomTime(visTimeline: string, time: DateType, id?: IdType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setCustomTime(time, id);
     } else {
@@ -496,13 +492,13 @@ export class VisTimelineService {
    * @param {string} visTimeline The timeline name/identifier.
    * @param {string} title Parameter title is the string to be set as title.
    *                       Use empty string to hide the title completely.
-   * @param {VisId} [id] Parameter id is the id of the custom time bar, and is undefined by default.
+   * @param {IdType} [id] Parameter id is the id of the custom time bar, and is undefined by default.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setCustomTimeTitle(visTimeline: string, title: string, id?: VisId): void {
+  public setCustomTimeTitle(visTimeline: string, title: string, id?: IdType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setCustomTimeTitle(title, id);
     } else {
@@ -526,7 +522,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public setData(visTimeline: string, data: { groups?: VisTimelineGroups; items?: VisTimelineItems }): void {
+  public setData(visTimeline: string, data: { groups?: DataGroupCollectionType; items?: DataItemCollectionType }): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setData(data);
     } else {
@@ -546,7 +542,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public setGroups(visTimeline: string, groups: VisTimelineGroups): void {
+  public setGroups(visTimeline: string, groups: DataGroupCollectionType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setGroups(groups);
     } else {
@@ -564,7 +560,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public setItems(visTimeline: string, items: VisTimelineItems): void {
+  public setItems(visTimeline: string, items: DataItemCollectionType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setItems(items);
     } else {
@@ -584,7 +580,7 @@ export class VisTimelineService {
    *
    * @memberOf VisTimelineService
    */
-  public setOptions(visTimeline: string, options: VisTimelineOptions): void {
+  public setOptions(visTimeline: string, options: TimelineOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setOptions(options);
     } else {
@@ -597,13 +593,13 @@ export class VisTimelineService {
    * The currently selected items will be unselected.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId} id The id of the item that should be selected.
+   * @param {IdType} id The id of the item that should be selected.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setSelectionToId(visTimeline: string, id: VisId): void {
+  public setSelectionToId(visTimeline: string, id: IdType): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setSelection(id);
     } else {
@@ -617,13 +613,13 @@ export class VisTimelineService {
    * To unselect all selected items, call `setSelection([])`.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisId[]} ids The ids of the irems that should be selected.
+   * @param {IdType[]} ids The ids of the irems that should be selected.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setSelectionToIds(visTimeline: string, ids: VisId[]): void {
+  public setSelectionToIds(visTimeline: string, ids: IdType[]): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setSelection(ids);
     } else {
@@ -637,15 +633,15 @@ export class VisTimelineService {
    * If the parameter value of start or end is null, the parameter will be left unchanged.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisDate} start The parameters start can be a Date, Number, or String.
-   * @param {VisDate} end The parameters end can be a Date, Number, or String.
-   * @param {VisTimelineAnimationOptions} [options] Optional options.
+   * @param {DateType} start The parameters start can be a Date, Number, or String.
+   * @param {DateType} end The parameters end can be a Date, Number, or String.
+   * @param {TimelineAnimationOptions} [options] Optional options.
    *
    * @throws {Error} Thrown when timeline does not exist.
    *
    * @memberOf VisTimelineService
    */
-  public setWindow(visTimeline: string, start: VisDate, end: VisDate, options?: VisTimelineAnimationOptions): void {
+  public setWindow(visTimeline: string, start: DateType, end: DateType, options?: TimelineAnimationOptions): void {
     if (this.timelines[visTimeline]) {
       this.timelines[visTimeline].setWindow(start, end, options);
     } else {
@@ -673,13 +669,13 @@ export class VisTimelineService {
    * Activates an event.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisTimelineEvents} eventName The event name.
+   * @param {string} eventName The event name.
    * @param {boolean} preventDefault Stops the default behavior of the event.
    * @returns {boolean} Returns true when the event was activated.
    *
    * @memberOf VisTimelineService
    */
-  public on(visTimeline: string, eventName: VisTimelineEvents, preventDefault?: boolean): boolean {
+  public on(visTimeline: string, eventName: string, preventDefault?: boolean): boolean {
     if (this.timelines[visTimeline]) {
       this.events.set(eventName, new EventEmitter<any>());
       // tslint:disable-next-line
@@ -704,11 +700,11 @@ export class VisTimelineService {
    * Deactivates an event.
    *
    * @param {string} visTimeline The timeline name/identifier.
-   * @param {VisTimelineEvents} eventName The event name.
+   * @param {string} eventName The event name.
    *
    * @memberOf VisTimelineService
    */
-  public off(visTimeline: string, eventName: VisTimelineEvents): void {
+  public off(visTimeline: string, eventName: string): void {
     if (this.timelines[visTimeline]) {
       this.events.delete(eventName);
       this.timelines[visTimeline].off(eventName, undefined);
@@ -717,10 +713,10 @@ export class VisTimelineService {
 
   /**
    * Get the event emitter associated with the specified event name.
-   * @param {VisTimelineEvents} eventName The event name.
+   * @param {string} eventName The event name.
    * @returns {EventEmitter<any>} The event emitter of the specified event name.
    */
-  public getEmitter(eventName: VisTimelineEvents): EventEmitter<any> {
+  public getEmitter(eventName: string): EventEmitter<any> {
     return this.events.get(eventName);
   }
 
