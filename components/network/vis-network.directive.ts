@@ -36,7 +36,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visData: Data;
+  public visNetworkData: Data;
 
   /**
    * The options that will be used with this network instance.
@@ -48,7 +48,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * @memberOf VisNetworkDirective
    */
   @Input()
-  public visOptions: Options;
+  public visNetworkOptions: Options;
 
   /**
    * This event will be raised when the network is initialized.
@@ -84,7 +84,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * @memberOf VisNetworkDirective
    */
   public ngOnInit(): void {
-    if (!this.isInitialized && this.visNetwork && this.visData) {
+    if (!this.isInitialized && this.visNetwork && this.visNetworkData) {
       this.createNetwork();
     }
   }
@@ -98,7 +98,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
    * @memberOf VisNetworkDirective
    */
   public ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
-    if (!this.isInitialized && this.visNetwork && this.visData) {
+    if (!this.isInitialized && this.visNetwork && this.visNetworkData) {
       this.createNetwork();
     }
 
@@ -128,7 +128,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   private createNetwork(): void {
-    this.visNetworkService.create(this.visNetwork, this.visNetworkContainer, this.visData, this.visOptions);
+    this.visNetworkService.create(this.visNetwork, this.visNetworkContainer, this.visNetworkData, this.visNetworkOptions);
     this.isInitialized = true;
     this.initialized.emit(this.visNetwork);
   }
