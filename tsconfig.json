@@ -21,8 +21,7 @@
     "types": [
       "node",
       "jasmine",
-      "webpack",
-      "vis"
+      "webpack"
     ]
   },
   "exclude": [
