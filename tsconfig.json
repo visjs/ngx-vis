@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -11,6 +12,12 @@
     "declaration": false,
     "skipLibCheck": true,
     "stripInternal": true,
+    "baseUrl": ".",
+    "paths": {
+        "ngx-vis": [
+            "./ngx-vis.ts"
+        ]
+    },
     "lib": [
       "dom",
       "es6"
@@ -25,6 +32,7 @@
     ]
   },
   "exclude": [
+    "components",
     "node_modules",
     "bundles",
     "dist"
