@@ -1,5 +1,5 @@
 import { DataItem, DataInterfaceDataGroup } from 'vis-timeline';
-import { VisTimelineService } from './index';
+import { VisTimelineService } from './vis-timeline.service';
 
 describe('VisTimelineService Tests', () => {
   let visTimelineService: VisTimelineService;
