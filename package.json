@@ -75,7 +75,7 @@
   "@angular/platform-server": "8.2.5",
   "@angular/router": "8.2.5",
   "@types/jasmine": "^3.3.1",
-  "@types/node": "12.12.9",
+  "@types/node": "12.12.10",
   "@types/webpack": "^4.4.25",
   "ajv": "6.10.2",
   "angular2-template-loader": "^0.6.2",
