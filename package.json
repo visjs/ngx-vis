@@ -55,7 +55,7 @@
   "test"
  ],
  "dependencies": {
-  "vis-network": "6.4.0",
+  "vis-network": "6.4.1",
   "vis-timeline": "6.2.4"
  },
  "peerDependencies": {
