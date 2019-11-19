@@ -1,5 +1,8 @@
 {
   "extends": "tslint:latest",
+  "linterOptions": {
+    "exclude": [".config", ".github", "dist", "node_modules"]
+  },
   "rules": {
     "max-line-length": [true, 180],
     "quotemark": false,
