@@ -1,13 +1,13 @@
 # ngx-vis
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/hypery2k/ngx-vis.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/hypery2k/ngx-vis.svg?branch=develop)](https://travis-ci.org/hypery2k/ngx-vis)
+[![Greenkeeper badge](https://badges.greenkeeper.io/visjs/ngx-vis.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/visjs/ngx-vis.svg?branch=develop)](https://travis-ci.org/visjs/ngx-vis)
 
 [![npm version](https://badge.fury.io/js/ngx-vis.svg)](https://badge.fury.io/js/ngx-vis)
-[![codecov.io](https://codecov.io/github/hypery2k/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/hypery2k/ngx-vis?branch=master)
-[![David](https://img.shields.io/david/hypery2k/ngx-vis.svg)]()
-[![David](https://img.shields.io/david/dev/hypery2k/ngx-vis.svg)]()
-[![David](https://img.shields.io/david/peer/hypery2k/ngx-vis.svg)]()
+[![codecov.io](https://codecov.io/github/visjs/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/visjs/ngx-vis?branch=master)
+[![David](https://img.shields.io/david/visjs/ngx-vis.svg)]()
+[![David](https://img.shields.io/david/dev/visjs/ngx-vis.svg)]()
+[![David](https://img.shields.io/david/peer/visjs/ngx-vis.svg)]()
 
 An angular 2+ vis.js project 
 

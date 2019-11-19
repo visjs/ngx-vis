@@ -51,6 +51,9 @@
    "vis-timeline"
   ]
  },
+ "pre-commit": [
+  "test"
+ ],
  "dependencies": {
   "vis-network": "6.4.0",
   "vis-timeline": "6.2.3"

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { DataItem, DataItemCollectionType, VisTimelineService } from '../../components/timeline';
+import { VisTimelineService, DataItem } from '../../dist';
 
 @Component({
   selector: 'timeline-example',
@@ -34,18 +34,19 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
 
   public addItem(): void {
     const newLength = this.visTimelineItems.length + 1;
-    this.visTimelineItems[this.visTimelineItems.length] = { id: newLength, content: 'item ' + newLength, start: Date.now() };
+    this.visTimelineItems.push({ id: newLength, content: 'item ' + newLength, start: Date.now() });
+    this.visTimelineService.setItems(this.visTimeline, this.visTimelineItems);
     this.visTimelineService.focusOnIds(this.visTimeline, [1, newLength]);
   }
 
   public ngOnInit(): void {
     this.visTimelineItems = [
       { id: 1, content: 'item 1', start: '2016-04-20' },
-      { id: 2, content: 'item 2', start: '2016-04-14' },
-      { id: 3, content: 'item 3', start: '2016-04-18' },
-      { id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19' },
-      { id: 5, content: 'item 5', start: '2016-04-25' },
-      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' }
+      { id: 2, content: 'item 2', start: '2017-04-14' },
+      { id: 3, content: 'item 3', start: '2017-04-18' },
+      { id: 4, content: 'item 4', start: '2018-04-16', end: '2016-04-19' },
+      { id: 5, content: 'item 5', start: '2018-04-25' },
+      { id: 6, content: 'item 6', start: '2019-04-27', type: 'point' }
     ];
   }
 
