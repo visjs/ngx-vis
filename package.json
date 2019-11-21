@@ -39,7 +39,7 @@
   "release:patch": "npm run release:pre && npm version patch && npm run release:post && git push origin && git push origin --tags && npm run version-and-push",
   "version-and-push": "git push origin && git push origin --tags && npm run publish-and-merge",
   "publish-and-merge": "git checkout master && git merge develop && git push && git checkout develop && npm publish",
-  "prepublish": "npm run build"
+  "prepublishOnly": "npm run build"
  },
  "ngPackage": {
   "lib": {
@@ -61,19 +61,22 @@
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
   "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
-  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0"
+  "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
+  "keycharm": "^0.2.0",
+  "vis-data": "^6.2.3",
+  "vis-util": "^1.1.10"
  },
  "devDependencies": {
-  "@angular/animations": "8.2.5",
-  "@angular/common": "8.2.5",
-  "@angular/compiler": "8.2.5",
-  "@angular/compiler-cli": "^8.2.5",
-  "@angular/core": "8.2.5",
-  "@angular/forms": "8.2.5",
-  "@angular/platform-browser": "8.2.5",
-  "@angular/platform-browser-dynamic": "8.2.5",
-  "@angular/platform-server": "8.2.5",
-  "@angular/router": "8.2.5",
+  "@angular/animations": "8.2.14",
+  "@angular/common": "8.2.14",
+  "@angular/compiler": "8.2.14",
+  "@angular/compiler-cli": "^8.2.14",
+  "@angular/core": "8.2.14",
+  "@angular/forms": "8.2.14",
+  "@angular/platform-browser": "8.2.14",
+  "@angular/platform-browser-dynamic": "8.2.14",
+  "@angular/platform-server": "8.2.14",
+  "@angular/router": "8.2.14",
   "@types/jasmine": "^3.3.1",
   "@types/node": "12.12.10",
   "@types/webpack": "^4.4.25",
@@ -103,6 +106,7 @@
   "karma-mocha-reporter": "^2.2.2",
   "karma-sourcemap-loader": "^0.3.7",
   "karma-webpack": "^4.0.2",
+  "keycharm": "^0.2.0",
   "mini-css-extract-plugin": "^0.8.0",
   "ng-packagr": "^5.7.1",
   "npm-audit-resolver": "^1.4.0",
@@ -113,6 +117,7 @@
   "reflect-metadata": "^0.1.10",
   "require-dir": "^1.2.0",
   "rimraf": "^3.0.0",
+  "rollup": "^1.27.3",
   "rxjs": "^6.0.0",
   "rxjs-compat": "^6.0.0",
   "source-map-loader": "^0.2.0",
@@ -120,15 +125,16 @@
   "systemjs-builder": "^0.16.13",
   "to-string-loader": "^1.1.5",
   "ts-helpers": "^1.1.2",
-  "tsickle": "^0.37.1",
   "tslint": "^5.20.1",
   "tslint-loader": "^3.4.3",
   "typescript": "^3.5.3",
+  "vis-data": "^6.2.3",
+  "vis-util": "^1.1.10",
   "webpack": "^4.32.2",
   "webpack-cli": "^3.2.3",
   "webpack-dev-server": "^3.2.1",
   "webpack-merge": "^4.1.0",
-  "zone.js": "0.10.2"
+  "zone.js": "^0.9.1"
  },
  "repository": {
   "type": "git",
