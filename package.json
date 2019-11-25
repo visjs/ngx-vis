@@ -113,7 +113,7 @@
   "null-loader": "^3.0.0",
   "pre-commit": "^1.2.2",
   "puppeteer": "1.19.0",
-  "raw-loader": "^3.0.0",
+  "raw-loader": "^4.0.0",
   "reflect-metadata": "^0.1.10",
   "require-dir": "^1.2.0",
   "rimraf": "^3.0.0",
