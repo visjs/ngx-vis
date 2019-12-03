@@ -38,7 +38,7 @@
   "release:minor": "npm run release:pre && npm version minor && npm run release:post && git push origin && git push origin --tags && npm run version-and-push",
   "release:patch": "npm run release:pre && npm version patch && npm run release:post && git push origin && git push origin --tags && npm run version-and-push",
   "version-and-push": "git push origin && git push origin --tags && npm run publish-and-merge",
-  "publish-and-merge": "git checkout master && git merge develop && git push && git checkout develop && npm publish",
+  "publish-and-merge": "git checkout master && git merge develop && git push && git checkout develop",
   "prepare": "npm run build"
  },
  "ngPackage": {
@@ -55,8 +55,8 @@
   "test"
  ],
  "dependencies": {
-  "vis-network": "6.4.5",
-  "vis-timeline": "6.2.5"
+  "vis-network": "6.4.6",
+  "vis-timeline": "6.2.7"
  },
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
@@ -64,7 +64,7 @@
   "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
   "keycharm": "^0.2.0",
   "vis-data": "^6.2.3",
-  "vis-util": "^1.1.10"
+  "vis-util": "^2.0.1"
  },
  "devDependencies": {
   "@angular/animations": "8.2.14",
