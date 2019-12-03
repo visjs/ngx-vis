@@ -1,3 +1,39 @@
+## [3.0.1](https://github.com/hypery2k/ngx-vis/compare/v3.0.0...v3.0.1) (2019-12-03)
+
+
+### Bug Fixes
+
+* **package:** update vis-network to version 6.4.1 ([ccc523f](https://github.com/hypery2k/ngx-vis/commit/ccc523f))
+* **package:** update vis-network to version 6.4.2 ([2fd0f74](https://github.com/hypery2k/ngx-vis/commit/2fd0f74))
+* **package:** update vis-network to version 6.4.5 ([89011fa](https://github.com/hypery2k/ngx-vis/commit/89011fa))
+* **package:** update vis-timeline to version 6.2.4 ([69be256](https://github.com/hypery2k/ngx-vis/commit/69be256))
+* **package:** update vis-timeline to version 6.2.5 ([6acfec9](https://github.com/hypery2k/ngx-vis/commit/6acfec9))
+* **Security:** Resolve dependency security issues ([9db3063](https://github.com/hypery2k/ngx-vis/commit/9db3063))
+* **Vis:** Update vis packages ([0185734](https://github.com/hypery2k/ngx-vis/commit/0185734))
+
+
+### Features
+
+* **Build:** Using GitHub Actions ([2633fd0](https://github.com/hypery2k/ngx-vis/commit/2633fd0)), closes [#319](https://github.com/hypery2k/ngx-vis/issues/319)
+
+
+
+# [3.0.0](https://github.com/hypery2k/ngx-vis/compare/v2.3.2...v3.0.0) (2019-11-19)
+
+
+### Bug Fixes
+
+* **Build:** Corrected CI build ([9cc76d7](https://github.com/hypery2k/ngx-vis/commit/9cc76d7))
+* **Build:** Resolve packaging via ng-packagr ([#348](https://github.com/hypery2k/ngx-vis/issues/348)) ([3b99345](https://github.com/hypery2k/ngx-vis/commit/3b99345))
+* **Demo:** Corrected demo setup ([5c035af](https://github.com/hypery2k/ngx-vis/commit/5c035af)), closes [#348](https://github.com/hypery2k/ngx-vis/issues/348)
+
+
+### Features
+
+* **Library:** Integrate new vis-network and library ([1450a65](https://github.com/hypery2k/ngx-vis/commit/1450a65)), closes [#321](https://github.com/hypery2k/ngx-vis/issues/321)
+
+
+
 ## [2.3.2](https://github.com/hypery2k/ngx-vis/compare/v2.3.1...v2.3.2) (2019-09-09)
 
 
