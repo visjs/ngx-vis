@@ -15,8 +15,6 @@ An angular 2+ vis.js project
 
 # Usage
 
-git commit --no-verify
-
 ## Installation
 
 ```
