@@ -13,6 +13,9 @@ An angular 2+ vis.js project
 
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
 
+[![Backers on Open Collective](https://opencollective.com/visjs/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/visjs/sponsors/badge.svg)](#sponsors)
+
+
 # Usage
 
 ## Installation
