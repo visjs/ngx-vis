@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           npm i
-          npm run build
+          npm run build && cd dist
           npm publish
         if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
 
@@ -54,7 +54,7 @@ jobs:
           CURRENT_TIME=$(date +%s)
           NEW_VERSION=${PACKAGE_VERSION}-build${CURRENT_TIME}
           npm i
-          npm run build
           npm version $NEW_VERSION --no-git-tag-version
+          npm run build && cd dist
           npm publish  --tag next
         if: contains( github.ref, 'develop' ) || contains( github.base_ref, 'develop' )
