@@ -41,18 +41,20 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           npm i
+          npm run build
           npm publish
         if: github.ref == 'master'
-      
+
       - name: publish preview package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-          PACKAGE_VERSION=$(node -p -e "require('./package.json').version") 
+          PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
           CURRENT_TIME=$(date +%s)
           NEW_VERSION=${PACKAGE_VERSION}-build${CURRENT_TIME}
           npm i
+          npm run build
           npm version $NEW_VERSION --no-git-tag-version
           npm publish  --tag next
         if: github.ref == 'develop'
