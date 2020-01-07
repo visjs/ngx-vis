@@ -43,7 +43,7 @@ jobs:
           npm i
           npm run build
           npm publish
-        if: github.ref == 'master'
+        if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
 
       - name: publish preview package
         env:
@@ -57,4 +57,4 @@ jobs:
           npm run build
           npm version $NEW_VERSION --no-git-tag-version
           npm publish  --tag next
-        if: github.ref == 'develop'
+        if: contains( github.ref, 'develop' ) || contains( github.base_ref, 'develop' )
