@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Data, DataSet, Edge, Node, Options } from 'vis-network';
-import { DataGroupCollectionType, DataItem, DataItemCollectionType, TimelineOptions } from 'vis-timeline';
+import { DataGroupCollectionType, DataItem, DataGroup, DataItemCollectionType, TimelineOptions } from 'vis-timeline';
 
 import { VisNetworkDirective } from './components/network/vis-network.directive';
 import { VisNetworkService } from './components/network/vis-network.service';
@@ -18,6 +18,7 @@ export {
   Edge,
   Options,
   DataItem,
+  DataGroup,
   DataGroupCollectionType,
   DataItemCollectionType,
   Node,
