@@ -1,3 +1,12 @@
+## [3.0.3](https://github.com/visjs/ngx-vis/compare/v3.0.2...v3.0.3) (2020-01-27)
+
+
+### Bug Fixes
+
+* **package:** update vis-network to version 7.0.1 ([2c35c67](https://github.com/visjs/ngx-vis/commit/2c35c67))
+
+
+
 ## [3.0.2](https://github.com/visjs/ngx-vis/compare/v3.0.1...v3.0.2) (2020-01-08)
 
 
