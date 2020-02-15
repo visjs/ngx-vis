@@ -51,12 +51,15 @@
    "vis-timeline"
   ]
  },
- "pre-commit": [
-  "test"
- ],
+ "husky": {
+  "hooks": {
+   "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+   "pre-push": "npm test"
+  }
+ },
  "dependencies": {
   "vis-network": "^7.3.4",
-  "vis-timeline": "^6.3.0"
+  "vis-timeline": "^7.1.1"
  },
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0",
@@ -77,6 +80,8 @@
   "@angular/platform-browser-dynamic": "8.2.14",
   "@angular/platform-server": "8.2.14",
   "@angular/router": "8.2.14",
+  "@commitlint/cli": "8.3.5",
+  "@commitlint/config-conventional": "8.3.4",
   "@types/jasmine": "^3.3.1",
   "@types/node": "13.5.1",
   "@types/webpack": "^4.4.25",
@@ -96,6 +101,7 @@
   "gitignore-to-glob": "^0.3.0",
   "html-loader": "^0.5.1",
   "html-webpack-plugin": "^3.2.0",
+  "husky": "^4.2.3",
   "istanbul-instrumenter-loader": "3.0.1",
   "jasmine-core": "^3.5.0",
   "karma": "^4.4.1",
@@ -111,7 +117,6 @@
   "ng-packagr": "^5.7.1",
   "npm-audit-resolver": "^2.2.0",
   "null-loader": "^3.0.0",
-  "pre-commit": "^1.2.2",
   "puppeteer": "^2.0.0",
   "raw-loader": "^4.0.0",
   "reflect-metadata": "^0.1.10",
