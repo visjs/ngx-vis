@@ -1,3 +1,7 @@
+## [3.0.4](https://github.com/visjs/ngx-vis/compare/v3.0.3...v3.0.4) (2020-02-18)
+
+
+
 ## [3.0.3](https://github.com/visjs/ngx-vis/compare/v3.0.2...v3.0.3) (2020-01-27)
 
 
