@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, NgZone } from '@angular/core';
 import {
   DataGroupCollectionType,
   DataItemCollectionType,
@@ -133,6 +133,10 @@ export class VisTimelineService {
 
   private timelines: { [id: string]: Timeline } = {};
 
+  constructor(
+    private ngZone: NgZone
+  ) { }
+
   /**
    * Creates a new timeline instance.
    *
@@ -150,7 +154,7 @@ export class VisTimelineService {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = new Timeline(container, items, options);
+    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, options));
   }
 
   /**
@@ -177,7 +181,7 @@ export class VisTimelineService {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = new Timeline(container, items, groups, options);
+    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, groups, options));
   }
 
   /**
