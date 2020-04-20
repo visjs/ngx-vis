@@ -3,9 +3,12 @@ import { VisTimelineService } from './vis-timeline.service';
 
 describe('VisTimelineService Tests', () => {
   let visTimelineService: VisTimelineService;
+  const ngZoneMock: any = {
+    runOutsideAngular: (fn: () => void) => fn()
+  };
 
   beforeEach(() => {
-    visTimelineService = new VisTimelineService();
+    visTimelineService = new VisTimelineService(ngZoneMock);
   });
 
   it('throws no error when the network does not exist', () => {
