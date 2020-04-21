@@ -1,0 +1,58 @@
+{
+  "decisions": {
+    "786|karma>expand-braces>braces": {
+      "madeAt": 0,
+      "decision": "ignore"
+    },
+    "1179|@angular/compiler-cli>chokidar>fsevents>node-pre-gyp>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434551288
+    },
+    "1179|@angular/compiler-cli>chokidar>fsevents>node-pre-gyp>tar>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434551288
+    },
+    "1179|@angular/compiler-cli>chokidar>fsevents>node-pre-gyp>rc>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434551288
+    },
+    "1179|karma>optimist>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434556722
+    },
+    "1179|karma-mocha>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434560322
+    },
+    "1179|conventional-changelog-cli>conventional-changelog>conventional-changelog-core>conventional-changelog-writer>handlebars>optimist>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434567365
+    },
+    "1179|webpack>watchpack>chokidar>fsevents>node-pre-gyp>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    },
+    "1179|webpack-dev-server>chokidar>fsevents>node-pre-gyp>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    },
+    "1179|webpack>watchpack>chokidar>fsevents>node-pre-gyp>tar>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    },
+    "1179|webpack-dev-server>chokidar>fsevents>node-pre-gyp>tar>mkdirp>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    },
+    "1179|webpack>watchpack>chokidar>fsevents>node-pre-gyp>rc>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    },
+    "1179|webpack-dev-server>chokidar>fsevents>node-pre-gyp>rc>minimist": {
+      "decision": "ignore",
+      "madeAt": 1587434571301
+    }
+  },
+  "rules": {},
+  "version": 1
+}
