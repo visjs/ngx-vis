@@ -13,7 +13,7 @@ import { VisNetworkService } from './vis-network.service';
  * @implements {OnChanges}
  */
 @Directive({
-  selector: '[visNetwork]'
+  selector: '[visNetwork]',
 })
 export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
   /**

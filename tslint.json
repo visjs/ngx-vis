@@ -1,18 +1,31 @@
 {
-  "extends": "tslint:latest",
-  "linterOptions": {
-    "exclude": [".config", ".github", "dist", "node_modules"]
-  },
+  "extends": ["tslint:recommended"],
+  "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
     "max-line-length": [true, 180],
-    "quotemark": false,
-    "only-arrow-functions": false,
-    "no-string-literal": false,
-    "linebreak-style": false,
-    "interface-name": [false],
-    "no-reference": false,
-    "max-classes-per-file": false,
-    "no-empty-interface": false,
-    "trailing-comma": false
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "indent": [true, "spaces"],
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-internal-module": true,
+    "no-trailing-whitespace": true,
+    "no-var-keyword": true,
+    "one-line": [true, "check-open-brace", "check-whitespace"],
+    "quotemark": [true, "single"],
+    "semicolon": true,
+    "triple-equals": [true, "allow-null-check"],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
+    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"]
   }
 }

@@ -22,7 +22,7 @@ export {
   DataGroupCollectionType,
   DataItemCollectionType,
   Node,
-  TimelineOptions
+  TimelineOptions,
 };
 
 @NgModule({
@@ -30,6 +30,6 @@ export {
   exports: [VisNetworkDirective, VisTimelineDirective],
   imports: [CommonModule],
   providers: [VisNetworkService, VisTimelineService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class VisModule {}

@@ -7,7 +7,7 @@ import {
   Timeline,
   TimelineAnimationOptions,
   TimelineEventPropertiesResult,
-  TimelineOptions
+  TimelineOptions,
 } from 'vis-timeline';
 
 /**
@@ -134,7 +134,7 @@ export class VisTimelineService {
   private timelines: { [id: string]: Timeline } = {};
 
   constructor(
-    private ngZone: NgZone
+    private ngZone: NgZone,
   ) { }
 
   /**
@@ -175,7 +175,7 @@ export class VisTimelineService {
     container: HTMLElement,
     items: DataItemCollectionType,
     groups: DataGroupCollectionType,
-    options?: TimelineOptions
+    options?: TimelineOptions,
   ): void {
     if (this.timelines[visTimeline]) {
       throw new Error(this.alreadyExistsError(visTimeline));

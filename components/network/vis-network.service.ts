@@ -12,7 +12,7 @@ import {
   NodeOptions,
   OpenClusterOptions,
   Options,
-  Position
+  Position,
 } from 'vis-network';
 
 /**

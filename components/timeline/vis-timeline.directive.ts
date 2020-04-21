@@ -13,7 +13,7 @@ import { VisTimelineService } from './vis-timeline.service';
  * @implements {OnChanges}
  */
 @Directive({
-  selector: '[visTimeline]'
+  selector: '[visTimeline]',
 })
 export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
   /**
@@ -147,7 +147,7 @@ export class VisTimelineDirective implements OnInit, OnDestroy, OnChanges {
         this.visTimelineContainer,
         this.visTimelineItems,
         this.visTimelineGroups,
-        this.visTimelineOptions
+        this.visTimelineOptions,
       );
     } else {
       this.visTimelineService.createWithItems(this.visTimeline, this.visTimelineContainer, this.visTimelineItems, this.visTimelineOptions);
