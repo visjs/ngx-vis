@@ -1,3 +1,18 @@
+# [3.1.0](https://github.com/visjs/ngx-vis/compare/v3.0.4...v3.1.0) (2020-04-21)
+
+
+### Bug Fixes
+
+* **Security:** Resolve dependency security issues ([f2f583d](https://github.com/visjs/ngx-vis/commit/f2f583d9aa5ffd7479ffb4af39e6d087f1d976a6))
+* **Security:** Resolve dependency security issues ([5148cc9](https://github.com/visjs/ngx-vis/commit/5148cc9a70f57c264b5226676158a4418fa191fd))
+
+
+### Features
+
+* **Library:** Use NgZone for Vis-timeline ([796de1c](https://github.com/visjs/ngx-vis/commit/796de1cb7a835def6a009bdd7f84b89780edaf2b)), closes [#388](https://github.com/visjs/ngx-vis/issues/388)
+
+
+
 ## [3.0.4](https://github.com/visjs/ngx-vis/compare/v3.0.3...v3.0.4) (2020-02-18)
 
 
@@ -7,7 +22,7 @@
 
 ### Bug Fixes
 
-* **package:** update vis-network to version 7.0.1 ([2c35c67](https://github.com/visjs/ngx-vis/commit/2c35c67))
+* **package:** update vis-network to version 7.0.1 ([2c35c67](https://github.com/visjs/ngx-vis/commit/2c35c67f01f89b343d50fab9466c5a894e9b4ed3))
 
 
 
@@ -16,13 +31,13 @@
 
 ### Bug Fixes
 
-* **package:** Update vis-network to version 6.4.7 ([b9f2db7](https://github.com/visjs/ngx-vis/commit/b9f2db7))
-* **package:** update vis-timeline to version 6.2.10 ([35be2c4](https://github.com/visjs/ngx-vis/commit/35be2c4))
-* **package:** update vis-timeline to version 6.2.8 ([1636ba2](https://github.com/visjs/ngx-vis/commit/1636ba2))
-* **package:** update vis-timeline to version 6.3.0 ([fa9babc](https://github.com/visjs/ngx-vis/commit/fa9babc))
-* **Publish:** Adding build step before publishing ([7629c2f](https://github.com/visjs/ngx-vis/commit/7629c2f)), closes [#383](https://github.com/visjs/ngx-vis/issues/383)
-* **Publish:** Using dist folder for publish ([5719d53](https://github.com/visjs/ngx-vis/commit/5719d53)), closes [#383](https://github.com/visjs/ngx-vis/issues/383)
-* **Security:** Update dependencies due the npm audit ([3e63706](https://github.com/visjs/ngx-vis/commit/3e63706))
+* **package:** Update vis-network to version 6.4.7 ([b9f2db7](https://github.com/visjs/ngx-vis/commit/b9f2db7a58586e7394d5c6376be3ace77a4c5824))
+* **package:** update vis-timeline to version 6.2.10 ([35be2c4](https://github.com/visjs/ngx-vis/commit/35be2c47163b3a146da5e26c87f93b11f69736f9))
+* **package:** update vis-timeline to version 6.2.8 ([1636ba2](https://github.com/visjs/ngx-vis/commit/1636ba2825782cb7ac540bec3ff9caad3569b25b))
+* **package:** update vis-timeline to version 6.3.0 ([fa9babc](https://github.com/visjs/ngx-vis/commit/fa9babc2da07f17a1ccfefd76acb0736c26a2ae8))
+* **Publish:** Adding build step before publishing ([7629c2f](https://github.com/visjs/ngx-vis/commit/7629c2f4a1b325a4d817da5a1bbb5bd89888f09c)), closes [#383](https://github.com/visjs/ngx-vis/issues/383)
+* **Publish:** Using dist folder for publish ([5719d53](https://github.com/visjs/ngx-vis/commit/5719d5331c4a3ea406f422538cb75b49dde18b59)), closes [#383](https://github.com/visjs/ngx-vis/issues/383)
+* **Security:** Update dependencies due the npm audit ([3e63706](https://github.com/visjs/ngx-vis/commit/3e6370638869825a509af164ca149ba19176016b))
 
 
 
@@ -31,18 +46,18 @@
 
 ### Bug Fixes
 
-* **package:** update vis-network to version 6.4.1 ([ccc523f](https://github.com/visjs/ngx-vis/commit/ccc523f))
-* **package:** update vis-network to version 6.4.2 ([2fd0f74](https://github.com/visjs/ngx-vis/commit/2fd0f74))
-* **package:** update vis-network to version 6.4.5 ([89011fa](https://github.com/visjs/ngx-vis/commit/89011fa))
-* **package:** update vis-timeline to version 6.2.4 ([69be256](https://github.com/visjs/ngx-vis/commit/69be256))
-* **package:** update vis-timeline to version 6.2.5 ([6acfec9](https://github.com/visjs/ngx-vis/commit/6acfec9))
-* **Security:** Resolve dependency security issues ([9db3063](https://github.com/visjs/ngx-vis/commit/9db3063))
-* **Vis:** Update vis packages ([0185734](https://github.com/visjs/ngx-vis/commit/0185734))
+* **package:** update vis-network to version 6.4.1 ([ccc523f](https://github.com/visjs/ngx-vis/commit/ccc523f5ae025554141db7a28124523fd3fb249e))
+* **package:** update vis-network to version 6.4.2 ([2fd0f74](https://github.com/visjs/ngx-vis/commit/2fd0f74a69150322fe12f0798a12c9bfa902cb02))
+* **package:** update vis-network to version 6.4.5 ([89011fa](https://github.com/visjs/ngx-vis/commit/89011fa9017502be80055b6737ff88d1aaa3c0ed))
+* **package:** update vis-timeline to version 6.2.4 ([69be256](https://github.com/visjs/ngx-vis/commit/69be256ee614d0981fe3d4b4cb6d44414dc9b5b7))
+* **package:** update vis-timeline to version 6.2.5 ([6acfec9](https://github.com/visjs/ngx-vis/commit/6acfec9739386ada936d21e8e671c31900183e93))
+* **Security:** Resolve dependency security issues ([9db3063](https://github.com/visjs/ngx-vis/commit/9db3063a3ed9222d8e4c02ebbaeb10494199c8bb))
+* **Vis:** Update vis packages ([0185734](https://github.com/visjs/ngx-vis/commit/018573499ec655459f4cfeec12257e914e5ddf66))
 
 
 ### Features
 
-* **Build:** Using GitHub Actions ([2633fd0](https://github.com/visjs/ngx-vis/commit/2633fd0)), closes [#319](https://github.com/visjs/ngx-vis/issues/319)
+* **Build:** Using GitHub Actions ([2633fd0](https://github.com/visjs/ngx-vis/commit/2633fd0a81db447752ac80a05f43950bf0215e77)), closes [#319](https://github.com/visjs/ngx-vis/issues/319)
 
 
 
@@ -51,14 +66,14 @@
 
 ### Bug Fixes
 
-* **Build:** Corrected CI build ([9cc76d7](https://github.com/visjs/ngx-vis/commit/9cc76d7))
-* **Build:** Resolve packaging via ng-packagr ([#348](https://github.com/visjs/ngx-vis/issues/348)) ([3b99345](https://github.com/visjs/ngx-vis/commit/3b99345))
-* **Demo:** Corrected demo setup ([5c035af](https://github.com/visjs/ngx-vis/commit/5c035af)), closes [#348](https://github.com/visjs/ngx-vis/issues/348)
+* **Build:** Corrected CI build ([9cc76d7](https://github.com/visjs/ngx-vis/commit/9cc76d7aa55a43f28841d067e904645324833a3b))
+* **Build:** Resolve packaging via ng-packagr ([#348](https://github.com/visjs/ngx-vis/issues/348)) ([3b99345](https://github.com/visjs/ngx-vis/commit/3b993451a54cab073e15d5a82cc64833135b7ef4))
+* **Demo:** Corrected demo setup ([5c035af](https://github.com/visjs/ngx-vis/commit/5c035af91b68a9bd3d94735d2108bb6149e25906)), closes [#348](https://github.com/visjs/ngx-vis/issues/348)
 
 
 ### Features
 
-* **Library:** Integrate new vis-network and library ([1450a65](https://github.com/visjs/ngx-vis/commit/1450a65)), closes [#321](https://github.com/visjs/ngx-vis/issues/321)
+* **Library:** Integrate new vis-network and library ([1450a65](https://github.com/visjs/ngx-vis/commit/1450a657df52ea1ca793848088d79be6f85e0eb1)), closes [#321](https://github.com/visjs/ngx-vis/issues/321)
 
 
 
@@ -75,7 +90,7 @@
 
 ### Features
 
-* **getBoundingBox:** Adding  'getBoundingBox' method in VisNetworksService ([f7838c1](https://github.com/visjs/ngx-vis/commit/f7838c1)), closes [#228](https://github.com/visjs/ngx-vis/issues/228)
+* **getBoundingBox:** Adding  'getBoundingBox' method in VisNetworksService ([f7838c1](https://github.com/visjs/ngx-vis/commit/f7838c16ea2c28407f042f2033c3764e744af4be)), closes [#228](https://github.com/visjs/ngx-vis/issues/228)
 
 
 
@@ -84,8 +99,8 @@
 
 ### Features
 
-* **Angular 8:** Basic Angular 8 support in peerDependencies ([be21df0](https://github.com/visjs/ngx-vis/commit/be21df0))
-* **storePosition:** Inital dummy implementation for store position ([#221](https://github.com/visjs/ngx-vis/issues/221)) ([e9c543f](https://github.com/visjs/ngx-vis/commit/e9c543f)), closes [#141](https://github.com/visjs/ngx-vis/issues/141)
+* **Angular 8:** Basic Angular 8 support in peerDependencies ([be21df0](https://github.com/visjs/ngx-vis/commit/be21df0c8e2aeff559c7f55e27f97368efb546bc))
+* **storePosition:** Inital dummy implementation for store position ([#221](https://github.com/visjs/ngx-vis/issues/221)) ([e9c543f](https://github.com/visjs/ngx-vis/commit/e9c543ff8e5f0295f54d4be7a67fd109b45f0bc7)), closes [#141](https://github.com/visjs/ngx-vis/issues/141)
 
 
 
@@ -94,15 +109,15 @@
 
 ### Bug Fixes
 
-* **Demo:** Corrected demo setup ([95f786a](https://github.com/visjs/ngx-vis/commit/95f786a))
-* **Demo:** Use relative paths ([ee6981b](https://github.com/visjs/ngx-vis/commit/ee6981b))
-* **GitHub Page:** Correct url routing ([898cd7b](https://github.com/visjs/ngx-vis/commit/898cd7b))
-* **Security:** Resolve dependency security issues ([a6388b9](https://github.com/visjs/ngx-vis/commit/a6388b9))
+* **Demo:** Corrected demo setup ([95f786a](https://github.com/visjs/ngx-vis/commit/95f786a603e6bf8514b2923581362ebe68a34286))
+* **Demo:** Use relative paths ([ee6981b](https://github.com/visjs/ngx-vis/commit/ee6981b7995ec1b4d7f3db1ab8087e8bfad6b1ed))
+* **GitHub Page:** Correct url routing ([898cd7b](https://github.com/visjs/ngx-vis/commit/898cd7bbf2d2e0dfbf11eb8a7d2142f07235e8e3))
+* **Security:** Resolve dependency security issues ([a6388b9](https://github.com/visjs/ngx-vis/commit/a6388b9413174232c54948e0fafb31fdc1f0a7d0))
 
 
 ### Features
 
-* **Demo:** Adding demo project ([93c32d7](https://github.com/visjs/ngx-vis/commit/93c32d7))
+* **Demo:** Adding demo project ([93c32d7](https://github.com/visjs/ngx-vis/commit/93c32d7477dad0b28944343550b30e72fb774627))
 
 
 
@@ -111,14 +126,14 @@
 
 ### Bug Fixes
 
-* **Security:** Resolve security issues ([404d2a7](https://github.com/visjs/ngx-vis/commit/404d2a7))
-* **TSLint:** Corrected linting errors ([7637888](https://github.com/visjs/ngx-vis/commit/7637888))
+* **Security:** Resolve security issues ([404d2a7](https://github.com/visjs/ngx-vis/commit/404d2a729a15cc991270b4a9414d9ed78b9ba50c))
+* **TSLint:** Corrected linting errors ([7637888](https://github.com/visjs/ngx-vis/commit/7637888e420b97e0752cc6e6af5a799f7324eb74))
 
 
 ### Features
 
-* **Events:** Added support for vis events ([#181](https://github.com/visjs/ngx-vis/issues/181)) ([2bf0a1b](https://github.com/visjs/ngx-vis/commit/2bf0a1b))
-* **Security:** Update dependencies to resolve security issues ([8e66970](https://github.com/visjs/ngx-vis/commit/8e66970))
+* **Events:** Added support for vis events ([#181](https://github.com/visjs/ngx-vis/issues/181)) ([2bf0a1b](https://github.com/visjs/ngx-vis/commit/2bf0a1b848ade2666dfba43f4bb5644c902c15d6))
+* **Security:** Update dependencies to resolve security issues ([8e66970](https://github.com/visjs/ngx-vis/commit/8e66970f1aaea30ee33fd20b14448083ab20a820))
 
 
 
@@ -127,9 +142,9 @@
 
 ### Bug Fixes
 
-* **Build:** Resolve puppeteer issue ([f71e47f](https://github.com/visjs/ngx-vis/commit/f71e47f)), closes [#136](https://github.com/visjs/ngx-vis/issues/136)
-* **getScale:** Fixed returned output of getScale method ([e74fbcc](https://github.com/visjs/ngx-vis/commit/e74fbcc)), closes [#143](https://github.com/visjs/ngx-vis/issues/143)
-* **package:** update @types/vis to version 4.21.9 ([05b45ff](https://github.com/visjs/ngx-vis/commit/05b45ff))
+* **Build:** Resolve puppeteer issue ([f71e47f](https://github.com/visjs/ngx-vis/commit/f71e47ff2322fd7a96667d897e72046de490800c)), closes [#136](https://github.com/visjs/ngx-vis/issues/136)
+* **getScale:** Fixed returned output of getScale method ([e74fbcc](https://github.com/visjs/ngx-vis/commit/e74fbcc44e7742d8161b2e60d809f05c25e5ad22)), closes [#143](https://github.com/visjs/ngx-vis/issues/143)
+* **package:** update @types/vis to version 4.21.9 ([05b45ff](https://github.com/visjs/ngx-vis/commit/05b45ffbbd1ab8d7076a0a7b5b7f5457e4a9a42e))
 
 
 
@@ -138,13 +153,13 @@
 
 ### Bug Fixes
 
-* **Build:** Corrected Jenkins build ([88ded19](https://github.com/visjs/ngx-vis/commit/88ded19))
+* **Build:** Corrected Jenkins build ([88ded19](https://github.com/visjs/ngx-vis/commit/88ded190cce6b083f5006b62c27e0f218a9d3afa))
 
 
 ### Features
 
-* **Angular:** Drop support for older version of Angular ([7162bbd](https://github.com/visjs/ngx-vis/commit/7162bbd))
-* **Security:** Run `npm audit` in CI ([e383694](https://github.com/visjs/ngx-vis/commit/e383694))
+* **Angular:** Drop support for older version of Angular ([7162bbd](https://github.com/visjs/ngx-vis/commit/7162bbd31b8fa8bc478cdbf9d0a7292f420382fa))
+* **Security:** Run `npm audit` in CI ([e383694](https://github.com/visjs/ngx-vis/commit/e383694cf0f250fe7ad5da3cd56b72f2fcea2189))
 
 
 ### BREAKING CHANGES
@@ -158,9 +173,9 @@
 
 ### Bug Fixes
 
-* **build:** Corrected dependencies ([0574f7e](https://github.com/visjs/ngx-vis/commit/0574f7e))
-* **package:** update @types/vis to version 4.21.4 ([d2073b9](https://github.com/visjs/ngx-vis/commit/d2073b9))
-* **package:** update @types/vis to version 4.21.5 ([997cdcb](https://github.com/visjs/ngx-vis/commit/997cdcb))
+* **build:** Corrected dependencies ([0574f7e](https://github.com/visjs/ngx-vis/commit/0574f7e63391ef831fb981610a867883a28a0834))
+* **package:** update @types/vis to version 4.21.4 ([d2073b9](https://github.com/visjs/ngx-vis/commit/d2073b93951e2fc3d536212eed253d2ce007f5b7))
+* **package:** update @types/vis to version 4.21.5 ([997cdcb](https://github.com/visjs/ngx-vis/commit/997cdcb842f69401f5eae0fe2af2c7e08e3c0cce))
 
 
 
@@ -169,8 +184,8 @@
 
 ### Features
 
-* **Angular 6:** Adding support for Angular 6 ([8b0dea8](https://github.com/visjs/ngx-vis/commit/8b0dea8))
-* **Angular 6:** Prepare Support for Angular 6 ([6ba8704](https://github.com/visjs/ngx-vis/commit/6ba8704))
+* **Angular 6:** Adding support for Angular 6 ([8b0dea8](https://github.com/visjs/ngx-vis/commit/8b0dea84259568ce04cf973a092f6e40e2179af0))
+* **Angular 6:** Prepare Support for Angular 6 ([6ba8704](https://github.com/visjs/ngx-vis/commit/6ba87049a46f1bd7b70dce5a48d10099a2b55296))
 
 
 
@@ -179,8 +194,8 @@
 
 ### Bug Fixes
 
-* **package:** update @types/vis to version 4.21.2 ([2173df5](https://github.com/visjs/ngx-vis/commit/2173df5))
-* **package:** update @types/vis to version 4.21.3 ([fc425ce](https://github.com/visjs/ngx-vis/commit/fc425ce))
+* **package:** update @types/vis to version 4.21.2 ([2173df5](https://github.com/visjs/ngx-vis/commit/2173df5995d8d482fa0b1b3db5dc178087ada079))
+* **package:** update @types/vis to version 4.21.3 ([fc425ce](https://github.com/visjs/ngx-vis/commit/fc425cebeaa595467ea4175f75bd79466fa739e6))
 
 
 
@@ -189,7 +204,7 @@
 
 ### Features
 
-* **networkservice:** Adding networkservice methods ([81990b7](https://github.com/visjs/ngx-vis/commit/81990b7)), closes [#69](https://github.com/visjs/ngx-vis/issues/69)
+* **networkservice:** Adding networkservice methods ([81990b7](https://github.com/visjs/ngx-vis/commit/81990b7f13adf45b15b7b7e1e51b0729380ef785)), closes [#69](https://github.com/visjs/ngx-vis/issues/69)
 
 
 
@@ -198,8 +213,8 @@
 
 ### Bug Fixes
 
-* **tslint:** Fix tslint errors ([1943ff4](https://github.com/visjs/ngx-vis/commit/1943ff4))
-* **tslint:** Resolve tslint errors ([5b60716](https://github.com/visjs/ngx-vis/commit/5b60716))
+* **tslint:** Fix tslint errors ([1943ff4](https://github.com/visjs/ngx-vis/commit/1943ff4ff2d3bbe107248b3c2450d4598b4993aa))
+* **tslint:** Resolve tslint errors ([5b60716](https://github.com/visjs/ngx-vis/commit/5b60716478ca807724b0a7e0a28116ef9b29b638))
 
 
 
@@ -208,14 +223,14 @@
 
 ### Bug Fixes
 
-* **tsc-error:** Resolve type error ([f9bdb79](https://github.com/visjs/ngx-vis/commit/f9bdb79))
-* **tslint:** Corrected linting errors ([dbbd13f](https://github.com/visjs/ngx-vis/commit/dbbd13f))
+* **tsc-error:** Resolve type error ([f9bdb79](https://github.com/visjs/ngx-vis/commit/f9bdb79038a1c7656994ce5189f6d024f6188f3e))
+* **tslint:** Corrected linting errors ([dbbd13f](https://github.com/visjs/ngx-vis/commit/dbbd13f90f0a3d86a318b372877a513b7e030f19))
 
 
 ### Features
 
-* **Angular-4:** Adding dependencies for Angular 4 and newer vis ([c8ae775](https://github.com/visjs/ngx-vis/commit/c8ae775))
-* **Angular-4:** Support Angular 2 and 4 ([4f046e0](https://github.com/visjs/ngx-vis/commit/4f046e0))
+* **Angular-4:** Adding dependencies for Angular 4 and newer vis ([c8ae775](https://github.com/visjs/ngx-vis/commit/c8ae775c721169b36a4ebfff30964a4aac14c8f5))
+* **Angular-4:** Support Angular 2 and 4 ([4f046e0](https://github.com/visjs/ngx-vis/commit/4f046e06a560e6bf697d366a386f31c4c6e6bfa7))
 
 
 
@@ -236,6 +251,14 @@
 
 
 ## [0.0.3](https://github.com/visjs/ngx-vis/compare/v0.0.3-develop...v0.0.3) (2016-11-29)
+
+
+
+## [0.0.2](https://github.com/visjs/ngx-vis/compare/v0.0.1-6...v0.0.2) (2016-11-08)
+
+
+
+## [0.0.1-6](https://github.com/visjs/ngx-vis/compare/v0.0.1-5...v0.0.1-6) (2016-11-05)
 
 
 
