@@ -154,7 +154,7 @@ export class VisTimelineService {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, options));
+    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, this.wrapCallbacksWithNgZone(options)));
   }
 
   /**
@@ -181,7 +181,7 @@ export class VisTimelineService {
       throw new Error(this.alreadyExistsError(visTimeline));
     }
 
-    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, groups, options));
+    this.timelines[visTimeline] = this.ngZone.runOutsideAngular(() => new Timeline(container, items, groups, this.wrapCallbacksWithNgZone(options)));
   }
 
   /**
@@ -730,5 +730,30 @@ export class VisTimelineService {
 
   private alreadyExistsError(visTimeline: string): string {
     return `Timeline with id ${visTimeline} already exists.`;
+  }
+
+  private wrapCallbacksWithNgZone(options: TimelineOptions): TimelineOptions {
+    const updatedOptions: any = { ...options };
+    const callbackFunctions: Array<keyof TimelineOptions> = [
+      'onAdd',
+      'onAddGroup',
+      'onDropObjectOnItem',
+      'onInitialDrawComplete',
+      'onUpdate',
+      'onMove',
+      'onMoveGroup',
+      'onMoving',
+      'onRemove',
+      'onRemoveGroup',
+    ];
+
+    callbackFunctions
+      .filter((callbackFunction) => updatedOptions.hasOwnProperty(callbackFunction))
+      .forEach((callbackFunction) => {
+        updatedOptions[callbackFunction] = (...params: any[]) => this.ngZone.run(() => options[callbackFunction](...params));
+      });
+
+    return updatedOptions;
+
   }
 }
