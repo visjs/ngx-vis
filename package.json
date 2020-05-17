@@ -58,7 +58,7 @@
   }
  },
  "dependencies": {
-  "vis-network": "^7.6.3",
+  "vis-network": "^7.6.4",
   "vis-timeline": "^7.3.4"
  },
  "peerDependencies": {
