@@ -1,4 +1,4 @@
-import { DataItem, DataInterfaceDataGroup } from 'vis-timeline';
+import { DataItem, DataInterfaceDataGroup } from 'vis-timeline/esnext';
 import { VisTimelineService } from './vis-timeline.service';
 
 describe('VisTimelineService Tests', () => {
