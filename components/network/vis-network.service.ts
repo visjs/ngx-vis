@@ -1027,7 +1027,7 @@ export class VisNetworkService {
    * @param {Array.<Node.id>|String} [ids]  --> optional, can be array of nodeIds, can be string
    * @returns {{}}
    */
-  public getPositions(visNetwork: string, nodeIds: IdType[]) {
+  public getPositions(visNetwork: string, nodeIds?: IdType[]) {
     return this.networks[visNetwork].getPositions(nodeIds);
   }
 
