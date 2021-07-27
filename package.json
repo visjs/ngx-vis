@@ -47,8 +47,10 @@
    "flatModuleFile": "ngxvis"
   },
   "whitelistedNonPeerDependencies": [
+   "vis-data",
    "vis-network",
-   "vis-timeline"
+   "vis-timeline",
+   "vis-util"
   ]
  },
  "husky": {
@@ -58,16 +60,16 @@
   }
  },
  "dependencies": {
+  "vis-data": "^6.5.1",
   "vis-network": "^7.6.4",
-  "vis-timeline": "^7.3.6"
+  "vis-timeline": "^7.3.6",
+  "vis-util": "^4.0.0"
  },
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0 || >=10.0.0",
   "@angular/core": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0 || >=10.0.0",
   "@angular/compiler": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0 || >=10.0.0",
   "keycharm": "^0.3.0",
-  "vis-data": "^6.5.1",
-  "vis-util": "^4.0.0",
   "moment": "^2.24.0",
   "propagating-hammerjs": "^1.4.0",
   "@egjs/hammerjs": "^2.0.0",
