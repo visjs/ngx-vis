@@ -63,7 +63,7 @@
   "vis-data": "^6.5.1",
   "vis-network": "^7.6.4",
   "vis-timeline": "^7.3.6",
-  "vis-util": "^4.0.0"
+  "vis-util": "^4.3.4"
  },
  "peerDependencies": {
   "@angular/common": ">=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0 || >=9.0.0 || >=10.0.0 || >=11.0.0 || >=12.0.0",
@@ -148,7 +148,7 @@
   "typescript": "^3.9.2",
   "uuid": "^7.0.3",
   "vis-data": "^6.5.1",
-  "vis-util": "^4.0.0",
+  "vis-util": "^4.3.4",
   "webpack": "^4.41.3",
   "webpack-cli": "^3.3.10",
   "webpack-dev-server": "^3.11.0",
