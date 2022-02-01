@@ -106,10 +106,10 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
       if (changes.hasOwnProperty(propertyName)) {
         const change = changes[propertyName];
         if (!change.isFirstChange()) {
-          if (propertyName === 'visData') {
+          if (propertyName === 'visNetworkData') {
             this.visNetworkService.setData(this.visNetwork, changes[propertyName].currentValue);
           }
-          if (propertyName === 'visOptions') {
+          if (propertyName === 'visNetworkOptions') {
             this.visNetworkService.setOptions(this.visNetwork, changes[propertyName].currentValue);
           }
         }
