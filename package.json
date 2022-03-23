@@ -62,7 +62,7 @@
  "dependencies": {
   "vis-data": "^6.6.1",
   "vis-network": "^7.6.4",
-  "vis-timeline": "^7.3.6",
+  "vis-timeline": "^7.5.1",
   "vis-util": "^4.0.0"
  },
  "peerDependencies": {
