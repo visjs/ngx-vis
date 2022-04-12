@@ -11,7 +11,7 @@
   "flow.copy:src": "cpy ngx-vis.ts \"components/*.ts\" ts --parents",
   "flow.clean": "rimraf bundles coverage dist demo-build \"components/**/*.+(metadata.json|js|d.ts|js.map)\" dist \"ngx-vis.+(js|d.ts|js.map)\"",
   "flow.eslint": "eslint --ignore-path .gitignore --ext js --fix . .config",
-  "flow.extract-metadata": "ng-packagr -p package.json",
+  "flow.extract-metadata": "ng-packagr -p ng-package.json",
   "flow.tslint": "tslint --project tsconfig.json --fix",
   "flow.lint": "npm run flow.eslint && npm run flow.tslint",
   "flow.build:demo": "cross-env NODE_ENV=production webpack --config .config/webpack.prod.js --progress --color",
