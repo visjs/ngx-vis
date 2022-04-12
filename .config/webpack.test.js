@@ -141,6 +141,11 @@ module.exports = function (options) {
           include: helpers.root('demo'),
           exclude: [/\.(e2e|spec)\.ts$/, /node_modules/],
         },
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: 'javascript/auto',
+        },
       ],
     },
 

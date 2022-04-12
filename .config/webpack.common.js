@@ -49,6 +49,11 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
     ],
   },
 
