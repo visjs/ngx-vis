@@ -62,6 +62,7 @@
   "uuid": "^7.0.0"
  },
  "devDependencies": {
+  "@angular-devkit/build-angular": "^13.3.11",
   "@angular-devkit/schematics": "^13.3.2",
   "@angular/animations": "13.3.2",
   "@angular/cli": "^13.3.2",
