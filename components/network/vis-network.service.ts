@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from "@angular/core";
 import {
   BoundingBox,
   ClusterOptions,
@@ -13,7 +13,7 @@ import {
   OpenClusterOptions,
   Options,
   Position,
-} from 'vis-network/esnext';
+} from "vis-network/esnext";
 
 /**
  * A service to create, manage and control Network instances.
@@ -928,7 +928,7 @@ export class VisNetworkService {
    */
   public getSeed(visNetwork: string): number {
     if (this.networks[visNetwork]) {
-      return this.networks[visNetwork].getSeed();
+      return this.networks[visNetwork].getSeed() as number;
     }
 
     return -1;
