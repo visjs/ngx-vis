@@ -227,5 +227,12 @@ module.exports = function (options) {
       clearImmediate: false,
       setImmediate: false,
     },
+
+    /**
+     * Configure mode so that webpack can optimize the bundle accordingly
+     *
+     * See: https://webpack.js.org/configuration/mode/
+     */
+    mode: 'development',
   };
 };
