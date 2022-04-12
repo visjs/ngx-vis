@@ -19,7 +19,7 @@ module.exports = webpackMerge(commonConfig, {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    }),
+    })
   ],
 
   devServer: {
