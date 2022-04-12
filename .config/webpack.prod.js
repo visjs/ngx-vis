@@ -41,5 +41,5 @@ module.exports = webpackMerge(commonConfig, {
      *
      * See: https://webpack.js.org/configuration/mode/
   */
-  mode: 'production',
+  mode: 'production'
 });
