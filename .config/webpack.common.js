@@ -6,13 +6,13 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'polyfills': helpers.root('demo', 'polyfills.ts'),
-    'vendor': helpers.root('demo', 'vendor.ts'),
-    'app': helpers.root('demo', 'index.ts')
+    polyfills: helpers.root('demo', 'polyfills.ts'),
+    vendor: helpers.root('demo', 'vendor.ts'),
+    app: helpers.root('demo', 'index.ts'),
   },
 
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
 
   module: {
@@ -21,18 +21,19 @@ module.exports = {
         test: /\.ts$/,
         loaders: [
           {
-            loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('tsconfig.json') }
-          } , 'angular2-template-loader'
-        ]
+            loader: 'ts-loader',
+            options: { configFileName: helpers.root('tsconfig.json') },
+          },
+          'angular2-template-loader',
+        ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
+        loader: 'file-loader?name=assets/[name].[hash].[ext]',
       },
       {
         test: /\.css$/,
@@ -42,13 +43,13 @@ module.exports = {
             options: {
               // you can specify a publicPath here
               // by default it use publicPath in webpackOptions.output
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           },
-          "css-loader"
-        ]
-      }
-    ]
+          'css-loader',
+        ],
+      },
+    ],
   },
 
   plugins: [
@@ -61,12 +62,9 @@ module.exports = {
     ),
 
     new HtmlWebpackPlugin({
-      template: helpers.root('demo', 'index.html')
+      template: helpers.root('demo', 'index.html'),
     }),
 
-    new CopyWebpackPlugin([
-        { from: helpers.root('demo', 'assets'), to: 'assets' },
-      ]
-    )
-  ]
+    new CopyWebpackPlugin([{ from: helpers.root('demo', 'assets'), to: 'assets' }]),
+  ],
 };

@@ -15,7 +15,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 /**
  * Webpack Constants
  */
-const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
+const ENV = (process.env.ENV = process.env.NODE_ENV = 'test');
 
 /**
  * Webpack configuration
@@ -24,7 +24,6 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
  */
 module.exports = function (options) {
   return {
-
     /**
      * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
      *
@@ -39,7 +38,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
-
       /**
        * An array of extensions that should be used to resolve modules.
        *
@@ -50,8 +48,7 @@ module.exports = function (options) {
       /**
        * Make sure root is src
        */
-      modules: ['node_modules']
-
+      modules: ['node_modules'],
     },
 
     /**
@@ -63,9 +60,7 @@ module.exports = function (options) {
      * See: https://github.com/AngularClass/angular2-webpack-starter/issues/1188#issuecomment-262872034
      */
     module: {
-
       rules: [
-
         /**
          * Source map loader support for *.js files
          * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
@@ -79,38 +74,35 @@ module.exports = function (options) {
           exclude: [
             // these packages have problems with their sourcemaps
             helpers.root('node_modules/rxjs'),
-            helpers.root('node_modules/@angular')
-          ]
+            helpers.root('node_modules/@angular'),
+          ],
         },
 
         /**
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
          *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
+         * See: https://github.com/TypeStrong/ts-loader
          */
         {
           test: /\.ts$/,
           use: [
             {
-              loader: 'awesome-typescript-loader',
+              loader: 'ts-loader',
               query: {
                 // use inline sourcemaps for "karma-remap-coverage" reporter
                 sourceMap: false,
                 inlineSourceMap: true,
                 compilerOptions: {
-
                   // Remove TypeScript helpers to be injected
                   // below by DefinePlugin
-                  removeComments: true
-
-                }
+                  removeComments: true,
+                },
               },
             },
-            'angular2-template-loader'
+            'angular2-template-loader',
           ],
-          exclude: [/\.e2e\.ts$/]
+          exclude: [/\.e2e\.ts$/],
         },
-
 
         /**
          * Raw loader support for *.css files
@@ -121,7 +113,7 @@ module.exports = function (options) {
         {
           test: /\.css$/,
           loader: ['to-string-loader', 'css-loader'],
-          exclude: [helpers.root('demo/index.html')]
+          exclude: [helpers.root('demo/index.html')],
         },
 
         /**
@@ -133,7 +125,7 @@ module.exports = function (options) {
         {
           test: /\.html$/,
           loader: 'raw-loader',
-          exclude: [helpers.root('demo/index.html')]
+          exclude: [helpers.root('demo/index.html')],
         },
 
         /**
@@ -147,13 +139,9 @@ module.exports = function (options) {
           test: /\.(js|ts)$/,
           loader: 'istanbul-instrumenter-loader',
           include: helpers.root('demo'),
-          exclude: [
-            /\.(e2e|spec)\.ts$/,
-            /node_modules/
-          ]
-        }
-
-      ]
+          exclude: [/\.(e2e|spec)\.ts$/, /node_modules/],
+        },
+      ],
     },
 
     /**
@@ -162,7 +150,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-
       /**
        * Plugin: DefinePlugin
        * Description: Define free variables.
@@ -174,13 +161,13 @@ module.exports = function (options) {
        */
       // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
       new DefinePlugin({
-        'ENV': JSON.stringify(ENV),
-        'HMR': false,
+        ENV: JSON.stringify(ENV),
+        HMR: false,
         'process.env': {
-          'ENV': JSON.stringify(ENV),
-          'NODE_ENV': JSON.stringify(ENV),
-          'HMR': false,
-        }
+          ENV: JSON.stringify(ENV),
+          NODE_ENV: JSON.stringify(ENV),
+          HMR: false,
+        },
       }),
 
       /**
@@ -208,9 +195,8 @@ module.exports = function (options) {
         debug: false,
         options: {
           // legacy options go here
-        }
+        },
       }),
-
     ],
 
     /**
@@ -219,7 +205,7 @@ module.exports = function (options) {
      * See: https://github.com/a-tarasyuk/rr-boilerplate/blob/master/webpack/dev.config.babel.js#L41
      */
     performance: {
-      hints: false
+      hints: false,
     },
 
     /**
@@ -234,8 +220,7 @@ module.exports = function (options) {
       crypto: 'empty',
       module: false,
       clearImmediate: false,
-      setImmediate: false
-    }
-
+      setImmediate: false,
+    },
   };
 };
