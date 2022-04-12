@@ -8,6 +8,6 @@ module.exports = webpackMerge(commonConfig, {
     publicPath: 'https://visjs.github.io/ngx-vis',
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js',
-    mode: 'production',
+    mode: 'production'
   }
 });
