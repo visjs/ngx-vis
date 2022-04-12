@@ -17,9 +17,9 @@ module.exports = webpackMerge(commonConfig, {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ],
 
   devServer: {
@@ -27,7 +27,5 @@ module.exports = webpackMerge(commonConfig, {
     historyApiFallback: true,
     stats: 'minimal',
     watchContentBase: true,
-  },
-
-  mode: 'development',
+  }
 });

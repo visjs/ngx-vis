@@ -227,7 +227,5 @@ module.exports = function (options) {
       clearImmediate: false,
       setImmediate: false,
     },
-
-    mode: 'development',
   };
 };
