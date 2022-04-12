@@ -2,20 +2,20 @@
  * @author: @AngularClass
  */
 
-const helpers = require('./helpers');
+const helpers = require("./helpers");
 
 /**
  * Webpack Plugins
  */
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const ProvidePlugin = require("webpack/lib/ProvidePlugin");
+const DefinePlugin = require("webpack/lib/DefinePlugin");
+const LoaderOptionsPlugin = require("webpack/lib/LoaderOptionsPlugin");
+const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
 
 /**
  * Webpack Constants
  */
-const ENV = (process.env.ENV = process.env.NODE_ENV = 'test');
+const ENV = process.env.ENV = process.env.NODE_ENV = "test";
 
 /**
  * Webpack configuration
@@ -24,13 +24,14 @@ const ENV = (process.env.ENV = process.env.NODE_ENV = 'test');
  */
 module.exports = function (options) {
   return {
+
     /**
      * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
      *
      * Do not change, leave as is or it wont work.
      * See: https://github.com/webpack/karma-webpack#source-maps
      */
-    devtool: 'inline-source-map',
+    devtool: "inline-source-map",
 
     /**
      * Options affecting the resolving of modules.
@@ -38,17 +39,18 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
+
       /**
        * An array of extensions that should be used to resolve modules.
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['.ts', '.js'],
+      extensions: [".ts", ".js"],
 
       /**
        * Make sure root is src
        */
-      modules: ['node_modules'],
+      modules: ["node_modules"]
     },
 
     /**
@@ -56,11 +58,13 @@ module.exports = function (options) {
      *
      * See: http://webpack.github.io/docs/configuration.html#module
      *
-     * 'use:' revered back to 'loader:' as a temp. workaround for #1188
+     * "use:" revered back to "loader:" as a temp. workaround for #1188
      * See: https://github.com/AngularClass/angular2-webpack-starter/issues/1188#issuecomment-262872034
      */
     module: {
+
       rules: [
+
         /**
          * Source map loader support for *.js files
          * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
@@ -68,13 +72,13 @@ module.exports = function (options) {
          * See: https://github.com/webpack/source-map-loader
          */
         {
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.js$/,
-          loader: 'source-map-loader',
+          loader: "source-map-loader",
           exclude: [
             // these packages have problems with their sourcemaps
-            helpers.root('node_modules/rxjs'),
-            helpers.root('node_modules/@angular'),
+            helpers.root("node_modules/rxjs"),
+            helpers.root("node_modules/@angular")
           ],
         },
 
@@ -87,21 +91,23 @@ module.exports = function (options) {
           test: /\.ts$/,
           use: [
             {
-              loader: 'ts-loader',
+              loader: "ts-loader",
               query: {
                 // use inline sourcemaps for "karma-remap-coverage" reporter
                 sourceMap: false,
                 inlineSourceMap: true,
                 compilerOptions: {
+
                   // Remove TypeScript helpers to be injected
                   // below by DefinePlugin
                   removeComments: true,
+
                 },
               },
             },
-            'angular2-template-loader',
+            "angular2-template-loader"
           ],
-          exclude: [/\.e2e\.ts$/],
+          exclude: [/\.e2e\.ts$/]
         },
 
         /**
@@ -112,9 +118,10 @@ module.exports = function (options) {
          */
         {
           test: /\.css$/,
-          loader: ['to-string-loader', 'css-loader'],
-          exclude: [helpers.root('demo/index.html')],
+          loader: ["to-string-loader", "css-loader"],
+          exclude: [helpers.root("demo/index.html")]
         },
+
 
         /**
          * Raw loader support for *.html
@@ -124,8 +131,8 @@ module.exports = function (options) {
          */
         {
           test: /\.html$/,
-          loader: 'raw-loader',
-          exclude: [helpers.root('demo/index.html')],
+          loader: "raw-loader",
+          exclude: [helpers.root("demo/index.html")]
         },
 
         /**
@@ -135,16 +142,20 @@ module.exports = function (options) {
          * See: https://github.com/deepsweet/istanbul-instrumenter-loader
          */
         {
-          enforce: 'post',
+          enforce: "post",
           test: /\.(js|ts)$/,
-          loader: 'istanbul-instrumenter-loader',
-          include: helpers.root('demo'),
-          exclude: [/\.(e2e|spec)\.ts$/, /node_modules/],
+          loader: "istanbul-instrumenter-loader",
+          include: helpers.root("demo"),
+          exclude: [
+            /\.(e2e|spec)\.ts$/, 
+            /node_modules/
+          ]
         },
+
         {
           test: /\.mjs$/,
           include: /node_modules/,
-          type: 'javascript/auto',
+          type: "javascript/auto",
         },
       ],
     },
@@ -155,6 +166,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+
       /**
        * Plugin: DefinePlugin
        * Description: Define free variables.
@@ -168,7 +180,7 @@ module.exports = function (options) {
       new DefinePlugin({
         ENV: JSON.stringify(ENV),
         HMR: false,
-        'process.env': {
+        "process.env": {
           ENV: JSON.stringify(ENV),
           NODE_ENV: JSON.stringify(ENV),
           HMR: false,
@@ -177,7 +189,7 @@ module.exports = function (options) {
 
       /**
        * Plugin: ContextReplacementPlugin
-       * Description: Provides context to Angular's use of System.import
+       * Description: Provides context to Angular"s use of System.import
        *
        * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
        * See: https://github.com/angular/angular/issues/11580
@@ -185,7 +197,7 @@ module.exports = function (options) {
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
         /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        helpers.root('demo'), // location of your src
+        helpers.root("demo"), // location of your src
         {
           // your Angular Async Route paths relative to this root directory
         }
@@ -201,7 +213,7 @@ module.exports = function (options) {
         options: {
           // legacy options go here
         },
-      }),
+      })
     ],
 
     /**
@@ -210,7 +222,7 @@ module.exports = function (options) {
      * See: https://github.com/a-tarasyuk/rr-boilerplate/blob/master/webpack/dev.config.babel.js#L41
      */
     performance: {
-      hints: false,
+      hints: false
     },
 
     /**
@@ -222,10 +234,10 @@ module.exports = function (options) {
     node: {
       global: true,
       process: false,
-      crypto: 'empty',
+      crypto: "empty",
       module: false,
       clearImmediate: false,
-      setImmediate: false,
+      setImmediate: false
     },
 
     /**
@@ -233,6 +245,6 @@ module.exports = function (options) {
      *
      * See: https://webpack.js.org/configuration/mode/
      */
-    mode: 'development',
+    mode: "development"
   };
 };
