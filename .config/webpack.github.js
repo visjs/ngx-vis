@@ -9,5 +9,5 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js',
     mode: 'production',
-  },
+  }
 });
