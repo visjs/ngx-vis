@@ -4,7 +4,7 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const ENV = (process.env.NODE_ENV = process.env.ENV = 'production');
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
@@ -13,7 +13,7 @@ module.exports = webpackMerge(commonConfig, {
     path: helpers.root('dist'),
     publicPath: './',
     filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    chunkFilename: '[id].[hash].chunk.js',
   },
 
   plugins: [
@@ -21,18 +21,20 @@ module.exports = webpackMerge(commonConfig, {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].[hash].css",
-      chunkFilename: "[id].css"
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].css',
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'ENV': JSON.stringify(ENV)
-      }
+        ENV: JSON.stringify(ENV),
+      },
     }),
     new webpack.LoaderOptionsPlugin({
       htmlLoader: {
-        minimize: false // workaround for ng2
-      }
-    })
-  ]
+        minimize: false, // workaround for ng2
+      },
+    }),
+  ],
+
+  mode: 'production',
 });
