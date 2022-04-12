@@ -2,7 +2,7 @@
  * @author: @AngularClass
  */
 
-const helpers = require("./helpers");
+const helpers = require('./helpers');
 
 /**
  * Webpack Plugins
@@ -51,6 +51,7 @@ module.exports = function (options) {
        * Make sure root is src
        */
       modules: ['node_modules']
+
     },
 
     /**
@@ -91,7 +92,7 @@ module.exports = function (options) {
           test: /\.ts$/,
           use: [
             {
-              loader: "ts-loader",
+              loader: 'ts-loader',
               query: {
                 // use inline sourcemaps for "karma-remap-coverage" reporter
                 sourceMap: false,
@@ -102,13 +103,14 @@ module.exports = function (options) {
                   // below by DefinePlugin
                   removeComments: true
 
-                },
+                }
               },
             },
             'angular2-template-loader'
           ],
           exclude: [/\.e2e\.ts$/]
         },
+
 
         /**
          * Raw loader support for *.css files
@@ -119,7 +121,7 @@ module.exports = function (options) {
         {
           test: /\.css$/,
           loader: ['to-string-loader', 'css-loader'],
-          exclude: [helpers.root("demo/index.html")]
+          exclude: [helpers.root('demo/index.html')]
         },
 
 
@@ -132,7 +134,7 @@ module.exports = function (options) {
         {
           test: /\.html$/,
           loader: 'raw-loader',
-          exclude: [helpers.root("demo/index.html")]
+          exclude: [helpers.root('demo/index.html')]
         },
 
         /**
@@ -184,7 +186,7 @@ module.exports = function (options) {
           'ENV': JSON.stringify(ENV),
           'NODE_ENV': JSON.stringify(ENV),
           'HMR': false,
-        },
+        }
       }),
 
       /**
@@ -213,7 +215,8 @@ module.exports = function (options) {
         options: {
           // legacy options go here
         }
-      })
+      }),
+
     ],
 
     /**
@@ -238,7 +241,7 @@ module.exports = function (options) {
       module: false,
       clearImmediate: false,
       setImmediate: false
-    },
+    }
 
     /**
      * Configure mode so that webpack can optimize the bundle accordingly
