@@ -80,7 +80,7 @@ module.exports = function (options) {
             // these packages have problems with their sourcemaps
             helpers.root('node_modules/rxjs'),
             helpers.root('node_modules/@angular')
-          ],
+          ]
         },
 
         /**
@@ -123,7 +123,6 @@ module.exports = function (options) {
           loader: ['to-string-loader', 'css-loader'],
           exclude: [helpers.root('demo/index.html')]
         },
-
 
         /**
          * Raw loader support for *.html
