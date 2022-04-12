@@ -129,7 +129,7 @@
   "timsort": "^0.3.0",
   "to-string-loader": "^1.1.5",
   "ts-helpers": "^1.1.2",
-  "ts-loader": "^9.2.8",
+  "ts-loader": "TypeStrong/ts-loader#webpack-4",
   "tslib": "^2.0.3",
   "tslint": "^5.20.1",
   "tslint-loader": "^3.4.3",
