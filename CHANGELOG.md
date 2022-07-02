@@ -1,3 +1,29 @@
+## [3.1.1](https://github.com/visjs/ngx-vis/compare/v3.1.0...v3.1.1) (2022-07-02)
+
+
+### Bug Fixes
+
+* **Build:** Fix dependency and build issues ([f6e6cae](https://github.com/visjs/ngx-vis/commit/f6e6cae6071d631283208a24ef12abcd85a56e48)), closes [#407](https://github.com/visjs/ngx-vis/issues/407)
+* **Build:** Use correct imports ([1bb682f](https://github.com/visjs/ngx-vis/commit/1bb682f40928b3253d085cfc478080ae9e11b32a)), closes [#401](https://github.com/visjs/ngx-vis/issues/401) [#396](https://github.com/visjs/ngx-vis/issues/396)
+* **Dependencies:** Resolve peer-dependency issues ([bbb3fb7](https://github.com/visjs/ngx-vis/commit/bbb3fb7865c4437f4d5d3c9a0a05ef9d9d26a1fc)), closes [#402](https://github.com/visjs/ngx-vis/issues/402)
+* **Library:** Wrap vis-timeline callback in NgZone ([085792c](https://github.com/visjs/ngx-vis/commit/085792cd39d4cb247397cd8d146a95c1eaa9f3d9)), closes [#397](https://github.com/visjs/ngx-vis/issues/397)
+* **network:** Make nodeIds optional on getPositions() ([0895969](https://github.com/visjs/ngx-vis/commit/0895969b2c1eb0d9f571ada9cdc5d87097c4098c))
+* **Package:** Update keycharm dependency ([b3932a7](https://github.com/visjs/ngx-vis/commit/b3932a73d0b473908278b46e8bcb92817c5729ad))
+* **Security:** Resolve dependency security issues ([73ce4df](https://github.com/visjs/ngx-vis/commit/73ce4df3400683596f7295eaabab8f366c1ae2db))
+* **Security:** Resolve dependency security issues ([6a62533](https://github.com/visjs/ngx-vis/commit/6a625333ccc249d0e0dc460d1dc8a53058b06b56))
+* upgrade vis-data from 6.5.1 to 6.6.1 ([a09146a](https://github.com/visjs/ngx-vis/commit/a09146aebfdd6dfd52ca23ad9b860470a8d4f89a))
+* upgrade vis-util from 4.0.0 to 4.3.4 ([af5c70d](https://github.com/visjs/ngx-vis/commit/af5c70d71d61e82692b48276df302d7ded1c8669))
+
+
+### Features
+
+* **Angular 10:** Update o latest Angular Release ([677be82](https://github.com/visjs/ngx-vis/commit/677be82f37822f0076a19b34e3a0ed4bb330a77f)), closes [#407](https://github.com/visjs/ngx-vis/issues/407)
+* **Angular:** Allow higher Angular versions ([d03c5f2](https://github.com/visjs/ngx-vis/commit/d03c5f2eb4ca300678027c563011dcfb5edf5696))
+* **Vis:** Update vis-network ([df99f53](https://github.com/visjs/ngx-vis/commit/df99f53798b8e8bb722460af76b1e001bf79a490))
+* **Vis:** Update vis-timeline ([665bb1a](https://github.com/visjs/ngx-vis/commit/665bb1a7949080e513106eec08cacb422d683460)), closes [#211](https://github.com/visjs/ngx-vis/issues/211)
+
+
+
 # [3.1.0](https://github.com/visjs/ngx-vis/compare/v3.0.4...v3.1.0) (2020-04-21)
 
 
