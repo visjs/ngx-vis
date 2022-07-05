@@ -1,0 +1,7 @@
+{
+  "lib": {
+    "entryFile": "ngx-vis.ts",
+    "flatModuleFile": "ngxvis"
+  },
+  "allowedNonPeerDependencies": ["vis-data", "vis-network", "vis-timeline", "vis-util"]
+}

@@ -928,7 +928,7 @@ export class VisNetworkService {
    */
   public getSeed(visNetwork: string): number {
     if (this.networks[visNetwork]) {
-      return this.networks[visNetwork].getSeed();
+      return this.networks[visNetwork].getSeed() as number;
     }
 
     return -1;

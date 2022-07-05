@@ -21,7 +21,7 @@ module.exports = {
         test: /\.ts$/,
         loaders: [
           {
-            loader: 'awesome-typescript-loader',
+            loader: 'ts-loader',
             options: { configFileName: helpers.root('tsconfig.json') }
           } , 'angular2-template-loader'
         ]
@@ -47,6 +47,11 @@ module.exports = {
           },
           "css-loader"
         ]
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto"
       }
     ]
   },

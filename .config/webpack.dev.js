@@ -27,5 +27,12 @@ module.exports = webpackMerge(commonConfig, {
     historyApiFallback: true,
     stats: 'minimal',
     watchContentBase: true,
-  }
+  },
+
+  /**
+   * Configure mode so that webpack can optimize the bundle accordingly
+   *
+   * See: https://webpack.js.org/configuration/mode/
+   */
+  mode: 'development'
 });

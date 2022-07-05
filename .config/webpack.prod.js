@@ -34,5 +34,12 @@ module.exports = webpackMerge(commonConfig, {
         minimize: false // workaround for ng2
       }
     })
-  ]
+  ],
+
+  /**
+     * Configure mode so that webpack can optimize the bundle accordingly
+     *
+     * See: https://webpack.js.org/configuration/mode/
+  */
+  mode: 'production'
 });

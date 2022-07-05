@@ -86,13 +86,13 @@ module.exports = function (options) {
         /**
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
          *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
+         * See: https://github.com/TypeStrong/ts-loader
          */
         {
           test: /\.ts$/,
           use: [
             {
-              loader: 'awesome-typescript-loader',
+              loader: 'ts-loader',
               query: {
                 // use inline sourcemaps for "karma-remap-coverage" reporter
                 sourceMap: false,
@@ -151,9 +151,14 @@ module.exports = function (options) {
             /\.(e2e|spec)\.ts$/,
             /node_modules/
           ]
-        }
+        },
 
-      ]
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: 'javascript/auto'
+        },
+      ],
     },
 
     /**
@@ -237,5 +242,11 @@ module.exports = function (options) {
       setImmediate: false
     }
 
+    /**
+     * Configure mode so that webpack can optimize the bundle accordingly
+     *
+     * See: https://webpack.js.org/configuration/mode/
+     */
+    mode: "development"
   };
 };
