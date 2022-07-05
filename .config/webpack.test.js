@@ -240,7 +240,7 @@ module.exports = function (options) {
       module: false,
       clearImmediate: false,
       setImmediate: false
-    }
+    },
 
     /**
      * Configure mode so that webpack can optimize the bundle accordingly
