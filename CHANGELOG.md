@@ -1,3 +1,15 @@
+## [3.1.2](https://github.com/visjs/ngx-vis/compare/v3.1.1...v3.1.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([93374d5](https://github.com/visjs/ngx-vis/commit/93374d5464742b53b74032fbf3b6285854f0cd8f))
+* upgrade moment from 2.24.0 to 2.29.3 ([c8e32e8](https://github.com/visjs/ngx-vis/commit/c8e32e829f049783842e5ab2862438875c19e3b6))
+* upgrade propagating-hammerjs from 1.4.7 to 1.5.0 ([07dbe04](https://github.com/visjs/ngx-vis/commit/07dbe04954510b1854c4376b2ac9d616c13ece09))
+* Vis-Timeline  'isDataViewLike' missing error ([4451db7](https://github.com/visjs/ngx-vis/commit/4451db72e7d0f352b13667a18527e6adde334133)), closes [#447](https://github.com/visjs/ngx-vis/issues/447)
+
+
+
 ## [3.1.1](https://github.com/visjs/ngx-vis/compare/v3.1.0...v3.1.1) (2022-07-02)
 
 
