@@ -48,10 +48,10 @@
   }
  },
  "dependencies": {
-  "vis-data": "^6.6.1",
-  "vis-network": "^7.6.4",
-  "vis-timeline": "^7.3.6",
-  "vis-util": "^4.0.0"
+  "vis-data": "~6.6.1",
+  "vis-network": "~7.6.4",
+  "vis-timeline": "~7.3.6",
+  "vis-util": "~4.3.4"
  },
  "peerDependencies": {
   "@egjs/hammerjs": "^2.0.0",
@@ -62,19 +62,19 @@
   "uuid": "^7.0.0"
  },
  "devDependencies": {
-  "@angular-devkit/build-angular": "^14.0.4",
-  "@angular-devkit/schematics": "^14.0.4",
-  "@angular/animations": "14.0.4",
-  "@angular/cli": "^14.0.4",
-  "@angular/common": "^14.0.4",
-  "@angular/compiler": "^14.0.4",
-  "@angular/compiler-cli": "^14.0.4",
-  "@angular/core": "^14.0.4",
-  "@angular/forms": "^14.0.4",
-  "@angular/platform-browser": "^14.0.4",
-  "@angular/platform-browser-dynamic": "^14.0.4",
-  "@angular/platform-server": "^14.0.4",
-  "@angular/router": "^14.0.4",
+  "@angular-devkit/build-angular": "^16.0.0",
+  "@angular-devkit/schematics": "^16.0.0",
+  "@angular/animations": "16.0.0",
+  "@angular/cli": "^16.0.0",
+  "@angular/common": "^16.0.0",
+  "@angular/compiler": "^16.0.0",
+  "@angular/compiler-cli": "^16.0.0",
+  "@angular/core": "^16.0.0",
+  "@angular/forms": "^16.0.0",
+  "@angular/platform-browser": "^16.0.0",
+  "@angular/platform-browser-dynamic": "^16.0.0",
+  "@angular/platform-server": "^16.0.0",
+  "@angular/router": "^16.0.0",
   "@commitlint/cli": "8.3.5",
   "@commitlint/config-conventional": "8.3.4",
   "@egjs/hammerjs": "^2.0.17",
@@ -111,7 +111,7 @@
   "keycharm": "^0.3.0",
   "mini-css-extract-plugin": "^0.9.0",
   "moment": "^2.29.3",
-  "ng-packagr": "^14.0.2",
+  "ng-packagr": "^16.0.0",
   "npm-audit-resolver": "^2.2.0",
   "null-loader": "^3.0.0",
   "propagating-hammerjs": "^1.4.0",
@@ -132,7 +132,7 @@
   "tslib": "^2.4.0",
   "tslint": "^5.20.1",
   "tslint-loader": "^3.4.3",
-  "typescript": "^4.7.4",
+  "typescript": "^5.0.2",
   "uuid": "^7.0.3",
   "vis-data": "^6.6.1",
   "vis-util": "^4.0.0",
@@ -140,7 +140,7 @@
   "webpack-cli": "^3.3.10",
   "webpack-dev-server": "^3.11.0",
   "webpack-merge": "^4.1.0",
-  "zone.js": "~0.11.6"
+  "zone.js": "~0.13.0"
  },
  "repository": {
   "type": "git",
