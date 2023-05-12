@@ -10,5 +10,5 @@ import '@angular/forms';
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 
-import 'vis-network/esnext';
-import 'vis-timeline/esnext';
+import 'vis-network';
+import 'vis-timeline';

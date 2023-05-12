@@ -48,10 +48,8 @@
   }
  },
  "dependencies": {
-  "vis-data": "~6.6.1",
-  "vis-network": "~7.6.4",
-  "vis-timeline": "~7.3.6",
-  "vis-util": "~4.3.4"
+  "vis-network": "~9.1.0",
+  "vis-timeline": "~7.7.0"
  },
  "peerDependencies": {
   "@egjs/hammerjs": "^2.0.0",
@@ -134,8 +132,8 @@
   "tslint-loader": "^3.4.3",
   "typescript": "^5.0.2",
   "uuid": "^7.0.3",
-  "vis-data": "^6.6.1",
-  "vis-util": "^4.0.0",
+  "vis-data": "^7.1.0",
+  "vis-util": "~5.0.1",
   "webpack": "^5.82.0",
   "webpack-cli": "^5.1.1",
   "webpack-dev-server": "^4.15.0",

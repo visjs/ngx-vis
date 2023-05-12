@@ -8,7 +8,7 @@ import {
   TimelineAnimationOptions,
   TimelineEventPropertiesResult,
   TimelineOptions,
-} from 'vis-timeline/esnext';
+} from 'vis-timeline';
 
 /**
  * A service to create, manage and control VisTimeline instances.
