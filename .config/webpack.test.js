@@ -64,7 +64,7 @@ module.exports = function (options) {
     module: {
       rules: [
         {
-          test: /(?:spec.ts)$/,
+          test: /(\.ts)$/,
           loader: '@ngtools/webpack',
         },
         /**

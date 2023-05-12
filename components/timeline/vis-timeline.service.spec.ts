@@ -1,10 +1,10 @@
-import { DataItem, DataInterfaceDataGroup } from 'vis-timeline';
+import { DataInterfaceDataGroup, DataItem } from 'vis-timeline';
 import { VisTimelineService } from './vis-timeline.service';
 
 describe('VisTimelineService Tests', () => {
   let visTimelineService: VisTimelineService;
   const ngZoneMock: any = {
-    runOutsideAngular: (fn: () => void) => fn()
+    runOutsideAngular: (fn: () => void) => fn(),
   };
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('VisTimelineService Tests', () => {
       { id: 3, content: 'item 3', start: '2016-04-18' },
       { id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19' },
       { id: 5, content: 'item 5', start: '2016-04-25' },
-      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' }
+      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' },
     ];
     const groups: DataInterfaceDataGroup = null;
     visTimelineService.createWithItems('knownNetwork', dummyElement, items);
@@ -43,7 +43,7 @@ describe('VisTimelineService Tests', () => {
       { id: 3, content: 'item 3', start: '2016-04-18' },
       { id: 4, content: 'item 4', start: '2016-04-16', end: '2016-04-19' },
       { id: 5, content: 'item 5', start: '2016-04-25' },
-      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' }
+      { id: 6, content: 'item 6', start: '2016-04-27', type: 'point' },
     ];
     const groups: DataInterfaceDataGroup = null;
 

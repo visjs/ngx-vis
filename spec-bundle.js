@@ -29,7 +29,7 @@ require('zone.js/dist/proxy');
 require('zone.js/dist/jasmine-patch');
 
 // RxJS
-require('rxjs/Rx');
+require('rxjs');
 
 var testing = require('@angular/core/testing');
 var browser = require('@angular/platform-browser-dynamic/testing');
