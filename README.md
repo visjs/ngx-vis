@@ -1,7 +1,7 @@
 # ngx-vis
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/visjs/ngx-vis.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/visjs/ngx-vis.svg?branch=develop)](https://travis-ci.org/visjs/ngx-vis)
+[![CI](https://github.com/visjs/ngx-vis/actions/workflows/build.yml/badge.svg)](https://github.com/visjs/ngx-vis/actions/workflows/build.yml)
 
 [![npm version](https://badge.fury.io/js/ngx-vis.svg)](https://badge.fury.io/js/ngx-vis)
 [![codecov.io](https://codecov.io/github/visjs/ngx-vis/coverage.svg?branch=master)](https://codecov.io/gh/visjs/ngx-vis?branch=master)
@@ -14,6 +14,14 @@ An angular 2+ vis.js project
 [![NPM](https://nodei.co/npm/ngx-vis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ngx-vis/)
 
 [![Backers on Open Collective](https://opencollective.com/visjs/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/visjs/sponsors/badge.svg)](#sponsors)
+
+- [ngx-vis](#ngx-vis)
+- [Usage](#usage)
+  - [Installation](#installation)
+- [About](#about)
+  - [Work in progress:](#work-in-progress)
+    - [Misc](#misc)
+  - [Credits](#credits)
 
 
 # Usage
