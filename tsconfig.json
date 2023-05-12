@@ -41,6 +41,9 @@
   "files": [
     "./ngx-vis.ts"
   ],
+  "include": [
+    "demo"
+  ],
   "atom": {
     "rewriteTsconfig": false
   }
