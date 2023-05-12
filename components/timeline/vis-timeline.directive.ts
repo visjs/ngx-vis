@@ -1,5 +1,5 @@
 import { Directive, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange } from '@angular/core';
-import { DataGroupCollectionType, DataItemCollectionType, TimelineOptions } from 'vis-timeline/esnext';
+import { DataGroupCollectionType, DataItemCollectionType, TimelineOptions } from 'vis-timeline';
 
 import { VisTimelineService } from './vis-timeline.service';
 

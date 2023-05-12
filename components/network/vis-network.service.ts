@@ -13,7 +13,7 @@ import {
   OpenClusterOptions,
   Options,
   Position,
-} from 'vis-network/esnext';
+} from 'vis-network';
 
 /**
  * A service to create, manage and control Network instances.
