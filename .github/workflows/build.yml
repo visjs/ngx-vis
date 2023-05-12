@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [14, 16]
+        node_version: [16, 18]
         # Windows (windows-latest) doesn't work with karma
         os: [ubuntu-latest, macOS-latest]
 
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: publish release package
         env:
