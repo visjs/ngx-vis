@@ -43,7 +43,7 @@ jobs:
           npm i
           npm run build && cd dist
           npm publish
-        if: contains( github.ref, 'master' ) || contains( github.base_ref, 'master' )
+        if: contains( github.ref, 'main' ) || contains( github.base_ref, 'main' )
 
       - name: publish preview package
         env:
