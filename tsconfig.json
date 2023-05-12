@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "noEmitHelpers": true,
@@ -33,7 +33,6 @@
     ]
   },
   "exclude": [
-    "components",
     "node_modules",
     "bundles",
     "dist"
@@ -42,6 +41,7 @@
     "./ngx-vis.ts"
   ],
   "include": [
+    "components",
     "demo"
   ],
   "atom": {
