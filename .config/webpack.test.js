@@ -2,20 +2,21 @@
  * @author: @AngularClass
  */
 
+const path = require('path');
 const helpers = require('./helpers');
 
 /**
  * Webpack Plugins
  */
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularWebpackPlugin;
 
 /**
  * Webpack Constants
  */
-const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
+const ENV = (process.env.ENV = process.env.NODE_ENV = 'test');
 
 /**
  * Webpack configuration
@@ -24,7 +25,7 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
  */
 module.exports = function (options) {
   return {
-
+    entry: path.resolve(__dirname, '../dist'),
     /**
      * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
      *
@@ -39,7 +40,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
-
       /**
        * An array of extensions that should be used to resolve modules.
        *
@@ -50,8 +50,7 @@ module.exports = function (options) {
       /**
        * Make sure root is src
        */
-      modules: ['node_modules']
-
+      modules: ['node_modules'],
     },
 
     /**
@@ -63,9 +62,11 @@ module.exports = function (options) {
      * See: https://github.com/AngularClass/angular2-webpack-starter/issues/1188#issuecomment-262872034
      */
     module: {
-
       rules: [
-
+        {
+          test: /(?:spec.ts)$/,
+          loader: '@ngtools/webpack',
+        },
         /**
          * Source map loader support for *.js files
          * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
@@ -79,39 +80,9 @@ module.exports = function (options) {
           exclude: [
             // these packages have problems with their sourcemaps
             helpers.root('node_modules/rxjs'),
-            helpers.root('node_modules/@angular')
-          ]
-        },
-
-        /**
-         * Typescript loader support for .ts and Angular 2 async routes via .async.ts
-         *
-         * See: https://github.com/TypeStrong/ts-loader
-         */
-        {
-          test: /\.ts$/,
-          use: [
-            {
-              loader: 'ts-loader',
-              query: {
-                // use inline sourcemaps for "karma-remap-coverage" reporter
-                sourceMap: false,
-                inlineSourceMap: true,
-                compilerOptions: {
-
-                  // Remove TypeScript helpers to be injected
-                  // below by DefinePlugin
-                  removeComments: true
-
-                }
-              },
-            },
-            'angular2-template-loader'
+            helpers.root('node_modules/@angular'),
           ],
-          exclude: [/\.e2e\.ts$/]
         },
-
-
         /**
          * Raw loader support for *.css files
          * Returns file content as string
@@ -120,8 +91,8 @@ module.exports = function (options) {
          */
         {
           test: /\.css$/,
-          loader: ['to-string-loader', 'css-loader'],
-          exclude: [helpers.root('demo/index.html')]
+          use: ['to-string-loader', 'css-loader'],
+          exclude: [helpers.root('demo/index.html')],
         },
 
         /**
@@ -133,30 +104,7 @@ module.exports = function (options) {
         {
           test: /\.html$/,
           loader: 'raw-loader',
-          exclude: [helpers.root('demo/index.html')]
-        },
-
-        /**
-         * Instruments JS files with Istanbul for subsequent code coverage reporting.
-         * Instrument only testing sources.
-         *
-         * See: https://github.com/deepsweet/istanbul-instrumenter-loader
-         */
-        {
-          enforce: 'post',
-          test: /\.(js|ts)$/,
-          loader: 'istanbul-instrumenter-loader',
-          include: helpers.root('demo'),
-          exclude: [
-            /\.(e2e|spec)\.ts$/,
-            /node_modules/
-          ]
-        },
-
-        {
-          test: /\.mjs$/,
-          include: /node_modules/,
-          type: 'javascript/auto'
+          exclude: [helpers.root('demo/index.html')],
         },
       ],
     },
@@ -167,7 +115,6 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-
       /**
        * Plugin: DefinePlugin
        * Description: Define free variables.
@@ -179,13 +126,12 @@ module.exports = function (options) {
        */
       // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
       new DefinePlugin({
-        'ENV': JSON.stringify(ENV),
-        'HMR': false,
+        ENV: JSON.stringify(ENV),
+        HMR: false,
         'process.env': {
-          'ENV': JSON.stringify(ENV),
-          'NODE_ENV': JSON.stringify(ENV),
-          'HMR': false,
-        }
+          ENV: JSON.stringify(ENV),
+          HMR: false,
+        },
       }),
 
       /**
@@ -213,9 +159,13 @@ module.exports = function (options) {
         debug: false,
         options: {
           // legacy options go here
-        }
+        },
       }),
 
+      new AngularCompilerPlugin({
+        tsConfigPath: './tsconfig.json',
+        entryModule: './demo/demo.module.ts#AppModule',
+      }),
     ],
 
     /**
@@ -224,7 +174,7 @@ module.exports = function (options) {
      * See: https://github.com/a-tarasyuk/rr-boilerplate/blob/master/webpack/dev.config.babel.js#L41
      */
     performance: {
-      hints: false
+      hints: false,
     },
 
     /**
@@ -235,11 +185,6 @@ module.exports = function (options) {
      */
     node: {
       global: true,
-      process: false,
-      crypto: 'empty',
-      module: false,
-      clearImmediate: false,
-      setImmediate: false
     },
 
     /**
@@ -247,6 +192,6 @@ module.exports = function (options) {
      *
      * See: https://webpack.js.org/configuration/mode/
      */
-    mode: "development"
+    mode: 'development',
   };
 };

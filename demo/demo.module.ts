@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule }   from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { VisModule } from '../dist';
 import { DemoComponent } from './demo.component';
@@ -11,12 +11,8 @@ import { VisNetworkExampleComponent } from './network/network-example.component'
 import { VisTimelineExampleComponent } from './timeline/timeline-example.component';
 
 @NgModule({
-  declarations: [
-    DemoComponent,
-    HomeComponent,
-    VisNetworkExampleComponent,
-    VisTimelineExampleComponent,
-  ],
+  bootstrap: [DemoComponent],
+  declarations: [DemoComponent, HomeComponent, VisNetworkExampleComponent, VisTimelineExampleComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -31,6 +27,5 @@ import { VisTimelineExampleComponent } from './timeline/timeline-example.compone
     ]),
   ],
   providers: [],
-  bootstrap: [DemoComponent],
 })
-export class VisDemoModule { }
+export class VisDemoModule {}

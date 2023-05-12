@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { VisTimelineService, DataItem } from '../../dist';
+import { DataItem, VisTimelineService } from '../../dist';
 
 @Component({
   selector: 'timeline-example',
@@ -10,7 +10,7 @@ import { VisTimelineService, DataItem } from '../../dist';
     <div [visTimeline]="visTimeline" [visTimelineItems]="visTimelineItems" (initialized)="timelineInitialized()"></div>
     <button type="button" class="btn btn-default" (click)="addItem()">Add and focus</button>
     <p><strong>Note:</strong> Open your dev tools to see the console output when the timeline receives click events.</p>
-  `
+  `,
 })
 export class VisTimelineExampleComponent implements OnInit, OnDestroy {
   public visTimeline: string = 'timelineId1';
@@ -19,6 +19,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
   public constructor(private visTimelineService: VisTimelineService) {}
 
   public timelineInitialized(): void {
+    // tslint:disable: no-console
     console.log('timeline initialized');
 
     // now we can use the service to register on events
@@ -27,6 +28,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
     // open your console/dev tools to see the click params
     this.visTimelineService.click.subscribe((eventData: any[]) => {
       if (eventData[0] === this.visTimeline) {
+        // tslint:disable: no-console
         console.log(eventData[1]);
       }
     });
@@ -46,7 +48,7 @@ export class VisTimelineExampleComponent implements OnInit, OnDestroy {
       { id: 3, content: 'item 3', start: '2017-04-18' },
       { id: 4, content: 'item 4', start: '2018-04-16', end: '2016-04-19' },
       { id: 5, content: 'item 5', start: '2018-04-25' },
-      { id: 6, content: 'item 6', start: '2019-04-27', type: 'point' }
+      { id: 6, content: 'item 6', start: '2019-04-27', type: 'point' },
     ];
   }
 

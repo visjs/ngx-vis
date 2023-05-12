@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { VisNetworkService, Data, DataSet, Node, Options, Edge } from '../../dist';
+import { Data, DataSet, Edge, Node, Options, VisNetworkService } from '../../dist';
 
 @Component({
   selector: 'network-example',
@@ -11,7 +11,7 @@ import { VisNetworkService, Data, DataSet, Node, Options, Edge } from '../../dis
         height: 400px;
         border: 1px solid lightgray;
       }
-    `
+    `,
   ],
   template: `
     <div *ngIf="visNetworkData">
@@ -27,7 +27,7 @@ import { VisNetworkService, Data, DataSet, Node, Options, Edge } from '../../dis
       <button type="button" class="btn btn-default" (click)="addNode()">Add node</button>
       <p><strong>Note:</strong> Open your dev tools to see the console output when the network receives click events.</p>
     </div>
-  `
+  `,
 })
 export class VisNetworkExampleComponent implements OnInit, OnDestroy {
   public visNetwork: string = 'networkId1';
@@ -53,6 +53,7 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
     // open your console/dev tools to see the click params
     this.visNetworkService.click.subscribe((eventData: any[]) => {
       if (eventData[0] === this.visNetwork) {
+        // tslint:disable: no-console
         console.log(eventData[1]);
       }
     });
@@ -64,13 +65,13 @@ export class VisNetworkExampleComponent implements OnInit, OnDestroy {
       { id: '2', label: 'Node 2' },
       { id: '3', label: 'Node 3' },
       { id: '4', label: 'Node 4' },
-      { id: '5', label: 'Node 5', title: 'Title of Node 5' }
+      { id: '5', label: 'Node 5', title: 'Title of Node 5' },
     ]);
     this.edges = new DataSet<Edge>([
       { from: '1', to: '2' },
       { from: '1', to: '3' },
       { from: '2', to: '4' },
-      { from: '2', to: '5' }
+      { from: '2', to: '5' },
     ]);
     this.visNetworkData = { nodes: this.nodes, edges: this.edges };
 
