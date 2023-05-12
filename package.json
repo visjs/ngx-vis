@@ -107,7 +107,7 @@
   "karma-mocha-reporter": "^2.2.5",
   "karma-sourcemap-loader": "^0.4.0",
   "karma-webpack": "^5.0.0",
-  "keycharm": "^0.3.0",
+  "keycharm": "^0.4.0",
   "mini-css-extract-plugin": "^2.7.5",
   "moment": "^2.29.3",
   "ng-packagr": "^16.0.0",
