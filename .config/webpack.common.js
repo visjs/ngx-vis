@@ -31,7 +31,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader',
         options: {
-          name: 'assets/[name].[hash].[ext]',
+          name: 'assets/[name].[fullhash].[ext]',
         },
       },
       {
@@ -64,7 +64,9 @@ module.exports = {
       template: helpers.root('demo', 'index.html'),
     }),
 
-    new CopyWebpackPlugin([{ from: helpers.root('demo', 'assets'), to: 'assets' }]),
+    new CopyWebpackPlugin({ patterns: [
+      { from: helpers.root('demo', 'assets'), to: 'assets' }
+    ]}),
 
     new AngularCompilerPlugin({
       tsConfigPath: './tsconfig.json',

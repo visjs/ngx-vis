@@ -1,13 +1,13 @@
-var webpackMerge = require('webpack-merge');
-var commonConfig = require('./webpack.prod.js');
-var helpers = require('./helpers');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.prod.js');
+const helpers = require('./helpers');
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = merge(commonConfig, {
+  mode: 'production',
   output: {
     path: helpers.root('docs'),
     publicPath: 'https://visjs.github.io/ngx-vis',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js',
-    mode: 'production'
+    filename: '[name].[fullhash].js',
+    chunkFilename: '[id].[fullhash].chunk.js',
   }
 });
