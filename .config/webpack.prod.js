@@ -12,8 +12,8 @@ module.exports = webpackMerge(commonConfig, {
   output: {
     path: helpers.root('dist'),
     publicPath: './',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    filename: '[name].[fullhash].js',
+    chunkFilename: '[id].[fullhash].chunk.js'
   },
 
   plugins: [
@@ -21,7 +21,7 @@ module.exports = webpackMerge(commonConfig, {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].[hash].css",
+      filename: "[name].[fullhash].css",
       chunkFilename: "[id].css"
     }),
     new webpack.DefinePlugin({
