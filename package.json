@@ -108,7 +108,7 @@
   "karma-webpack": "^5.0.0",
   "keycharm": "^0.4.0",
   "mini-css-extract-plugin": "^2.7.6",
-  "moment": "^2.29.3",
+  "moment": "^2.30.1",
   "ng-packagr": "^16.0.0",
   "npm-audit-resolver": "^2.2.0",
   "null-loader": "^4.0.1",
