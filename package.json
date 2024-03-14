@@ -61,7 +61,7 @@
  },
  "devDependencies": {
   "@angular-devkit/build-angular": "^16.0.0",
-  "@angular-devkit/build-webpack": "^0.1600.1",
+  "@angular-devkit/build-webpack": "^0.1703.0",
   "@angular-devkit/schematics": "^16.0.0",
   "@angular/animations": "16.0.0",
   "@angular/cli": "^16.0.0",
