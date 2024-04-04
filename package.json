@@ -96,7 +96,7 @@
   "gitignore-to-glob": "^0.3.0",
   "html-loader": "^5.0.0",
   "html-webpack-plugin": "^5.5.1",
-  "husky": "^8.0.3",
+  "husky": "^9.0.0",
   "jasmine-core": "^5.0.0",
   "karma": "^6.4.2",
   "karma-chrome-launcher": "^3.2.0",
