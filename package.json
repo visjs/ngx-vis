@@ -129,7 +129,7 @@
   "ts-helpers": "^1.1.2",
   "ts-loader": "^9.4.2",
   "tslib": "^2.4.0",
-  "tslint": "^5.20.1",
+  "tslint": "^6.0.0",
   "tslint-loader": "^3.5.4",
   "typescript": "^5.0.2",
   "uuid": "^7.0.3",
