@@ -6,6 +6,21 @@
       "matchDatasources": ["npm"],
       "matchUpdateTypes": ["patch"],
       "automerge": true
+    },
+    {
+      "groupName": "Angular Release",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^@angular/",
+        "^zone\\.js",
+        "^@ngrx/",
+        "^@ng-easy/",
+        "^@angular-devkit/",
+        "^ng-packagr",
+        "^tslib",
+        "^@angular-eslint/"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     }
   ],
   "prHourlyLimit": 10
