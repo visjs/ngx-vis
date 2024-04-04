@@ -1,0 +1,14 @@
+<h2>Timeline</h2>
+<h3>Basic usage</h3>
+<div
+  [visTimeline]="visTimeline"
+  [visTimelineItems]="visTimelineItems"
+  (initialized)="timelineInitialized()"
+></div>
+<button type="button" class="btn btn-default" (click)="addItem()">
+  Add and focus
+</button>
+<p>
+  <strong>Note:</strong> Open your dev tools to see the console output when the
+  timeline receives click events.
+</p>
