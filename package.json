@@ -61,7 +61,7 @@
  },
  "devDependencies": {
   "@angular-devkit/build-angular": "^16.2.12",
-  "@angular-devkit/build-webpack": "^0.1600.1",
+  "@angular-devkit/build-webpack": "^0.1703.0",
   "@angular-devkit/schematics": "^16.2.12",
   "@angular/animations": "16.2.12",
   "@angular/cli": "^16.2.12",
@@ -139,7 +139,7 @@
   "webpack-cli": "^5.1.1",
   "webpack-dev-server": "^4.15.0",
   "webpack-merge": "^5.8.0",
-  "zone.js": "~0.13.0"
+  "zone.js": "~0.14.0"
  },
  "repository": {
   "type": "git",
