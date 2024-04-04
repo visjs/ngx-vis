@@ -121,7 +121,7 @@
   "rimraf": "^5.0.0",
   "rollup": "^4.0.0",
   "rxjs": "^7.5.5",
-  "source-map-loader": "^4.0.1",
+  "source-map-loader": "^5.0.0",
   "style-loader": "^3.3.3",
   "systemjs-builder": "^0.16.13",
   "timsort": "^0.3.0",
