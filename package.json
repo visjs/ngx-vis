@@ -91,7 +91,7 @@
   "css-loader": "^7.0.0",
   "es6-promise": "^4.1.0",
   "es6-shim": "^0.35.3",
-  "eslint": "^8.40.0",
+  "eslint": "^9.0.0",
   "file-loader": "^6.0.0",
   "gitignore-to-glob": "^0.3.0",
   "html-loader": "^5.0.0",
