@@ -27,7 +27,7 @@
   "build:demo": "rm -rf docs/* && npm run flow.build:demo",
   "build:docs": "rm -rf docs/* && npm run flow.build:github-pages",
   "pretest": "npm run flow.lint",
-  "test": "CHROME_BIN=$(node -e \"process.stdout.write(require('puppeteer').executablePath())\") ng test --browsers=ChromeHeadless --no-watch",
+  "test": "CHROME_BIN=$(node -e \"process.stdout.write(require('puppeteer').executablePath())\") ng test --browsers=$(node -e \"process.stdout.write(process.env.CI==='true'?'ChromeHeadlessNoSandbox':'ChromeHeadless')\") --no-watch",
   "test:watch": "CHROME_BIN=$(node -e \"process.stdout.write(require('puppeteer').executablePath())\") ng test --browsers=ChromeHeadless",
   "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
   "changelog:add": "git add CHANGELOG.md && git commit --no-verify -m 'chore(changelog): Updated CHANGELOG.md'",
