@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { DataItem, VisTimelineService } from "ngx-vis";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DataItem, VisTimelineService } from 'ngx-vis';
 
 
 @Component({
