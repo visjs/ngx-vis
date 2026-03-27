@@ -48,7 +48,7 @@
  },
  "dependencies": {
   "vis-network": "~9.1.7",
-  "vis-timeline": "~7.7.0"
+  "vis-timeline": "~8.5.0"
  },
  "peerDependencies": {
   "@egjs/hammerjs": "^2.0.0",

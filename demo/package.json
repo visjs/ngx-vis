@@ -23,7 +23,7 @@
     "tslib": "^2.8.0",
     "vis-data": "^7.1.7",
     "vis-network": "^9.1.8",
-    "vis-timeline": "^7.7.3",
+    "vis-timeline": "^8.0.0",
     "zone.js": "~0.16.0"
   },
   "devDependencies": {
