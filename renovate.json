@@ -30,7 +30,8 @@
         "vis-data",
         "vis-network",
         "vis-timeline",
-        "vis-util"
+        "vis-util",
+        "^uuid$"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     }
