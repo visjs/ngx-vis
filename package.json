@@ -110,7 +110,7 @@
   "npm-audit-resolver": "^2.2.0",
   "null-loader": "^4.0.1",
   "propagating-hammerjs": "^1.4.0",
-  "puppeteer": "^22.0.0",
+  "puppeteer": "^24.0.0",
   "raw-loader": "^4.0.0",
   "reflect-metadata": "^0.2.0",
   "require-dir": "^1.2.0",
