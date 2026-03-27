@@ -8,7 +8,7 @@
       "automerge": true
     },
     {
-      "groupName": "Angular Release",
+      "groupName": "Angular",
       "matchManagers": ["npm"],
       "matchPackagePatterns": [
         "^@angular/",
@@ -20,6 +20,17 @@
         "^ng-packagr",
         "^tslib",
         "^@angular-eslint/"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "Vis",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "vis-data",
+        "vis-network",
+        "vis-timeline",
+        "vis-util"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     }
