@@ -17,6 +17,7 @@ npm-debug.log
 /coverage
 /ts
 /doc
+/docs
 
 # ignore inline compiling
 /demo/**/*.js
@@ -55,5 +56,6 @@ components/timeline/*.ngfactory.*
 components/timeline/*.metadata.json
 components/timeline/*.ngsummary.json
 
-
+.angular/cache/*
+demo/.angular/cache/*
 yarn.lock

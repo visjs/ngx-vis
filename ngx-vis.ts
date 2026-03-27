@@ -28,9 +28,8 @@ export {
 };
 
 @NgModule({
-  declarations: [VisNetworkDirective, VisTimelineDirective],
+  imports: [CommonModule, VisNetworkDirective, VisTimelineDirective],
   exports: [VisNetworkDirective, VisTimelineDirective],
-  imports: [CommonModule],
   providers: [VisNetworkService, VisTimelineService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

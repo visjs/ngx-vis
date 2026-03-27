@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "types": ["jasmine"]
+  },
+  "include": [
+    "components/**/*.spec.ts",
+    "components/**/*.ts"
+  ]
+}

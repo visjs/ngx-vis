@@ -1,37 +1,16 @@
-/**
- * @author: @AngularClass
- */
 'use strict';
 
-var pkg = require('./package.json');
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
-// Look in ./config for karma.conf.js
-const config = {
-    src: '/',
-    // metadata
-    title: pkg.description,
-    baseUrl: '/',
-    // root folder name
-    src: 'demo',
-    dist: 'demo-build',
-    htmlIndexes: ['index.html'],
-    // karma bundle src
-    spec: './spec-bundle.js',
-    // webpack entry
-    entry: {
-        polyfills: './demo/polyfills.ts',
-        vendor: './demo/vendor.ts',
-        main: './demo/index.ts'
+module.exports = function (config) {
+  config.set({
+    coverageReporter: {
+      dir: 'coverage/',
+      reporters: [
+        { type: 'text-summary' },
+        { type: 'html' },
+        { type: 'json', subdir: '.', file: 'coverage-final.json' },
+      ],
     },
-    commonChunks: {
-        name: ['polyfills', 'vendor'].reverse()
-    },
-    // webpack alias
-    alias: {},
-    copy: [
-        { from: 'demo/favicon.ico', to: 'favicon.ico' },
-        { from: 'demo/assets', to: 'assets' }
-    ]
+  });
 };
-
-module.exports = require('./.config/karma.conf')(config);

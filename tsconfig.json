@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2022",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -21,7 +21,7 @@
     },
     "lib": [
       "dom",
-      "es6"
+      "ES2022"
     ],
     "typeRoots": [
       "./node_modules/@types"

@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Data, DataSet, Edge, Node, Options, VisNetworkService } from 'ngx-vis';
+import { NgIf } from '@angular/common';
+import { Data, DataSet, Edge, Node, Options, VisModule, VisNetworkService } from 'ngx-vis';
 
 @Component({
   selector: 'network-example',
+  imports: [NgIf, VisModule],
   styles: [
     `
       .network-canvas {
