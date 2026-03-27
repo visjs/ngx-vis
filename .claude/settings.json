@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(grep -E \"\\\\.\\(json|js|ts\\)$|browserslist\")",
+      "Bash(npm test:*)",
+      "Bash(node -e \"const p = require\\(''''puppeteer''''\\); console.log\\(typeof p.executablePath\\(\\), p.executablePath\\(\\)\\)\")",
+      "Bash(npm run:*)"
+    ]
+  }
+}
