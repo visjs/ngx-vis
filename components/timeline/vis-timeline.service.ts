@@ -734,7 +734,7 @@ export class VisTimelineService {
 
   private wrapCallbacksWithNgZone(options: TimelineOptions): TimelineOptions {
     const updatedOptions: any = { ...options };
-    const callbackFunctions: Array<keyof TimelineOptions> = [
+    const callbackFunctions: (keyof TimelineOptions)[] = [
       'onAdd',
       'onAddGroup',
       'onDropObjectOnItem',
