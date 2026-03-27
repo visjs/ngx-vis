@@ -33,6 +33,52 @@
         "vis-util"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "ESLint",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^eslint",
+        "^@eslint/",
+        "^eslint-config-",
+        "^eslint-plugin-"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "Jasmine",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^jasmine",
+        "^@types/jasmine"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "Karma",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^karma",
+        "^karma-"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "TypeScript",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^typescript$",
+        "^@types/"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "Commitlint",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^@commitlint/"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     }
   ],
   "prHourlyLimit": 10
