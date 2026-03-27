@@ -124,7 +124,7 @@
   "ts-helpers": "^1.1.2",
   "ts-loader": "^9.4.2",
   "tslib": "^2.8.0",
-  "typescript": "~5.9.0",
+  "typescript": "~6.0.0",
   "uuid": "^9.0.0",
   "vis-data": "^7.1.0",
   "vis-util": "~5.0.1",
