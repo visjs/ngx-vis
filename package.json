@@ -76,7 +76,7 @@
   "@commitlint/config-conventional": "^20.0.0",
   "@egjs/hammerjs": "^2.0.17",
   "@ngtools/webpack": "^21.2.0",
-  "@types/jasmine": "^5.0.0",
+  "@types/jasmine": "^6.0.0",
   "@types/node": "^24.0.0",
   "@types/webpack": "^5.28.1",
   "codecov": "^3.8.3",
