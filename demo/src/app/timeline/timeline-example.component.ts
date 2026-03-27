@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DataItem, VisTimelineService } from 'ngx-vis';
-
+import { DataItem, VisModule, VisTimelineService } from 'ngx-vis';
 
 @Component({
   selector: 'timeline-example',
   templateUrl: './timeline-example.component.html',
+  imports: [VisModule],
 })
 export class VisTimelineExampleComponent implements OnInit, OnDestroy {
   public visTimeline: string = 'timelineId1';
