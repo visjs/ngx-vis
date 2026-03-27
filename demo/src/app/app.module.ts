@@ -6,9 +6,11 @@ import { VisModule } from 'ngx-vis';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VisNetworkExampleComponent } from './network/network-example.component';
+import { VisTimelineExampleComponent } from './timeline/timeline-example.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, VisNetworkExampleComponent, VisTimelineExampleComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
