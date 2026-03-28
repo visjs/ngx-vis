@@ -31,7 +31,8 @@
         "vis-network",
         "vis-timeline",
         "vis-util",
-        "^uuid$"
+        "^uuid$",
+        "^propagating-hammerjs$"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     },
@@ -47,18 +48,11 @@
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     },
     {
-      "groupName": "Jasmine",
+      "groupName": "Karma + Jasmine",
       "matchManagers": ["npm"],
       "matchPackagePatterns": [
         "^jasmine",
-        "^@types/jasmine"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
-    },
-    {
-      "groupName": "Karma",
-      "matchManagers": ["npm"],
-      "matchPackagePatterns": [
+        "^@types/jasmine",
         "^karma",
         "^karma-"
       ],
