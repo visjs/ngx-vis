@@ -6,7 +6,8 @@
       "Bash(grep -E \"\\\\.\\(json|js|ts\\)$|browserslist\")",
       "Bash(npm test:*)",
       "Bash(node -e \"const p = require\\(''''puppeteer''''\\); console.log\\(typeof p.executablePath\\(\\), p.executablePath\\(\\)\\)\")",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(gh issue:*)"
     ]
   }
 }

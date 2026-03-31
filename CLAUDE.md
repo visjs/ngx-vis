@@ -31,6 +31,7 @@ ngx-vis/
 ├── components/
 │   ├── network/
 │   │   ├── vis-network.directive.ts
+│   │   ├── vis-network.directive.spec.ts
 │   │   ├── vis-network.service.ts
 │   │   └── vis-network.service.spec.ts
 │   └── timeline/
@@ -109,7 +110,16 @@ Raised to `1.5mb` warning / `3mb` error because vis.js ships only CJS modules an
 
 ## Testing
 
-Tests are in `components/**/*.spec.ts`. They are **pure unit tests** — no `TestBed`, services are instantiated directly. `VisTimelineService` receives an NgZone mock.
+**Always write unit tests** when implementing new features or fixing bugs. Every change to a service or directive must be accompanied by a corresponding spec file update or addition.
+
+Tests are in `components/**/*.spec.ts`. They are **pure unit tests** — no `TestBed`, services and directives are instantiated directly. `VisTimelineService` receives an NgZone mock. Directives are tested by instantiating them with a mock `ElementRef` and a `jasmine.createSpyObj` for the service dependency.
+
+### Patterns
+
+- **Services**: instantiate directly, call methods, assert return values or thrown errors.
+- **Directives**: instantiate directly with `new ElementRef(document.createElement('div'))` and a spy service; call lifecycle hooks (`ngOnInit`, `ngOnChanges`, `ngOnDestroy`) manually and assert spy calls.
+- Use `jasmine.createSpyObj` for dependency mocks — never use real network/DOM instances in unit tests.
+- Every public method that guards on network existence must have a corresponding `toThrowError()` assertion in the "throws error when network does not exist" spec.
 
 The root `angular.json` defines a test target for the `ngx-vis` library project:
 
@@ -127,7 +137,7 @@ The root `angular.json` defines a test target for the `ngx-vis` library project:
 
 `karma.conf.js` sets `CHROME_BIN` to puppeteer's bundled Chrome and configures the coverage reporter. The `test` npm script sets `CHROME_BIN` inline too (belt-and-suspenders for CI environments).
 
-**CI vs local browser**: The `test` script selects `ChromeHeadlessCI` when `CI=true` (set automatically by GitHub Actions), otherwise `ChromeHeadless`. `ChromeHeadlessCI` is a custom launcher defined in `karma.conf.js` that adds `--no-sandbox --disable-dev-shm-usage`, required on Linux runners which have no kernel sandbox.
+**CI vs local browser**: The `test` script selects `ChromeHeadlessNoSandbox` when `CI=true` (set automatically by GitHub Actions), otherwise `ChromeHeadless`. `ChromeHeadlessNoSandbox` is a built-in launcher provided by the Angular CLI karma builder (adds `--no-sandbox --disable-dev-shm-usage`), required on Linux runners which have no kernel sandbox. Do not specify `karmaConfig` in `angular.json` — when `karmaConfig` is set, Angular CLI uses an empty base config and the built-in launcher is not registered.
 
 **Critical**: `tsconfig.spec.json` must have `"importHelpers": true`. The root tsconfig has `"noEmitHelpers": true`, which suppresses inline TypeScript helpers (e.g. `__decorate`). Without `importHelpers`, those helpers are neither inlined nor imported from `tslib`, causing a runtime `ReferenceError` in the browser.
 
