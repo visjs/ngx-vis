@@ -45,6 +45,7 @@ describe('VisNetworkService Tests', () => {
     expect(() => visNetworkService.unselectAll('unknown')).toThrowError();
     expect(() => visNetworkService.fit('unknown')).toThrowError();
     expect(() => visNetworkService.getScale('unknown')).toThrowError();
+    expect(() => visNetworkService.getViewPosition('unknown')).toThrowError();
     expect(() => visNetworkService.fit('unknown', { animation: true })).toThrowError();
     expect(() => visNetworkService.redraw('unknown')).toThrowError();
     expect(() => visNetworkService.enableEditMode('unknown')).toThrowError();

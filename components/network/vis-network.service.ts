@@ -1058,6 +1058,26 @@ export class VisNetworkService {
   }
 
   /**
+   * Returns the current central focus point of the camera in canvas coordinates.
+   * The returned position can be passed directly to {@link moveTo} via `MoveToOptions.position`
+   * to save and restore the viewport.
+   *
+   * @param {string} visNetwork The network name/identifier.
+   * @returns {Position} The canvas coordinates of the current viewport center.
+   *
+   * @throws {Error} Thrown when the network does not exist.
+   *
+   * @memberOf NetworkService
+   */
+  public getViewPosition(visNetwork: string): Position {
+    if (this.networks[visNetwork]) {
+      return this.networks[visNetwork].getViewPosition();
+    } else {
+      throw new Error(`Network with id ${visNetwork} not found.`);
+    }
+  }
+
+  /**
    * Start the physics simulation.
    * This is normally done whenever needed and is only really useful
    * if you stop the simulation yourself and wish to continue it afterwards.
