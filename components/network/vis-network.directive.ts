@@ -91,7 +91,7 @@ export class VisNetworkDirective implements OnInit, OnDestroy, OnChanges {
 
   /**
    * Update the network data or options on reference changes to
-   * the visData or visOptions properties.
+   * the visNetworkData or visNetworkOptions properties.
    *
    * @param {{[propName: string]: SimpleChange}} changes
    *
