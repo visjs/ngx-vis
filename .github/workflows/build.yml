@@ -29,6 +29,11 @@ jobs:
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+        contents: write
+        packages: write
+        attestations: write
+        id-token: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -36,8 +41,6 @@ jobs:
           node-version: 24
 
       - name: publish release package
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           npm i
@@ -46,8 +49,6 @@ jobs:
         if: contains( github.ref, 'main' ) || contains( github.base_ref, 'main' )
 
       - name: publish preview package
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
