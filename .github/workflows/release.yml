@@ -5,7 +5,13 @@ on:
     inputs:
       release_type:
         description: "Type of release to build: patch, minor, major, or custom"
-        type: string
+        options:
+          - patch
+          - minor
+          - major
+          - custom
+        default: patch
+        type: choice
         required: true
       custom_version:
         description: "Version to release (only used when release_type is 'custom', e.g. 1.2.3)"
@@ -41,7 +47,7 @@ jobs:
       - uses: actions/create-github-app-token@v3
         id: app-token
         with:
-          client-id: ${{ secrets.CI_CLIENT_ID }}
+          client-id: ${{ vars.CI_CLIENT_ID }}
           private-key: ${{ secrets.CI_PRIVATE_KEY }}
 
       - name: Checkout
