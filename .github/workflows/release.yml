@@ -12,10 +12,6 @@ on:
         type: string
         required: false
         default: ""
-      app_id:
-        description: "GitHub App ID used to mint the release commit/PR token"
-        type: string
-        required: true
       default_branch:
         description: "Branch to release from and push commits/tags back to"
         type: string
