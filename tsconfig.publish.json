@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "strict": false,
         "declaration": true,
         "stripInternal": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "module": "ES2022",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "noEmitOnError": false,
         "outDir": "./dist",
         "rootDir": ".",

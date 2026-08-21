@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "strict": false,
     "target": "ES2022",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": false,
@@ -28,9 +29,9 @@
     ],
     "types": [
       "node",
-      "jasmine",
-      "webpack"
-    ]
+      "jasmine"
+    ],
+    "ignoreDeprecations": "6.0"
   },
   "exclude": [
     "node_modules",
