@@ -73,12 +73,6 @@ jobs:
           node-version: "24"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Publish npm package
-        run: |
-          npm ci
-          npm run build  
-          npm publish
-
       - name: Determine release version
         id: version
         run: |
@@ -116,6 +110,12 @@ jobs:
           mv package.json.new package.json
           git add package.json
           git commit -m "Release ${{ steps.version.outputs.release_version }}"
+
+      - name: Publish npm package
+        run: |
+          npm ci
+          npm run build  
+          npm publish
 
       - name: Update changelog
         run: |
