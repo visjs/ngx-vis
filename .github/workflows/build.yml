@@ -26,49 +26,18 @@ jobs:
           npm run build:all
           npm run test
 
-  ci-status:
-    name: CI status
-    needs: [build]
+  build-results:
+    name: Build results
+    if: ${{ always() }}
     runs-on: ubuntu-latest
-    if: always()
+    needs:
+      - build
     steps:
-      - name: Fail if any matrix job failed
-        run: |
-          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" = "true" ]; then
-            echo "One or more build matrix jobs did not succeed."
-            exit 1
-          fi
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    permissions:
-        contents: write
-        packages: write
-        attestations: write
-        id-token: write
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-
-      - name: publish release package
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-          npm i
-          npm run build && cd dist
-          npm publish
-        if: contains( github.ref, 'main' ) || contains( github.base_ref, 'main' )
-
-      - name: publish preview package
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
-          PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-          CURRENT_TIME=$(date +%s)
-          NEW_VERSION=${PACKAGE_VERSION}-build${CURRENT_TIME}
-          npm i
-          npm version $NEW_VERSION --no-git-tag-version
-          npm run build && cd dist
-          npm publish  --tag next
-        if: contains( github.ref, 'develop' ) || contains( github.base_ref, 'develop' )
+      - run: exit 1
+        # see https://stackoverflow.com/a/67532120/4907315
+        if: >-
+          ${{
+                contains(needs.*.result, 'failure')
+            || contains(needs.*.result, 'cancelled')
+                || contains(needs.*.result, 'skipped')
+                }}
