@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "packageRules": [
     {
       "matchDatasources": ["npm"],
@@ -19,7 +19,16 @@
         "^@angular-devkit/",
         "^ng-packagr",
         "^tslib",
-        "^@angular-eslint/"
+        "^@angular-eslint/",
+        "^typescript$"
+      ],
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+    },
+    {
+      "groupName": "TypeScript",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^@types/"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     },
@@ -55,15 +64,6 @@
         "^@types/jasmine",
         "^karma",
         "^karma-"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
-    },
-    {
-      "groupName": "TypeScript",
-      "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^typescript$",
-        "^@types/"
       ],
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     },

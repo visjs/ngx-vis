@@ -26,6 +26,19 @@ jobs:
           npm run build:all
           npm run test
 
+  ci-status:
+    name: CI status
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Fail if any matrix job failed
+        run: |
+          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" = "true" ]; then
+            echo "One or more build matrix jobs did not succeed."
+            exit 1
+          fi
+
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
