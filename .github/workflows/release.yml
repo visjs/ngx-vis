@@ -73,30 +73,6 @@ jobs:
           node-version: "24"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Setup Java
-        uses: actions/setup-java@v5
-        with:
-          distribution: "temurin" # As good as any other, see: https://github.com/actions/setup-java#supported-distributions
-          java-package: "jdk"
-          java-version: "21"
-          check-latest: true
-          cache: "maven"
-
-      - name: Setup settings.xml
-        uses: s4u/maven-settings-action@v4.0.0
-        with:
-          override: true
-          servers: |
-            [{
-                "id": "central",
-                "username": "${{ secrets.OSS_SONATYPE_USER }}",
-                "password": "${{ secrets.OSS_SONATYPE_PASS }}"
-            },{
-                "id":"github",
-                "username": "ci-bot",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
-            }]
-
       - name: Publish npm package
         run: |
           npm ci
