@@ -121,5 +121,13 @@
  "bugs": {
   "url": "https://github.com/visjs/ngx-vis/issues"
  },
- "homepage": "https://github.com/visjs/ngx-vis#readme"
+ "homepage": "https://github.com/visjs/ngx-vis#readme",
+ "allowScripts": {
+  "@parcel/watcher@2.6.0": true,
+  "esbuild@0.28.2": true,
+  "fsevents@2.3.3": true,
+  "msgpackr-extract@3.0.4": true,
+  "puppeteer@24.43.1": true,
+  "lmdb@3.5.6": true
+ }
 }
