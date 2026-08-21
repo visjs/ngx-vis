@@ -1,4 +1,143 @@
 
+## [6.0.0](https://github.com/visjs/ngx-vis/compare/v5.0.0...v6.0.0) (2026-08-21)
+
+### Bug Fixes
+
+* **deps:** Update vis ([fa84c52](https://github.com/visjs/ngx-vis/commit/fa84c52ebb9c6b8df5fc89bedf5630bd741ccb3b))
+
+* Adding missing dep ([c7fe7f6](https://github.com/visjs/ngx-vis/commit/c7fe7f6f729878db2766a509f3078d2b5830e192))
+
+* **Network:** Resolve change detection issue ([7717c5e](https://github.com/visjs/ngx-vis/commit/7717c5e487277152018572dde8ed290d54454abd))
+
+* **deps:** Update dependency vis-network to ~10.1.0 ([d8a101d](https://github.com/visjs/ngx-vis/commit/d8a101deb1c472f95f3b42a66629cb542d6c5f57))
+
+
+
+### Dependency Updates
+
+* **deps:** Update dependency copy-webpack-plugin to v14 ([7676e4a](https://github.com/visjs/ngx-vis/commit/7676e4af16a00952e727ef8407252fc5c05271f8))
+
+* **deps:** Update actions/setup-node action to v6 ([a82ef0a](https://github.com/visjs/ngx-vis/commit/a82ef0a3cd25fbe0e1715aae5ab6e87231b4289a))
+
+* **deps:** Update dependency rimraf to v6 ([204a78b](https://github.com/visjs/ngx-vis/commit/204a78ba4ec7bfe705a33e7d7363b2f65f8c9e0f))
+
+* **deps:** Update node.js to v24 ([1bf3593](https://github.com/visjs/ngx-vis/commit/1bf359325d231ebb7ad2dc06547cf555fb5398f0))
+
+* **deps:** Update dependency cross-env to v10 ([eec60e6](https://github.com/visjs/ngx-vis/commit/eec60e6556d3bf582f99d6f2ab61a5361b124025))
+
+* **deps:** Update actions/checkout action to v6 ([fedf01f](https://github.com/visjs/ngx-vis/commit/fedf01f7de7aa2b5d140627d55ba936a7db167da))
+
+* **deps:** Update commitlint monorepo to v20 ([205a364](https://github.com/visjs/ngx-vis/commit/205a3648ddae65a3b6073802943353333809de9f))
+
+* **deps:** Update dependency puppeteer to v24 ([4a65581](https://github.com/visjs/ngx-vis/commit/4a6558146b7832f64fdcc543e5c396ad0e82bca8))
+
+* **deps:** Update dependency cpy-cli to v7 ([7ea2a58](https://github.com/visjs/ngx-vis/commit/7ea2a5853f61a4cc6e7e8bb8e02db41d72809e00))
+
+* **deps:** Update dependency webpack-dev-server to v5 [security] ([e793254](https://github.com/visjs/ngx-vis/commit/e793254bf62e5b70e0a84acc9dc0ca9b63dc794c))
+
+* **deps:** Update dependency uuid to v13 ([e7dc94c](https://github.com/visjs/ngx-vis/commit/e7dc94c5992bba9313d5a142ffce18812a341892))
+
+* **deps:** Update dependency webpack-cli to v7 ([765c813](https://github.com/visjs/ngx-vis/commit/765c813420614febeb60ff6c912b72dc93d4c912))
+
+* **deps:** Update angular to v21.2.5 ([e4a8b3e](https://github.com/visjs/ngx-vis/commit/e4a8b3ec709d2faa0ab6007e08a7c248a7b5f11a))
+
+* **deps:** Update angular to v21.2.5 ([6a1f1e5](https://github.com/visjs/ngx-vis/commit/6a1f1e55f6dfe473f26f58d04320c28404709eee))
+
+* **deps:** Update dependency karma-jasmine-html-reporter to ~2.2.0 ([ad7911f](https://github.com/visjs/ngx-vis/commit/ad7911fdb6e1ad7465ab7ee7a54fca162ecdbaca))
+
+* **deps:** Update dependency karma-jasmine-html-reporter to v2.2.0 ([bd8e431](https://github.com/visjs/ngx-vis/commit/bd8e4316910bfc612e3d84e60a146a86ab043880))
+
+* **deps:** Update angular to v21.2.5 ([ee0a871](https://github.com/visjs/ngx-vis/commit/ee0a8717f4a612dd264ac6275e2dada4de60a1e7))
+
+* **deps:** Update dependency jasmine-core to v6 ([eced8d6](https://github.com/visjs/ngx-vis/commit/eced8d6068602a2b559b1a6670671a22e8b7c0a2))
+
+* **deps:** Update angular to v21.2.6 ([8ce10fb](https://github.com/visjs/ngx-vis/commit/8ce10fbc8af3e200ac920a78817726145b2d7094))
+
+* **deps:** Update angular to v21.2.7 ([89d7647](https://github.com/visjs/ngx-vis/commit/89d7647add24997ebdd137d64d52595658d6d996))
+
+* **deps:** Update dependency @types/node to v24.12.2 ([739316a](https://github.com/visjs/ngx-vis/commit/739316a4b7300bbe7d978b3d5071d6bfccde540e))
+
+* **deps:** Update angular to v21.2.7 ([d933bce](https://github.com/visjs/ngx-vis/commit/d933bce6637688a4fe0d50ade4530db97a9cec52))
+
+* **deps:** Update dependency @commitlint/cli to v20.5.2 ([ef649d8](https://github.com/visjs/ngx-vis/commit/ef649d8c3d92d09e4640f955b7a102c5cd4f47ff))
+
+* **deps:** Update angular to v21.2.8 ([8d83d96](https://github.com/visjs/ngx-vis/commit/8d83d969ff9eedc2a9b2097b82073ae9695a1b67))
+
+* **deps:** Update commitlint to v20.5.3 ([22ea3ef](https://github.com/visjs/ngx-vis/commit/22ea3ef62ecd5a0246bcdd95df0857132fdf88db))
+
+* **deps:** Update angular to v21.2.9 ([2236f40](https://github.com/visjs/ngx-vis/commit/2236f40d7647df077e000fec4212b75897a556de))
+
+* **deps:** Update dependency uuid to v13.0.1 [security] ([6cccba2](https://github.com/visjs/ngx-vis/commit/6cccba2f579d855b3687efe0f5ba2bce56109ced))
+
+* **deps:** Update angular ([fc84edc](https://github.com/visjs/ngx-vis/commit/fc84edcb1b46543a3a4d5c497f85d6acbe98e7d7))
+
+* **deps:** Update vis ([3761769](https://github.com/visjs/ngx-vis/commit/37617690111252253da9c8293ab85e183d39a804))
+
+* **deps:** Update dependency @types/node to v24.12.3 ([e7da999](https://github.com/visjs/ngx-vis/commit/e7da9992d603e8c47cacfbed62ff498b1cb65a2d))
+
+* **deps:** Update dependency @types/node to v24.12.4 ([9631fc6](https://github.com/visjs/ngx-vis/commit/9631fc656020a2fe74a2043fe5a2aeedea1b2d41))
+
+* **deps:** Update angular ([84c9757](https://github.com/visjs/ngx-vis/commit/84c9757b373bcba6a0b126f9da2dbf79c68024c3))
+
+* **deps:** Update angular ([c238983](https://github.com/visjs/ngx-vis/commit/c238983b32b3f0e0cead2c70e347d3a3f6e28385))
+
+* **deps:** Update angular ([a9f5336](https://github.com/visjs/ngx-vis/commit/a9f5336a533d173922a9fac77276276b7e935a44))
+
+* **deps:** Update angular ([fb2d66f](https://github.com/visjs/ngx-vis/commit/fb2d66f1a587b54f74b2657b8c3512da9abfc25e))
+
+* **deps:** Update angular ([e1ec2b0](https://github.com/visjs/ngx-vis/commit/e1ec2b03024bfaa1a82c97f4e2ff0c0896d015bc))
+
+* **deps:** Update angular ([25dbf89](https://github.com/visjs/ngx-vis/commit/25dbf89355044b9ca7332314498b69f4031dada1))
+
+* **deps:** Update angular ([96a0012](https://github.com/visjs/ngx-vis/commit/96a0012646e2b28a4337dd3d7e12a95b223b1a6c))
+
+* **deps:** Update angular ([ae7fdc1](https://github.com/visjs/ngx-vis/commit/ae7fdc1ef8028eac4a3ff5eab0793ee4d5388ef8))
+
+* **deps:** Update angular ([b1dee78](https://github.com/visjs/ngx-vis/commit/b1dee78b5f44e3ded07eee06fefdb5418c27ede2))
+
+* **deps:** Update angular ([f229064](https://github.com/visjs/ngx-vis/commit/f229064032101cf43cb9081c57fd0646697e4913))
+
+* **deps:** Update angular ([f584414](https://github.com/visjs/ngx-vis/commit/f5844147c28c926e3c3a65e4dd99514a19ff7761))
+
+* **deps:** Update angular ([ef2e4bb](https://github.com/visjs/ngx-vis/commit/ef2e4bb2ffe3dcf7f3ab15690bab6ca0237d368f))
+
+* **deps:** Update angular ([117fd00](https://github.com/visjs/ngx-vis/commit/117fd0049074d870dd7e872609115b52ab9e8adc))
+
+* **deps:** Update angular ([b0439a4](https://github.com/visjs/ngx-vis/commit/b0439a4a7404b0eced13f1423049f0e489079381))
+
+* **deps:** Update angular ([e8260ec](https://github.com/visjs/ngx-vis/commit/e8260ecc30bc79f645fe0261384161a82aacdf62))
+
+* **deps:** Update angular ([464d0b1](https://github.com/visjs/ngx-vis/commit/464d0b179c180f892e4824966706b3a531d1eadf))
+
+* **deps:** Update angular ([78ea80c](https://github.com/visjs/ngx-vis/commit/78ea80c2b843600d0e3c9706d8221ddb49aa86ee))
+
+* **deps:** Update angular ([9ae991c](https://github.com/visjs/ngx-vis/commit/9ae991c7cd87c3a0b29b5a3ba3dc138072cf25a1))
+
+* **deps:** Update angular ([04aae6d](https://github.com/visjs/ngx-vis/commit/04aae6dbf88da191ef0e9b1c4ac6d97ac526f768))
+
+* **deps:** Update dependency karma-jasmine-html-reporter to ~2.3.0 ([3e8aa14](https://github.com/visjs/ngx-vis/commit/3e8aa143026f2a79c6feb37fe81d9988d0126fc4))
+
+* **deps:** Update dependency uuid to v14 ([899ea69](https://github.com/visjs/ngx-vis/commit/899ea69559a8ab58a9133f290a323f7c9c294c00))
+
+* **deps:** Update commitlint to v21 ([153bb65](https://github.com/visjs/ngx-vis/commit/153bb65095068bae1f2b96d511194e4643b81dac))
+
+* **deps:** Update dependency puppeteer to v25 ([0710020](https://github.com/visjs/ngx-vis/commit/0710020d60de3174d4e9b670de1661534211d6a7))
+
+* **deps:** Update actions/setup-node action to v7 ([d370553](https://github.com/visjs/ngx-vis/commit/d370553e44d9de2df8cc5696bf6c5c163b88b002))
+
+* **deps:** Update actions/checkout action to v7 ([3a3fe69](https://github.com/visjs/ngx-vis/commit/3a3fe695cd385e771a1731754d252b82ae86cd9b))
+
+
+
+### Features
+
+* **Network:** Implement getViewPosition ([aaf3055](https://github.com/visjs/ngx-vis/commit/aaf3055a548cd18f54d005c73db9243be7d92691))
+
+* **Angular:** Upgrade to Angular 22 ([8363aea](https://github.com/visjs/ngx-vis/commit/8363aea7d58af2d6d1a7d09e77562d4e56760be4))
+
+
+
+
 ## 5.0.0 (2026-03-27)
 
 * 5.0.0 ([3179d63](https://github.com/visjs/ngx-vis/commit/3179d63))
