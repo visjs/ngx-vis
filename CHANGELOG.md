@@ -1,4 +1,49 @@
 
+## [6.0.1](https://github.com/visjs/ngx-vis/compare/v6.0.0...v6.0.1) (2026-11-25)
+
+### Dependency Updates
+
+* **deps:** Update angular to v22.1.6 ([c859b46](https://github.com/visjs/ngx-vis/commit/c859b4639d0db860e9848d0fb0b4ee1658f4d472))
+
+* **deps:** Update angular to v22.1.4 ([ba4b02f](https://github.com/visjs/ngx-vis/commit/ba4b02f0608c621e23e0814514bd7870b0186a1f))
+
+* **deps:** Update dependency @angular-devkit/schematics to v22.1.7 ([2705d8b](https://github.com/visjs/ngx-vis/commit/2705d8b494cee6414fbaf16c06fbba51ae73c186))
+
+* **deps:** Update angular ([75d3a53](https://github.com/visjs/ngx-vis/commit/75d3a531727e60f4c386fd7d3662b0c0f7953939))
+
+* **deps:** Update dependency @types/node to v24.13.4 ([13e8794](https://github.com/visjs/ngx-vis/commit/13e87942253d010626116fa7cbde3b2619152fc7))
+
+* **deps:** Update angular to v22.1.6 ([4c6116c](https://github.com/visjs/ngx-vis/commit/4c6116cd17b64d5311e8e6e9ba3d6f22a2b3c5d8))
+
+* **deps:** Update dependency @types/node to v24.13.5 ([cc056ad](https://github.com/visjs/ngx-vis/commit/cc056adb39af284ed92bed50feff50f5132ab13e))
+
+* **deps:** Update dependency @types/node to v24.13.6 ([503e38c](https://github.com/visjs/ngx-vis/commit/503e38c8ab7dc279e86f1e80dc975de953371ada))
+
+* **deps:** Update commitlint to v21.2.3 ([6544a51](https://github.com/visjs/ngx-vis/commit/6544a513efa476242c1e8b3b8e66216455145928))
+
+* **deps:** Update commitlint to v21.2.4 ([e9dbfd9](https://github.com/visjs/ngx-vis/commit/e9dbfd9441df9f7897d1a5d45efda514c5720c8c))
+
+* **deps:** Update vis ([8464459](https://github.com/visjs/ngx-vis/commit/8464459999cd6d7c1da218cac9df3d03f27df17b))
+
+* **deps:** Update vis ([0ae8685](https://github.com/visjs/ngx-vis/commit/0ae868528f5c4cfe7aeac7122be0c7c7ff4b0e1b))
+
+* **deps:** Update dependency vis-timeline to v8.5.6 ([e9357d1](https://github.com/visjs/ngx-vis/commit/e9357d1468d50f9fa015943ba887e2975255b57d))
+
+* **deps:** Update dependency vis-network to v10.1.4 ([d7fdad7](https://github.com/visjs/ngx-vis/commit/d7fdad7f880401ca09b76d752f4d214e78259bbf))
+
+* **deps:** Update dependency rimraf to v6.1.4 ([9d3504d](https://github.com/visjs/ngx-vis/commit/9d3504d88a9bdf7ccf1189ceca56a8d7b7f4cde8))
+
+* **deps:** Update dependency vis-network to v10.1.5 ([b07f44a](https://github.com/visjs/ngx-vis/commit/b07f44a728cc0d8084a1da19e08bf74c32abb245))
+
+* **deps:** Update dependency @types/node to v26 ([3a7fa5c](https://github.com/visjs/ngx-vis/commit/3a7fa5c60e1574a8c985c33ba95323c48133b48f))
+
+* **deps:** Update dependency moment to v2.31.0 [security] ([910d2e5](https://github.com/visjs/ngx-vis/commit/910d2e59e1a121a59afa61aaaff37ad5ab3aed02))
+
+* **deps:** Update angular ([efe9668](https://github.com/visjs/ngx-vis/commit/efe9668ed5a7683debbb8d6fda78e8d4e02f2fcf))
+
+
+
+
 ## [6.0.0](https://github.com/visjs/ngx-vis/compare/v5.0.0...v6.0.0) (2026-08-21)
 
 ### Bug Fixes
