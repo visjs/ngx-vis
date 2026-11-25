@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [22, 24]
+        node_version: [24, 26]
         # Windows (windows-latest) doesn't work with karma
         os: [ubuntu-latest, macOS-latest]
 
