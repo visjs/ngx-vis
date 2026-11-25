@@ -68,6 +68,12 @@
       "matchUpdateTypes": ["major", "minor", "patch", "pin"]
     },
     {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["jasmine-core", "@types/jasmine"],
+      "allowedVersions": "<5.0.0",
+      "description": "karma-jasmine@5.x requires jasmine-core ^4.1.0; upgrading past 4.x causes duplicate Jasmine instances and a read-only globals error"
+    },
+    {
       "groupName": "Commitlint",
       "matchManagers": ["npm"],
       "matchPackagePatterns": [
