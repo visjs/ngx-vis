@@ -10,62 +10,62 @@
     {
       "groupName": "Angular",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^@angular/",
-        "^zone\\.js",
-        "^@ngrx/",
-        "^@ngtools/",
-        "^@ng-easy/",
-        "^@angular-devkit/",
-        "^ng-packagr",
-        "^tslib",
-        "^@angular-eslint/",
-        "^typescript$"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/^@angular//",
+        "/^zone\\.js/",
+        "/^@ngrx//",
+        "/^@ngtools//",
+        "/^@ng-easy//",
+        "/^@angular-devkit//",
+        "/^ng-packagr/",
+        "/^tslib/",
+        "/^@angular-eslint//",
+        "/^typescript$/"
+      ]
     },
     {
       "groupName": "TypeScript",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^@types/"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/^@types//"
+      ]
     },
     {
       "groupName": "Vis",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "vis-data",
-        "vis-network",
-        "vis-timeline",
-        "vis-util",
-        "^uuid$",
-        "^propagating-hammerjs$"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/vis-data/",
+        "/vis-network/",
+        "/vis-timeline/",
+        "/vis-util/",
+        "/^uuid$/",
+        "/^propagating-hammerjs$/"
+      ]
     },
     {
       "groupName": "ESLint",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^eslint",
-        "^@eslint/",
-        "^eslint-config-",
-        "^eslint-plugin-"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/^eslint/",
+        "/^@eslint//",
+        "/^eslint-config-/",
+        "/^eslint-plugin-/"
+      ]
     },
     {
       "groupName": "Karma + Jasmine",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^jasmine",
-        "^@types/jasmine",
-        "^karma",
-        "^karma-"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/^jasmine/",
+        "/^@types/jasmine/",
+        "/^karma/",
+        "/^karma-/"
+      ]
     },
     {
       "matchManagers": ["npm"],
@@ -76,10 +76,10 @@
     {
       "groupName": "Commitlint",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": [
-        "^@commitlint/"
-      ],
-      "matchUpdateTypes": ["major", "minor", "patch", "pin"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin"],
+      "matchPackageNames": [
+        "/^@commitlint//"
+      ]
     }
   ],
   "prHourlyLimit": 10
